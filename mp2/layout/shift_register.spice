@@ -1,0 +1,34 @@
+* SPICE3 file created from shift_register.ext - technology: sky130A
+
+.subckt inverter A Y VP VN
+X0 VN A Y VN sky130_fd_pr__nfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+X1 VP A Y VP sky130_fd_pr__pfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+.ends
+
+.subckt d_ff clk D Dn Q Qn VP VN
+X0 a_n180_n40# clk VN VN sky130_fd_pr__nfet_01v8 ad=0.125 pd=1.25 as=0.5 ps=3 w=1 l=0.15
+X1 . clk Dn VP sky130_fd_pr__pfet_01v8 ad=0.25 pd=1.5 as=0.5 ps=3 w=1 l=0.45
+X2 Qn clk . VN sky130_fd_pr__nfet_01v8 ad=0.275 pd=1.55 as=0.25 ps=1.5 w=1 l=0.45
+X3 Q Qn a_100_1080# VP sky130_fd_pr__pfet_01v8 ad=0.5 pd=3 as=0.125 ps=1.25 w=1 l=0.15
+X4 VP a_n160_1080# . VP sky130_fd_pr__pfet_01v8 ad=0.25 pd=1.5 as=0.25 ps=1.5 w=1 l=0.15
+X5 . a_n160_1080# a_n180_350# VN sky130_fd_pr__nfet_01v8 ad=0.25 pd=1.5 as=0.125 ps=1.25 w=1 l=0.15
+X6 VN Qn Q VN sky130_fd_pr__nfet_01v8 ad=0.5 pd=3 as=0.275 ps=1.55 w=1 l=0.15
+X7 Qn Q a_100_660# VP sky130_fd_pr__pfet_01v8 ad=0.5 pd=3 as=0.125 ps=1.25 w=1 l=0.15
+X8 a_n180_350# clk VN VN sky130_fd_pr__nfet_01v8 ad=0.125 pd=1.25 as=0.5 ps=3 w=1 l=0.15
+X9 a_100_1080# clk VP VP sky130_fd_pr__pfet_01v8 ad=0.125 pd=1.25 as=0.25 ps=1.5 w=1 l=0.15
+X10 a_100_660# clk VP VP sky130_fd_pr__pfet_01v8 ad=0.125 pd=1.25 as=0.25 ps=1.5 w=1 l=0.15
+X11 Q clk a_n160_1080# VN sky130_fd_pr__nfet_01v8 ad=0.275 pd=1.55 as=0.25 ps=1.5 w=1 l=0.45
+X12 a_n160_1080# . a_n180_n40# VN sky130_fd_pr__nfet_01v8 ad=0.25 pd=1.5 as=0.125 ps=1.25 w=1 l=0.15
+X13 VN Q Qn VN sky130_fd_pr__nfet_01v8 ad=0.5 pd=3 as=0.275 ps=1.55 w=1 l=0.15
+X14 a_n160_1080# clk D VP sky130_fd_pr__pfet_01v8 ad=0.25 pd=1.5 as=0.55 ps=3.1 w=1 l=0.45
+X15 VP . a_n160_1080# VP sky130_fd_pr__pfet_01v8 ad=0.25 pd=1.5 as=0.25 ps=1.5 w=1 l=0.15
+.ends
+
+.subckt shift_register clk D Q0 Q1 Q2 Q3 VP VN Qn3
+Xinverter_0 D d_ff_0/Dn VP VN inverter
+Xd_ff_0 clk D d_ff_0/Dn Q0 d_ff_1/Dn VP VN d_ff
+Xd_ff_1 clk Q0 d_ff_1/Dn Q1 d_ff_2/Dn VP VN d_ff
+Xd_ff_2 clk Q1 d_ff_2/Dn Q2 d_ff_3/Dn VP VN d_ff
+Xd_ff_3 clk Q2 d_ff_3/Dn Q3 Qn3 VP VN d_ff
+.ends
+
