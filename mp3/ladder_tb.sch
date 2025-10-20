@@ -153,14 +153,14 @@ C {lab_pin.sym} 90 -290 3 1 {name=p12 sig_type=std_logic lab=D3}
 C {madvlsi/vsource.sym} 90 -260 0 0 {name=VD3
 value="pwl(0 0 399u 0 400u 1.8)"}
 C {madvlsi/gnd.sym} 90 -230 0 0 {name=l15 lab=GND}
-C {code_shown.sym} -320 240 0 0 {name=SPICE only_toplevel=false value=".param wid=3 len=1 wid_b=3 len_b=1
+C {code_shown.sym} -320 240 0 0 {name=SPICE only_toplevel=false value=".param wid=6 len=2 wid_b=8 len_b=2
 .tran 1u 10m
 .save all
 "}
 C {sky130_fd_pr/corner.sym} -120 -20 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {madvlsi/gnd.sym} 460 400 0 0 {name=l4 lab=GND}
 C {madvlsi/nmos3.sym} -240 -70 2 0 {name=M16
-L=\{wid_b\}
+L=\{len_b\}
 W=\{wid_b\}
 body=GND
 nf=1

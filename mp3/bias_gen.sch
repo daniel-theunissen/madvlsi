@@ -34,7 +34,7 @@ N -0 -200 -0 -120 {lab=#net2}
 N 400 -220 400 -170 {lab=#net4}
 N 400 -160 400 -140 {lab=Vbn}
 N 400 -140 400 -120 {lab=Vbn}
-N 260 -60 400 -60 {lab=GND}
+N 260 -40 400 -40 {lab=GND}
 N 260 -60 260 20 {lab=GND}
 N 190 20 260 20 {lab=GND}
 N 90 20 190 20 {lab=GND}
@@ -42,6 +42,8 @@ N -140 20 90 20 {lab=GND}
 N -140 -280 -0 -280 {lab=VDD}
 N -0 -280 260 -280 {lab=VDD}
 N 260 -280 400 -280 {lab=VDD}
+N 400 -60 400 -40 {lab=GND}
+N -0 -60 -0 20 {lab=GND}
 C {madvlsi/nmos3.sym} -140 -90 2 0 {name=M1
 L=\{len\}
 W=\{wid\}
@@ -102,7 +104,6 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {madvlsi/gnd.sym} 0 -60 0 0 {name=l6 lab=GND}
 C {madvlsi/resistor.sym} -140 -10 0 0 {name=R1
 value=100k
 m=1}

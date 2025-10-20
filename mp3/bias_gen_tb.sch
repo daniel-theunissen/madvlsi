@@ -31,7 +31,7 @@ N -140 20 -140 40 {lab=GND}
 N -140 -60 -140 -40 {lab=#net5}
 N 0 -220 0 -200 {lab=#net3}
 N -0 -200 -0 -120 {lab=#net3}
-N 400 -220 400 -170 {lab=#net6}
+N 400 -220 400 -170 {lab=Vbn}
 N 400 -160 400 -140 {lab=#net4}
 N 400 -140 400 -120 {lab=#net4}
 C {madvlsi/nmos3.sym} -140 -90 2 0 {name=M1
@@ -183,12 +183,13 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {madvlsi/vsource.sym} -310 -180 0 0 {name=Vdd
-value="pwl(0 0 100u 1.8)"}
+value=1.8}
 C {madvlsi/vdd.sym} -310 -210 0 0 {name=l11 lab=VDD}
 C {madvlsi/gnd.sym} -310 -150 0 0 {name=l12 lab=GND}
-C {code_shown.sym} 500 -130 0 0 {name=SPICE only_toplevel=false value=".param wid=6 len=2
+C {code_shown.sym} 500 -130 0 0 {name=SPICE only_toplevel=false value=".param wid=3 len=1
 .tran 1u 200m
 .save all
 "}
 C {sky130_fd_pr/corner.sym} 490 -300 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {madvlsi/ammeter1.sym} 400 -170 0 0 {name=Vib}
+C {lab_pin.sym} 400 -190 2 0 {name=p1 sig_type=std_logic lab=Vbn}

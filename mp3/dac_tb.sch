@@ -10,7 +10,13 @@ N -240 -110 -240 -80 {lab=VTEST}
 N 150 -110 180 -110 {lab=#net1}
 N 180 -110 180 -60 {lab=#net1}
 N 180 -50 180 -20 {lab=Vout}
-N -240 -80 -240 60 {lab=VTEST}
+N -730 250 -730 280 {lab=Vbn}
+N -640 380 -640 390 {lab=#net2}
+N -640 400 -640 410 {lab=GND}
+N -640 310 -640 380 {lab=#net2}
+N -700 310 -640 310 {lab=#net2}
+N -240 -80 -240 -40 {lab=VTEST}
+N -240 -30 -240 60 {lab=#net3}
 C {mirror_lvs.sym} 0 -40 0 0 {name=X1}
 C {madvlsi/vsource.sym} -490 -100 0 0 {name=Vdd
 value=1.8}
@@ -19,13 +25,13 @@ value=0}
 C {madvlsi/vdd.sym} -490 -130 0 0 {name=l3 lab=VDD}
 C {madvlsi/gnd.sym} -410 -70 0 0 {name=l4 lab=GND}
 C {madvlsi/gnd.sym} -490 -70 0 0 {name=l5 lab=GND}
-C {lab_pin.sym} -50 220 2 0 {name=p1 sig_type=std_logic lab=Vbn}
+C {lab_pin.sym} -730 250 2 0 {name=p1 sig_type=std_logic lab=Vbn}
 C {lab_pin.sym} -150 -90 0 0 {name=p2 sig_type=std_logic lab=Vbn}
-C {madvlsi/ammeter1.sym} 180 -60 0 0 {name=Vmeas1}
+C {madvlsi/ammeter1.sym} -240 -40 0 0 {name=ViTEST}
 C {lab_pin.sym} -410 -130 2 0 {name=p3 sig_type=std_logic lab=Vout}
 C {lab_pin.sym} 180 -20 2 0 {name=p4 sig_type=std_logic lab=Vout}
 C {sky130_fd_pr/corner.sym} -690 -160 0 0 {name=CORNER only_toplevel=false corner=tt}
-C {code_shown.sym} -810 20 0 0 {name=SPICE only_toplevel=false value=".param len=2 wid=6 len_b=2 wid_b=6
+C {code_shown.sym} -810 20 0 0 {name=SPICE only_toplevel=false value=".param len=1 wid=3 len_b=1 wid_b=4
 *.dc Vout 0 1.8 0.01
 .tran 1u 10m
 .save all
@@ -76,3 +82,23 @@ C {lab_pin.sym} -400 120 2 1 {name=p14 sig_type=std_logic lab=D4}
 C {lab_pin.sym} -400 160 2 1 {name=p15 sig_type=std_logic lab=D5}
 C {lab_pin.sym} -400 180 2 1 {name=p19 sig_type=std_logic lab=D6}
 C {lab_pin.sym} -240 -110 0 0 {name=p20 sig_type=std_logic lab=VTEST}
+C {madvlsi/nmos3.sym} -730 310 1 0 {name=M1
+L=\{len\}
+W=\{wid\}
+body=GND
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {madvlsi/gnd.sym} -640 410 0 0 {name=l14 lab=GND}
+C {madvlsi/ammeter1.sym} -640 390 0 0 {name=Vib}
+C {lab_pin.sym} -50 220 2 0 {name=p21 sig_type=std_logic lab=Vbn}
+C {madvlsi/vdd.sym} -760 310 3 0 {name=l16 lab=VDD}
+C {madvlsi/ammeter1.sym} 180 -60 0 0 {name=Viout}

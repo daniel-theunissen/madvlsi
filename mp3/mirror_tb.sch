@@ -182,7 +182,7 @@ value=800n}
 C {lab_pin.sym} -440 -90 2 0 {name=p1 sig_type=std_logic lab=Vb}
 C {lab_pin.sym} -90 130 0 0 {name=p2 sig_type=std_logic lab=Vb}
 C {madvlsi/isource.sym} 240 -10 0 0 {name=I2
-value=1u}
+value=8n}
 C {madvlsi/ammeter1.sym} -170 170 0 0 {name=Viout}
 C {madvlsi/pmos3.sym} -580 210 2 0 {name=M9
 L=\{len\}
