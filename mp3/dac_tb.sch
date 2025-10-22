@@ -13,6 +13,9 @@ N 280 420 280 430 {lab=GND}
 N -130 120 -90 120 {lab=#net3}
 N 310 370 340 370 {lab=Vbn}
 N 280 310 280 340 {lab=VDD}
+N -150 440 -110 440 {lab=Vbn2}
+N -110 440 -110 470 {lab=Vbn2}
+N -120 470 -110 470 {lab=Vbn2}
 C {mirror_lvs.sym} 0 200 0 0 {name=X1}
 C {madvlsi/vsource.sym} -610 100 0 0 {name=Vdd
 value=1.8}
@@ -22,14 +25,13 @@ C {madvlsi/vdd.sym} -610 70 0 0 {name=l3 lab=VDD}
 C {madvlsi/gnd.sym} -610 270 0 0 {name=l4 lab=GND}
 C {madvlsi/gnd.sym} -610 130 0 0 {name=l5 lab=GND}
 C {lab_pin.sym} 340 370 2 0 {name=p1 sig_type=std_logic lab=Vbn}
-C {lab_pin.sym} 10 140 0 0 {name=p2 sig_type=std_logic lab=Vbn}
 C {madvlsi/ammeter1.sym} -80 120 1 0 {name=ViTEST}
 C {lab_pin.sym} -610 210 1 0 {name=p3 sig_type=std_logic lab=Vout}
 C {lab_pin.sym} 160 160 2 0 {name=p4 sig_type=std_logic lab=Vout}
 C {sky130_fd_pr/corner.sym} 400 90 0 0 {name=CORNER only_toplevel=false corner=tt}
-C {code_shown.sym} 410 250 0 0 {name=SPICE only_toplevel=false value=".param len=1 wid=3 len_b=1 wid_b=4
+C {code_shown.sym} 410 250 0 0 {name=SPICE only_toplevel=false value=".param len=1 wid=1 len_b=1 wid_b=1
 *.dc Vout 0 1.8 0.01
-.tran 1u 10m
+.tran 1u 100m
 .save all
 "}
 C {madvlsi/gnd.sym} 70 200 0 0 {name=l2 lab=GND}
@@ -98,3 +100,22 @@ C {madvlsi/ammeter1.sym} 280 410 0 0 {name=Vib}
 C {lab_pin.sym} 130 370 2 0 {name=p21 sig_type=std_logic lab=Vbn}
 C {madvlsi/vdd.sym} 280 310 0 0 {name=l16 lab=VDD}
 C {madvlsi/ammeter1.sym} 160 120 0 0 {name=Viout}
+C {isource.sym} -150 410 0 0 {name=I0 value=25n}
+C {madvlsi/nmos3.sym} -150 470 2 0 {name=M2
+L=\{len\}
+W=\{wid\}
+body=GND
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {madvlsi/gnd.sym} -150 500 0 0 {name=l17 lab=GND}
+C {lab_pin.sym} -110 440 2 0 {name=p2 sig_type=std_logic lab=Vbn2}
+C {lab_pin.sym} 10 140 0 0 {name=p22 sig_type=std_logic lab=Vbn2}
