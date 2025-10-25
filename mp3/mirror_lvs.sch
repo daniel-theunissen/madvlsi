@@ -691,3 +691,4 @@ spiceprefix=X
 }
 C {iopin.sym} -390 450 1 0 {name=p1 lab=GND}
 C {ipin.sym} -430 370 0 0 {name=p3 lab=Vbn}
+C {code_shown.sym} -930 70 0 0 {name=SPICE only_toplevel=false value=".param len=0.6 wid=1"}

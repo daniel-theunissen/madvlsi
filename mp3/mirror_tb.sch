@@ -182,7 +182,7 @@ C {madvlsi/gnd.sym} 100 160 0 0 {name=l3 lab=GND}
 C {madvlsi/vdd.sym} -60 -120 0 0 {name=l4 lab=VDD}
 C {madvlsi/vdd.sym} 100 -120 0 0 {name=l5 lab=VDD}
 C {madvlsi/isource.sym} -440 -130 0 0 {name=I1
-value=100n}
+value=50n}
 C {lab_pin.sym} -440 -90 2 0 {name=p1 sig_type=std_logic lab=Vb}
 C {lab_pin.sym} -90 130 0 0 {name=p2 sig_type=std_logic lab=Vb}
 C {madvlsi/isource.sym} 240 -10 0 0 {name=I2
