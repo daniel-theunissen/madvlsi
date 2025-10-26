@@ -16,7 +16,7 @@ C {madvlsi/vdd.sym} -610 70 0 0 {name=l3 lab=VDD}
 C {madvlsi/gnd.sym} -610 130 0 0 {name=l5 lab=GND}
 C {madvlsi/ammeter1.sym} -80 120 1 0 {name=ViTEST}
 C {lab_pin.sym} 160 160 2 0 {name=p4 sig_type=std_logic lab=Vout}
-C {sky130_fd_pr/corner.sym} 400 90 0 0 {name=CORNER only_toplevel=false corner=tt}
+C {sky130_fd_pr/corner.sym} 400 90 0 0 {name=CORNER only_toplevel=false corner=tt_mm}
 C {code_shown.sym} 410 250 0 0 {name=SPICE only_toplevel=false value="*.param len=1 wid=2 len_b=1 wid_b=2
 *.dc Vout 0 1.8 0.01
 *.tran 500n 100m
@@ -25,58 +25,67 @@ C {code_shown.sym} 410 250 0 0 {name=SPICE only_toplevel=false value="*.param le
 .control
   set wr_vecnames
   set wr_singlescale
-  let code = 0
-  while code < 128
-    if code eq 0
-      let b0 = 0
-    else
-      let b0 = code % 2
+
+  let mc_runs = 10
+  let run = 1
+  dowhile run <= mc_runs
+    set wr_vecnames
+    let code = 0
+    while code < 128
+      if code eq 0
+        let b0 = 0
+      else
+        let b0 = code % 2
+      end
+      if floor(code / 2) eq 0
+        let b1 = 0
+      else
+        let b1 = floor(code / 2) % 2
+      end
+      if floor(code / 4) eq 0
+        let b2 = 0
+      else
+        let b2 = floor(code / 4) % 2
+      end
+      if floor(code / 8) eq 0
+        let b3 = 0
+      else
+        let b3 = floor(code / 8) % 2
+      end
+      if floor(code / 16) eq 0
+        let b4 = 0
+      else 
+        let b4 = floor(code / 16) % 2
+      end
+      if floor(code / 32) eq 0
+        let b5 = 0
+      else
+        let b5 = floor(code / 32) % 2
+      end
+      if floor(code / 64) eq 0
+        let b6 = 0
+      else
+        let b6 = floor(code / 64) % 2
+      end
+      alter vd0 $&b0
+      alter vd1 $&b1
+      alter vd2 $&b2
+      alter vd3 $&b3
+      alter vd4 $&b4
+      alter vd5 $&b5
+      alter vd6 $&b6
+      save all
+      op
+      wrdata ~/Documents/madvlsi/mp3/monte_carlo/dacout\{$&run\}.txt v(b0) v(b1) v(b2) v(b3) v(b4) v(b5) v(b6) i(Vitest) i(Viout) v(Vout) i(v.x3.vib0) i(v.x3.vib1) i(v.x3.vib2) i(v.x3.vib3) i(v.x3.vib4) i(v.x3.vib5) i(v.x3.vib6)
+      if code eq 0
+        set appendwrite
+        set wr_vecnames = FALSE
+      end
+      let code = code + 1
     end
-    if floor(code / 2) eq 0
-      let b1 = 0
-    else
-      let b1 = floor(code / 2) % 2
-    end
-    if floor(code / 4) eq 0
-      let b2 = 0
-    else
-      let b2 = floor(code / 4) % 2
-    end
-    if floor(code / 8) eq 0
-      let b3 = 0
-    else
-      let b3 = floor(code / 8) % 2
-    end
-    if floor(code / 16) eq 0
-      let b4 = 0
-    else 
-      let b4 = floor(code / 16) % 2
-    end
-    if floor(code / 32) eq 0
-      let b5 = 0
-    else
-      let b5 = floor(code / 32) % 2
-    end
-    if floor(code / 64) eq 0
-      let b6 = 0
-    else
-      let b6 = floor(code / 64) % 2
-    end
-    alter vd0 $&b0
-    alter vd1 $&b1
-    alter vd2 $&b2
-    alter vd3 $&b3
-    alter vd4 $&b4
-    alter vd5 $&b5
-    alter vd6 $&b6
-    save all
-    op
-    wrdata ~/Documents/madvlsi/mp3/dacout.txt v(b0) v(b1) v(b2) v(b3) v(b4) v(b5) v(b6) i(Vitest) i(Viout) v(Vout) i(v.x3.vib0) i(v.x3.vib1) i(v.x3.vib2) i(v.x3.vib3) i(v.x3.vib4) i(v.x3.vib5) i(v.x3.vib6)
-    if code eq 0
-      set appendwrite
-      set wr_vecnames = FALSE
-    end
-    let code = code + 1
+
+    reset
+    let run = run + 1
   end
   quit
 .endc

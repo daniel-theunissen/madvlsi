@@ -187,4 +187,4 @@ C {iopin.sym} -140 40 1 0 {name=p1 lab=GND}
 C {iopin.sym} -140 -280 3 0 {name=p6 lab=VDD}
 C {opin.sym} 400 -130 0 0 {name=p2 lab=Vbn}
 C {opin.sym} 340 -190 0 0 {name=p3 lab=Vbp}
-C {code_shown.sym} -690 -140 0 0 {name=SPICE only_toplevel=false value=".param len=1 wid=4"}
+C {code_shown.sym} -690 -140 0 0 {name=SPICE only_toplevel=false value=".param len=2 wid=6"}

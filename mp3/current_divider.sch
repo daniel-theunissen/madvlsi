@@ -32,16 +32,23 @@ N 480 190 480 210 {lab=GND}
 N 480 210 540 210 {lab=GND}
 N 510 160 630 160 {lab=#net4}
 N 570 160 570 180 {lab=#net4}
-N 540 210 720 210 {lab=GND}
+N 720 210 900 210 {lab=GND}
+N 840 190 840 210 {lab=GND}
+N 870 160 930 160 {lab=#net5}
+N 930 160 930 180 {lab=#net5}
+N 930 240 930 260 {lab=#net6}
+N 930 270 930 290 {lab=Vbn2}
+N 890 280 930 280 {lab=Vbn2}
+N 890 280 890 320 {lab=Vbn2}
+N 890 320 900 320 {lab=Vbn2}
+N 540 210 660 210 {lab=GND}
 N 660 190 660 210 {lab=GND}
-N 690 160 750 160 {lab=#net5}
-N 750 160 750 180 {lab=#net5}
-N 750 240 750 260 {lab=#net6}
-N 750 270 750 290 {lab=Vbn2}
-N 710 280 750 280 {lab=Vbn2}
-N 710 280 710 320 {lab=Vbn2}
-N 710 320 720 320 {lab=Vbn2}
-C {code_shown.sym} -330 330 0 0 {name=SPICE only_toplevel=false value=".param len_div=1 wid_div=4 len=1 wid=4"}
+N 660 210 720 210 {lab=GND}
+N 690 160 810 160 {lab=#net7}
+N 750 160 750 180 {lab=#net7}
+N 570 250 750 250 {lab=GND}
+N 750 240 750 250 {lab=GND}
+C {code_shown.sym} -330 330 0 0 {name=SPICE only_toplevel=false value=".param len_div=2 wid_div=6 len=2 wid=6"}
 C {madvlsi/pmos3.sym} 30 -30 0 0 {name=M2
 L=\{len\}
 W=\{wid\}
@@ -162,7 +169,7 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {madvlsi/pmos3.sym} 660 160 3 0 {name=M10
+C {madvlsi/pmos3.sym} 840 160 3 0 {name=M10
 L=\{len_div\}
 W=\{wid_div\}
 body=VDD
@@ -177,7 +184,7 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {madvlsi/pmos3.sym} 750 210 0 0 {name=M11
+C {madvlsi/pmos3.sym} 930 210 0 0 {name=M11
 L=\{len_div\}
 W=\{wid_div\}
 body=VDD
@@ -192,9 +199,9 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 750 320 0 0 {name=M12
-L=0.6
-W=1
+C {madvlsi/nmos3.sym} 930 320 0 0 {name=M12
+L=3
+W=2
 body=GND
 nf=1
 mult=1
@@ -207,9 +214,39 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/ammeter1.sym} 750 260 0 0 {name=Vibdiv}
-C {madvlsi/gnd.sym} 750 350 0 0 {name=l6 lab=GND}
+C {madvlsi/ammeter1.sym} 930 260 0 0 {name=Vibdiv}
+C {madvlsi/gnd.sym} 930 350 0 0 {name=l6 lab=GND}
 C {iopin.sym} 30 260 1 0 {name=p9 lab=GND}
 C {iopin.sym} 30 -60 3 0 {name=p8 lab=VDD}
 C {ipin.sym} 0 -30 0 0 {name=p10 lab=Vbp}
-C {opin.sym} 710 280 2 0 {name=p1 lab=Vbn2}
+C {opin.sym} 890 280 2 0 {name=p1 lab=Vbn2}
+C {madvlsi/pmos3.sym} 660 160 3 0 {name=M1
+L=\{len_div\}
+W=\{wid_div\}
+body=VDD
+nf=1
+mult=2
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {madvlsi/pmos3.sym} 750 210 0 0 {name=M13
+L=\{len_div\}
+W=\{wid_div\}
+body=VDD
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}

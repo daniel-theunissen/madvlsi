@@ -19,7 +19,7 @@ C {lab_pin.sym} 160 160 2 0 {name=p4 sig_type=std_logic lab=Vout}
 C {sky130_fd_pr/corner.sym} 400 90 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {code_shown.sym} 410 250 0 0 {name=SPICE only_toplevel=false value="*.param len=1 wid=2 len_b=1 wid_b=2
 *.dc Vout 0 1.8 0.01
-.tran 500n 100m
+.tran 500n 300m
 .save all
 "}
 C {madvlsi/gnd.sym} 70 200 0 0 {name=l2 lab=GND}

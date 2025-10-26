@@ -13,10 +13,10 @@ N 510 -320 510 -300 {lab=#net1}
 N 630 -320 630 -300 {lab=#net2}
 N 750 -320 750 -300 {lab=#net3}
 N 870 -320 870 -300 {lab=#net4}
-N 430 -180 480 -180 {lab=Vbn}
-N 480 -180 600 -180 {lab=Vbn}
-N 600 -180 720 -180 {lab=Vbn}
-N 720 -180 840 -180 {lab=Vbn}
+N 430 -90 480 -90 {lab=Vbn}
+N 480 -90 600 -90 {lab=Vbn}
+N 600 -90 720 -90 {lab=Vbn}
+N 720 -90 840 -90 {lab=Vbn}
 N 440 -690 450 -690 {lab=Vg}
 N 410 -660 480 -660 {lab=#net5}
 N 1230 -690 1240 -690 {lab=Vg}
@@ -80,9 +80,9 @@ N 960 -380 990 -380 {lab=#net14}
 N 1080 -660 1080 -530 {lab=#net8}
 N 1080 -530 1080 -380 {lab=#net8}
 N 1080 -380 1110 -380 {lab=#net8}
-N 840 -180 960 -180 {lab=Vbn}
-N 960 -180 1080 -180 {lab=Vbn}
-N 1080 -180 1200 -180 {lab=Vbn}
+N 840 -90 960 -90 {lab=Vbn}
+N 960 -90 1080 -90 {lab=Vbn}
+N 1080 -90 1200 -90 {lab=Vbn}
 N 780 -690 780 -530 {lab=Vg}
 N 900 -690 900 -530 {lab=Vg}
 N 1020 -690 1020 -530 {lab=Vg}
@@ -96,31 +96,31 @@ N 720 -720 840 -720 {lab=VDD}
 N 840 -720 960 -720 {lab=VDD}
 N 960 -720 1080 -720 {lab=VDD}
 N 340 -720 410 -720 {lab=VDD}
-N 1110 -30 1230 -30 {lab=GND}
-N 990 -30 1110 -30 {lab=GND}
-N 870 -30 990 -30 {lab=GND}
-N 750 -30 870 -30 {lab=GND}
-N 630 -30 750 -30 {lab=GND}
-N 510 -30 630 -30 {lab=GND}
-N 320 -30 510 -30 {lab=GND}
-N 320 -180 430 -180 {lab=Vbn}
+N 1110 -20 1230 -20 {lab=GND}
+N 990 -20 1110 -20 {lab=GND}
+N 870 -20 990 -20 {lab=GND}
+N 750 -20 870 -20 {lab=GND}
+N 630 -20 750 -20 {lab=GND}
+N 510 -20 630 -20 {lab=GND}
+N 320 -20 510 -20 {lab=GND}
+N 320 -90 430 -90 {lab=Vbn}
 N 1200 -750 1200 -720 {lab=Iout}
 N 1270 -750 1270 -720 {lab=Iout}
 N 340 -690 440 -690 {lab=Vg}
-N 510 -70 510 -50 {lab=#net15}
-N 510 -40 510 -30 {lab=GND}
-N 630 -70 630 -50 {lab=#net16}
-N 630 -40 630 -30 {lab=GND}
-N 750 -70 750 -50 {lab=#net17}
-N 750 -40 750 -30 {lab=GND}
-N 870 -70 870 -50 {lab=#net18}
-N 870 -40 870 -30 {lab=GND}
-N 990 -70 990 -50 {lab=#net19}
-N 990 -40 990 -30 {lab=GND}
-N 1110 -70 1110 -50 {lab=#net20}
-N 1110 -40 1110 -30 {lab=GND}
-N 1230 -70 1230 -50 {lab=#net21}
-N 1230 -40 1230 -30 {lab=GND}
+N 510 -60 510 -40 {lab=#net15}
+N 510 -30 510 -20 {lab=GND}
+N 630 -60 630 -40 {lab=#net16}
+N 630 -30 630 -20 {lab=GND}
+N 750 -60 750 -40 {lab=#net17}
+N 750 -30 750 -20 {lab=GND}
+N 870 -60 870 -40 {lab=#net18}
+N 870 -30 870 -20 {lab=GND}
+N 990 -60 990 -40 {lab=#net19}
+N 990 -30 990 -20 {lab=GND}
+N 1110 -60 1110 -40 {lab=#net20}
+N 1110 -30 1110 -20 {lab=GND}
+N 1230 -60 1230 -40 {lab=#net21}
+N 1230 -30 1230 -20 {lab=GND}
 N 480 -350 480 -270 {lab=D0}
 N 600 -350 600 -270 {lab=D1}
 N 720 -350 720 -270 {lab=D2}
@@ -135,20 +135,20 @@ N 870 -240 870 -210 {lab=#net25}
 N 750 -240 750 -210 {lab=#net26}
 N 630 -240 630 -210 {lab=#net27}
 N 510 -240 510 -210 {lab=#net28}
-N 510 -150 510 -130 {lab=#net29}
-N 630 -150 630 -130 {lab=#net30}
-N 750 -150 750 -130 {lab=#net31}
-N 870 -150 870 -130 {lab=#net32}
-N 990 -150 990 -130 {lab=#net33}
-N 1110 -150 1110 -130 {lab=#net34}
-N 480 -180 480 -100 {lab=Vbn}
-N 480 -100 600 -100 {lab=Vbn}
-N 600 -100 720 -100 {lab=Vbn}
-N 720 -100 840 -100 {lab=Vbn}
-N 840 -100 960 -100 {lab=Vbn}
-N 960 -100 1080 -100 {lab=Vbn}
-N 1080 -100 1200 -100 {lab=Vbn}
-N 1230 -150 1230 -130 {lab=#net35}
+N 510 -150 510 -120 {lab=#net29}
+N 630 -150 630 -120 {lab=#net30}
+N 750 -150 750 -120 {lab=#net31}
+N 870 -150 870 -120 {lab=#net32}
+N 990 -150 990 -120 {lab=#net33}
+N 1110 -150 1110 -120 {lab=#net34}
+N 1230 -150 1230 -120 {lab=#net35}
+N 480 -180 480 -90 {lab=Vbn}
+N 480 -180 600 -180 {lab=Vbn}
+N 600 -180 720 -180 {lab=Vbn}
+N 720 -180 840 -180 {lab=Vbn}
+N 840 -180 960 -180 {lab=Vbn}
+N 960 -180 1080 -180 {lab=Vbn}
+N 1080 -180 1200 -180 {lab=Vbn}
 C {madvlsi/nmos3.sym} 410 -690 2 0 {name=M1
 L=\{len\}
 W=\{wid\}
@@ -179,7 +179,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 510 -180 0 0 {name=M12
+C {madvlsi/nmos3.sym} 510 -90 0 0 {name=M12
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -479,10 +479,10 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {ipin.sym} 320 -180 0 0 {name=p10 lab=Vbn}
+C {ipin.sym} 320 -90 0 0 {name=p10 lab=Vbn}
 C {iopin.sym} 340 -720 2 0 {name=p8 lab=VDD}
 C {opin.sym} 1270 -730 0 0 {name=p13 lab=Iout}
-C {iopin.sym} 320 -30 2 0 {name=p9 lab=GND}
+C {iopin.sym} 320 -20 2 0 {name=p9 lab=GND}
 C {ipin.sym} 470 -350 0 0 {name=p1 lab=D0}
 C {ipin.sym} 590 -350 0 0 {name=p2 lab=D1}
 C {ipin.sym} 710 -350 0 0 {name=p3 lab=D2}
@@ -491,14 +491,14 @@ C {ipin.sym} 950 -350 0 0 {name=p5 lab=D4}
 C {ipin.sym} 1070 -350 0 0 {name=p6 lab=D5}
 C {ipin.sym} 1190 -350 0 0 {name=p7 lab=D6}
 C {ipin.sym} 340 -690 0 0 {name=p11 lab=Vg}
-C {madvlsi/ammeter1.sym} 510 -50 0 0 {name=Vib0}
-C {code_shown.sym} -110 -530 0 0 {name=SPICE only_toplevel=false value=".param len=1 wid=1 len_b=5 wid_b=4 len_p=5 wid_p=1"}
-C {madvlsi/ammeter1.sym} 630 -50 0 0 {name=Vib1}
-C {madvlsi/ammeter1.sym} 750 -50 0 0 {name=Vib2}
-C {madvlsi/ammeter1.sym} 870 -50 0 0 {name=Vib3}
-C {madvlsi/ammeter1.sym} 990 -50 0 0 {name=Vib4}
-C {madvlsi/ammeter1.sym} 1110 -50 0 0 {name=Vib5}
-C {madvlsi/ammeter1.sym} 1230 -50 0 0 {name=Vib6}
+C {madvlsi/ammeter1.sym} 510 -40 0 0 {name=Vib0}
+C {code_shown.sym} -110 -530 0 0 {name=SPICE only_toplevel=false value=".param len=4 wid=1 len_b=2 wid_b=2 len_p=4 wid_p=1"}
+C {madvlsi/ammeter1.sym} 630 -40 0 0 {name=Vib1}
+C {madvlsi/ammeter1.sym} 750 -40 0 0 {name=Vib2}
+C {madvlsi/ammeter1.sym} 870 -40 0 0 {name=Vib3}
+C {madvlsi/ammeter1.sym} 990 -40 0 0 {name=Vib4}
+C {madvlsi/ammeter1.sym} 1110 -40 0 0 {name=Vib5}
+C {madvlsi/ammeter1.sym} 1230 -40 0 0 {name=Vib6}
 C {madvlsi/nmos3.sym} 510 -270 0 0 {name=M16
 L=\{len_p\}
 W=\{wid_p\}
@@ -709,7 +709,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 630 -180 0 0 {name=M25
+C {madvlsi/nmos3.sym} 630 -90 0 0 {name=M25
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -724,7 +724,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 750 -180 0 0 {name=M26
+C {madvlsi/nmos3.sym} 750 -90 0 0 {name=M26
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -739,7 +739,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 870 -180 0 0 {name=M27
+C {madvlsi/nmos3.sym} 870 -90 0 0 {name=M27
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -754,7 +754,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 990 -180 0 0 {name=M28
+C {madvlsi/nmos3.sym} 990 -90 0 0 {name=M28
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -769,7 +769,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 1110 -180 0 0 {name=M29
+C {madvlsi/nmos3.sym} 1110 -90 0 0 {name=M29
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -784,7 +784,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 1230 -180 0 0 {name=M30
+C {madvlsi/nmos3.sym} 1230 -90 0 0 {name=M30
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -799,7 +799,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 510 -100 0 0 {name=M43
+C {madvlsi/nmos3.sym} 510 -180 0 0 {name=M43
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -814,7 +814,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 630 -100 0 0 {name=M44
+C {madvlsi/nmos3.sym} 630 -180 0 0 {name=M44
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -829,7 +829,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 750 -100 0 0 {name=M45
+C {madvlsi/nmos3.sym} 750 -180 0 0 {name=M45
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -844,7 +844,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 870 -100 0 0 {name=M46
+C {madvlsi/nmos3.sym} 870 -180 0 0 {name=M46
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -859,7 +859,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 990 -100 0 0 {name=M47
+C {madvlsi/nmos3.sym} 990 -180 0 0 {name=M47
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -874,7 +874,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 1110 -100 0 0 {name=M48
+C {madvlsi/nmos3.sym} 1110 -180 0 0 {name=M48
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
@@ -889,7 +889,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 1230 -100 0 0 {name=M49
+C {madvlsi/nmos3.sym} 1230 -180 0 0 {name=M49
 L=\{len_b\}
 W=\{wid_b\}
 body=GND
