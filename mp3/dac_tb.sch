@@ -22,6 +22,7 @@ C {code_shown.sym} 410 250 0 0 {name=SPICE only_toplevel=false value="*.param le
 *.tran 500n 100m
 *.save all
 
+
 .control
   set wr_vecnames
   set wr_singlescale
