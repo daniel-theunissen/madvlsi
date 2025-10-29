@@ -487,13 +487,7 @@ C {ipin.sym} 560 -520 0 0 {name=p29 lab=D3}
 C {ipin.sym} 680 -520 0 0 {name=p30 lab=D4}
 C {ipin.sym} 800 -520 0 0 {name=p31 lab=D5}
 C {ipin.sym} 920 -520 0 0 {name=p32 lab=D6}
-C {madvlsi/ammeter1.sym} 240 -190 0 0 {name=Vib7}
-C {madvlsi/ammeter1.sym} 360 -190 0 0 {name=Vib8}
-C {madvlsi/ammeter1.sym} 480 -190 0 0 {name=Vib9}
-C {madvlsi/ammeter1.sym} 600 -190 0 0 {name=Vib10}
-C {madvlsi/ammeter1.sym} 720 -190 0 0 {name=Vib11}
-C {madvlsi/ammeter1.sym} 840 -190 0 0 {name=Vib12}
-C {madvlsi/ammeter1.sym} 960 -190 0 0 {name=Vib13}
+C {madvlsi/ammeter1.sym} 240 -190 0 0 {name=Vib0}
 C {madvlsi/nmos3.sym} 240 -520 0 0 {name=M110
 L=\{len_p\}
 W=\{wid_p\}
@@ -796,3 +790,9 @@ spiceprefix=X
 }
 C {ipin.sym} 50 -380 0 0 {name=p33 lab=Vc}
 C {code_shown.sym} -450 -1030 0 0 {name=SPICE only_toplevel=false value=".param len=2 wid=9 len_b=4 wid_b=3 len_p=4 wid_p=1"}
+C {madvlsi/ammeter1.sym} 360 -190 0 0 {name=Vib1}
+C {madvlsi/ammeter1.sym} 480 -190 0 0 {name=Vib2}
+C {madvlsi/ammeter1.sym} 600 -190 0 0 {name=Vib3}
+C {madvlsi/ammeter1.sym} 720 -190 0 0 {name=Vib4}
+C {madvlsi/ammeter1.sym} 840 -190 0 0 {name=Vib5}
+C {madvlsi/ammeter1.sym} 960 -190 0 0 {name=Vib6}

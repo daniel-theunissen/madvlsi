@@ -155,7 +155,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/ammeter1.sym} 640 -240 0 0 {name=Vib4}
+C {madvlsi/ammeter1.sym} 640 -240 0 0 {name=Vib}
 C {opin.sym} 840 -230 0 0 {name=p15 lab=Vbn}
 C {madvlsi/nmos3.sym} 90 -190 1 0 {name=M34
 L=\{len\}

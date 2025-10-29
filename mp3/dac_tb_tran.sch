@@ -52,21 +52,19 @@ C {madvlsi/ammeter1.sym} -60 140 1 0 {name=ViTEST}
 C {lab_pin.sym} 180 180 2 0 {name=p4 sig_type=std_logic lab=Vout}
 C {madvlsi/gnd.sym} 90 220 0 0 {name=l2 lab=GND}
 C {madvlsi/vdd.sym} 90 80 0 0 {name=l1 lab=VDD}
-C {bias_gen.sym} -180 510 0 0 {name=x2}
 C {madvlsi/vdd.sym} -130 370 0 0 {name=l7 lab=VDD}
 C {madvlsi/gnd.sym} -130 510 0 0 {name=l8 lab=GND}
-C {ladder.sym} -280 310 0 0 {name=x3}
 C {madvlsi/gnd.sym} -190 300 0 0 {name=l6 lab=GND}
 C {madvlsi/vdd.sym} -190 50 0 0 {name=l9 lab=VDD}
-C {madvlsi/vdd.sym} -270 80 0 0 {name=l10 lab=VDD}
-C {lab_pin.sym} -270 120 0 0 {name=p5 sig_type=std_logic lab=Vbn}
-C {lab_pin.sym} -270 140 2 1 {name=p6 sig_type=std_logic lab=D0}
-C {lab_pin.sym} -270 160 2 1 {name=p7 sig_type=std_logic lab=D1}
-C {lab_pin.sym} -270 180 2 1 {name=p8 sig_type=std_logic lab=D2}
-C {lab_pin.sym} -270 200 2 1 {name=p13 sig_type=std_logic lab=D3}
-C {lab_pin.sym} -270 220 2 1 {name=p14 sig_type=std_logic lab=D4}
-C {lab_pin.sym} -270 240 2 1 {name=p15 sig_type=std_logic lab=D5}
-C {lab_pin.sym} -270 260 2 1 {name=p19 sig_type=std_logic lab=D6}
+C {madvlsi/vdd.sym} -270 90 0 0 {name=l10 lab=VDD}
+C {lab_pin.sym} -270 130 0 0 {name=p5 sig_type=std_logic lab=Vbn}
+C {lab_pin.sym} -270 150 2 1 {name=p6 sig_type=std_logic lab=D0}
+C {lab_pin.sym} -270 170 2 1 {name=p7 sig_type=std_logic lab=D1}
+C {lab_pin.sym} -270 190 2 1 {name=p8 sig_type=std_logic lab=D2}
+C {lab_pin.sym} -270 210 2 1 {name=p13 sig_type=std_logic lab=D3}
+C {lab_pin.sym} -270 230 2 1 {name=p14 sig_type=std_logic lab=D4}
+C {lab_pin.sym} -270 250 2 1 {name=p15 sig_type=std_logic lab=D5}
+C {lab_pin.sym} -270 270 2 1 {name=p19 sig_type=std_logic lab=D6}
 C {lab_pin.sym} -10 140 1 0 {name=p20 sig_type=std_logic lab=VTEST}
 C {lab_pin.sym} -70 450 2 0 {name=p21 sig_type=std_logic lab=Vbn}
 C {madvlsi/ammeter1.sym} 180 140 0 0 {name=Viout}
@@ -85,5 +83,7 @@ C {lab_pin.sym} 70 420 0 0 {name=p1 sig_type=std_logic lab=Vbp}
 C {madvlsi/vdd.sym} 130 330 0 0 {name=l14 lab=VDD}
 C {madvlsi/gnd.sym} 130 530 0 0 {name=l16 lab=GND}
 C {lab_pin.sym} 190 420 2 0 {name=p3 sig_type=std_logic lab=Vc}
-C {lab_pin.sym} -270 100 0 0 {name=p25 sig_type=std_logic lab=Vc}
+C {lab_pin.sym} -270 110 0 0 {name=p25 sig_type=std_logic lab=Vc}
 C {current_divider_lds.sym} -370 520 0 0 {name=x4}
+C {bias_gen_lds.sym} -200 540 0 0 {name=x3}
+C {ladder_lds.sym} -280 430 0 0 {name=x2}
