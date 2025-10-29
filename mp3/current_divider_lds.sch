@@ -120,7 +120,7 @@ N -280 -170 -250 -170 {lab=VDD}
 N 270 -170 300 -170 {lab=VDD}
 N 300 -300 300 -170 {lab=VDD}
 N -280 -300 300 -300 {lab=VDD}
-C {code_shown.sym} 520 -450 0 0 {name=SPICE only_toplevel=false value=".param len_div=4 wid_div=3 len=4 wid=3"}
+C {code_shown.sym} 390 -190 0 0 {name=SPICE only_toplevel=false value=".param len_div=4 wid_div=3 len=4 wid=3"}
 C {madvlsi/pmos3.sym} 240 -170 1 0 {name=M2
 L=\{len_div\}
 W=\{wid_div\}
