@@ -149,8 +149,8 @@ C {madvlsi/vdd.sym} 280 590 0 0 {name=l14 lab=VDD}
 C {madvlsi/gnd.sym} 280 790 0 0 {name=l16 lab=GND}
 C {lab_pin.sym} 340 690 2 0 {name=p3 sig_type=std_logic lab=Vc}
 C {lab_pin.sym} -120 370 0 0 {name=p25 sig_type=std_logic lab=Vc}
-C {Layout_Schem_Designs/ladder_lds.sym} -130 690 0 0 {name=x1}
-C {Layout_Schem_Designs/current_divider_lds.sym} -220 780 0 0 {name=x2}
-C {Layout_Schem_Designs/mirror_lds.sym} 170 480 0 0 {name=X3}
-C {Layout_Schem_Designs/bias_gen_lds.sym} -50 800 0 0 {name=x4}
-C {Layout_Schem_Designs/cascode_bias_lds.sym} 240 770 0 0 {name=x5}
+C {ladder_lds.sym} -130 690 0 0 {name=x1}
+C {current_divider_lds.sym} -220 780 0 0 {name=x2}
+C {mirror_lds.sym} 170 480 0 0 {name=X3}
+C {bias_gen_lds.sym} -50 800 0 0 {name=x4}
+C {cascode_bias_lds.sym} 240 770 0 0 {name=x5}
