@@ -193,8 +193,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {madvlsi/nmos3.sym} 750 320 0 0 {name=M12
-L=4
-W=2
+L=3
+W=3
 body=GND
 nf=1
 mult=1

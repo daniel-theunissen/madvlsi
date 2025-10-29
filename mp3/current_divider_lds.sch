@@ -273,8 +273,8 @@ spiceprefix=X
 }
 C {iopin.sym} 10 740 1 0 {name=p1 lab=GND}
 C {madvlsi/nmos3.sym} 120 610 1 1 {name=M12
-L=4
-W=2
+L=3
+W=3
 body=GND
 nf=1
 mult=1
@@ -439,8 +439,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {madvlsi/nmos3.sym} -100 610 3 0 {name=M22
-L=4
-W=2
+L=3
+W=3
 body=GND
 nf=1
 mult=1

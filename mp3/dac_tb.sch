@@ -138,7 +138,6 @@ C {lab_pin.sym} 190 210 1 0 {name=p20 sig_type=std_logic lab=VTEST}
 C {lab_pin.sym} 130 520 2 0 {name=p21 sig_type=std_logic lab=Vbn}
 C {madvlsi/ammeter1.sym} 380 210 0 0 {name=Viout}
 C {lab_pin.sym} 230 230 0 0 {name=p22 sig_type=std_logic lab=Vbn2}
-C {current_divider.sym} -20 510 0 0 {name=x4}
 C {lab_pin.sym} 130 500 2 0 {name=p2 sig_type=std_logic lab=Vbp}
 C {lab_pin.sym} -170 510 0 0 {name=p23 sig_type=std_logic lab=Vbp}
 C {madvlsi/vdd.sym} -110 460 0 0 {name=l17 lab=VDD}
@@ -154,3 +153,4 @@ C {madvlsi/vdd.sym} 330 400 0 0 {name=l14 lab=VDD}
 C {madvlsi/gnd.sym} 330 600 0 0 {name=l16 lab=GND}
 C {lab_pin.sym} 390 490 2 0 {name=p3 sig_type=std_logic lab=Vc}
 C {lab_pin.sym} -70 170 0 0 {name=p25 sig_type=std_logic lab=Vc}
+C {current_divider_lds.sym} -170 590 0 0 {name=x4}

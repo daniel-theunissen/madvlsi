@@ -485,7 +485,7 @@ C {ipin.sym} 1070 -350 0 0 {name=p6 lab=D5}
 C {ipin.sym} 1190 -350 0 0 {name=p7 lab=D6}
 C {ipin.sym} 340 -690 0 0 {name=p11 lab=Vg}
 C {madvlsi/ammeter1.sym} 510 -100 0 0 {name=Vib0}
-C {code_shown.sym} -110 -530 0 0 {name=SPICE only_toplevel=false value=".param len=2 wid=6 len_b=4 wid_b=3 len_p=4 wid_p=1"}
+C {code_shown.sym} -110 -530 0 0 {name=SPICE only_toplevel=false value=".param len=2 wid=9 len_b=4 wid_b=3 len_p=4 wid_p=1"}
 C {madvlsi/ammeter1.sym} 630 -100 0 0 {name=Vib1}
 C {madvlsi/ammeter1.sym} 750 -100 0 0 {name=Vib2}
 C {madvlsi/ammeter1.sym} 870 -100 0 0 {name=Vib3}
