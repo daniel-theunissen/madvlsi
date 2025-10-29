@@ -9,6 +9,7 @@ N -80 120 10 120 {lab=VTEST}
 N 130 120 160 120 {lab=#net1}
 N 160 130 160 160 {lab=Vout}
 N -130 120 -90 120 {lab=#net2}
+N -340 80 -290 80 {lab=VDD}
 C {mirror_lvs.sym} 0 200 0 0 {name=X1}
 C {madvlsi/vsource.sym} -610 100 0 0 {name=Vdd
 value=1.8}
@@ -19,7 +20,7 @@ C {lab_pin.sym} 160 160 2 0 {name=p4 sig_type=std_logic lab=Vout}
 C {sky130_fd_pr/corner.sym} 400 90 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {code_shown.sym} 410 250 0 0 {name=SPICE only_toplevel=false value="*.param len=1 wid=2 len_b=1 wid_b=2
 *.dc Vout 0 1.8 0.01
-.tran 500n 300m
+.tran 500n 100m
 .save all
 "}
 C {madvlsi/gnd.sym} 70 200 0 0 {name=l2 lab=GND}
@@ -58,7 +59,7 @@ C {lab_pin.sym} -810 910 3 1 {name=p18 sig_type=std_logic lab=D6}
 C {madvlsi/vsource.sym} -810 940 0 0 {name=VD6
 value="pwl(0 0 399u 0 400u 1.8)"}
 C {madvlsi/gnd.sym} -810 970 0 0 {name=l25 lab=GND}
-C {madvlsi/vdd.sym} -290 80 0 0 {name=l10 lab=VDD}
+C {madvlsi/vdd.sym} -340 80 0 0 {name=l10 lab=VDD}
 C {lab_pin.sym} -290 100 0 0 {name=p5 sig_type=std_logic lab=Vbn}
 C {lab_pin.sym} -290 120 2 1 {name=p6 sig_type=std_logic lab=D0}
 C {lab_pin.sym} -290 140 2 1 {name=p7 sig_type=std_logic lab=D1}
@@ -81,3 +82,9 @@ C {madvlsi/resistor.sym} 160 190 0 0 {name=R1
 value=1k
 m=1}
 C {madvlsi/gnd.sym} 160 220 0 0 {name=l4 lab=GND}
+C {cascode_bias.sym} -70 590 0 0 {name=x5}
+C {lab_pin.sym} -220 570 0 0 {name=p1 sig_type=std_logic lab=Vbp}
+C {madvlsi/vdd.sym} 80 570 0 0 {name=l14 lab=VDD}
+C {madvlsi/gnd.sym} 80 610 0 0 {name=l16 lab=GND}
+C {lab_pin.sym} 80 590 2 0 {name=p3 sig_type=std_logic lab=Vc}
+C {lab_pin.sym} -290 70 1 0 {name=p25 sig_type=std_logic lab=Vc}

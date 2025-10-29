@@ -49,7 +49,7 @@ L=\{len\}
 W=\{wid\}
 body=GND
 nf=1
-mult=18
+mult=12
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -187,4 +187,4 @@ C {iopin.sym} -140 40 1 0 {name=p1 lab=GND}
 C {iopin.sym} -140 -280 3 0 {name=p6 lab=VDD}
 C {opin.sym} 400 -130 0 0 {name=p2 lab=Vbn}
 C {opin.sym} 340 -190 0 0 {name=p3 lab=Vbp}
-C {code_shown.sym} -690 -140 0 0 {name=SPICE only_toplevel=false value=".param len=2 wid=6"}
+C {code_shown.sym} -690 -140 0 0 {name=SPICE only_toplevel=false value=".param len=4 wid=3"}

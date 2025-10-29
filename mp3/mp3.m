@@ -2,7 +2,7 @@ close all;
 clear all;
 data = import_ngspice("dacout.txt");
 
-ib = 188e-9;
+ib = 891e-9;
 RL = 1000;
 b0 = 0;
 b1 = 0;
@@ -67,7 +67,7 @@ title("7-Bit DAC Linearity")
 xlabel("Input (decimal)")
 ylabel("Output (Normalized to decimal)")
 legend("Ideal", "Actual", Location="northwest")
-% plot(d_in, data.i_Vitest_./(ib/96), 'gx')
+plot(d_in, data.i_Vitest_./(ib/96), 'gx')
 % plot(d_in, d_in, 'm.')
 
 dnl_list = zeros(1,127);
@@ -111,7 +111,7 @@ output_mc = zeros(128,10);
 
 for i = 1:10
     run_field = sprintf('run%d', i);
-    value_field = "i_Viout_";
+    value_field = "i_Vitest_";
     output_mc(:,i) = mc_data.(run_field).(value_field);
 end
 
