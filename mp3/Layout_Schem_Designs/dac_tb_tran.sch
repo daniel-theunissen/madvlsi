@@ -77,13 +77,13 @@ C {madvlsi/resistor.sym} 120 240 0 0 {name=R1
 value=1k
 m=1}
 C {madvlsi/gnd.sym} 120 270 0 0 {name=l4 lab=GND}
-C {lab_pin.sym} 10 450 0 0 {name=p1 sig_type=std_logic lab=Vbp}
+C {lab_pin.sym} 10 460 0 0 {name=p1 sig_type=std_logic lab=Vbp}
 C {madvlsi/vdd.sym} 70 360 0 0 {name=l14 lab=VDD}
 C {madvlsi/gnd.sym} 70 560 0 0 {name=l16 lab=GND}
-C {lab_pin.sym} 130 450 2 0 {name=p3 sig_type=std_logic lab=Vc}
+C {lab_pin.sym} 130 460 2 0 {name=p3 sig_type=std_logic lab=Vc}
 C {lab_pin.sym} -330 140 0 0 {name=p25 sig_type=std_logic lab=Vc}
-C {/home/allan/Documents/Shared_MP3_Git/madvlsi/mp3/Layout Schem Designs/ladder_lds.sym} -340 460 0 0 {name=x6}
-C {/home/allan/Documents/Shared_MP3_Git/madvlsi/mp3/Layout Schem Designs/mirror_lds.sym} -40 250 0 0 {name=X7}
-C {/home/allan/Documents/Shared_MP3_Git/madvlsi/mp3/Layout Schem Designs/current_divider_lds.sym} -430 550 0 0 {name=x8}
-C {/home/allan/Documents/Shared_MP3_Git/madvlsi/mp3/Layout Schem Designs/bias_gen_lds.sym} -260 570 0 0 {name=x9}
-C {/home/allan/Documents/Shared_MP3_Git/madvlsi/mp3/Layout Schem Designs/cascode_bias_lds.sym} 30 530 0 0 {name=x10}
+C {Layout_Schem_Designs/ladder_lds.sym} -340 460 0 0 {name=x1}
+C {Layout_Schem_Designs/current_divider_lds.sym} -430 550 0 0 {name=x2}
+C {Layout_Schem_Designs/mirror_lds.sym} -40 250 0 0 {name=X3}
+C {Layout_Schem_Designs/bias_gen_lds.sym} -260 570 0 0 {name=x4}
+C {Layout_Schem_Designs/cascode_bias_lds.sym} 30 540 0 0 {name=x5}
