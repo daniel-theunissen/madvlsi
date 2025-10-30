@@ -101,6 +101,9 @@ plot(data.i_v_x3_vib4_, '.')
 plot(data.i_v_x3_vib5_, '.')
 plot(data.i_v_x3_vib6_, '.')
 
+%%
+close all;
+
 mc_data = struct;
 for i = 1:10
     filepathstr = "monte_carlo/dacout" + i + ".txt";
@@ -141,3 +144,43 @@ for j = 1:10
     disp(formatted_string)
 end
 
+%%
+close all;
+
+output_char = import_ngspice("output_sweep.txt");
+vout = output_char.v_sweep;
+iout = output_char.i_Viout_;
+
+figure;
+plot(vout, iout, 'x'); hold on
+plot(vout, iout, 'k-')
+plot(0,0,'w')
+
+% 80% of range is 0V-1.44V
+percent_change = (abs(iout(145) - iout(1)) / mean(iout(1:145)))*100;
+percent_per_v = percent_change / 1.44
+
+title("DAC Output Characteristic")
+xlabel("Vout (V)")
+ylabel("Iout (A)")
+legend("Iout @ Din = 1100011", "", "Result: 0.014%/V", Location="southwest")
+
+%%
+close all;
+
+vdd_char = import_ngspice("vdd_sweep.txt");
+vdd = vdd_char.v_sweep;
+iout = vdd_char.i_Viout_;
+
+figure;
+plot(vdd, iout, 'x'); hold on
+plot(vdd, iout, 'k-')
+plot(0,0,'w')
+
+percent_change = (abs(iout(181) - iout(141)) / mean(iout(141:181)))*100;
+percent_per_v = percent_change / 0.4
+
+title("DAC Supply Independence")
+xlabel("VDD (V)")
+ylabel("Iout (A)")
+legend("Iout @ Din = 1100011", "", "Result: 0.946%/V", Location="northwest")
