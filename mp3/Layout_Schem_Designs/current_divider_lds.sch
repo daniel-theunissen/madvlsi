@@ -125,7 +125,7 @@ L=\{len_div\}
 W=\{wid_div\}
 body=VDD
 nf=1
-mult=2
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -245,7 +245,7 @@ L=\{len_div\}
 W=\{wid_div\}
 body=VDD
 nf=1
-mult=2
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -334,12 +334,12 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {madvlsi/pmos3.sym} -1370 -30 3 1 {name=M27
+C {madvlsi/pmos3.sym} -1370 610 3 1 {name=M28
 L=\{len_div\}
 W=\{wid_div\}
 body=VDD
 nf=1
-mult=2
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
@@ -349,12 +349,12 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {madvlsi/pmos3.sym} -1370 610 3 1 {name=M28
+C {madvlsi/pmos3.sym} -1370 -30 3 1 {name=M2
 L=\{len_div\}
 W=\{wid_div\}
 body=VDD
 nf=1
-mult=2
+mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
 as="'int((nf+2)/2) * W/nf * 0.29'" 
