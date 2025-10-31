@@ -39,29 +39,28 @@ N 420 -190 440 -190 {lab=Vbp}
 N 280 -410 280 -190 {lab=#net1}
 N 280 -190 300 -190 {lab=#net1}
 N 360 -190 360 -30 {lab=GND}
-N 90 -230 90 -220 {lab=#net3}
-N 90 -230 120 -230 {lab=#net3}
-N 120 -230 120 -190 {lab=#net3}
+N 250 160 250 170 {lab=#net3}
+N 220 170 250 170 {lab=#net3}
+N 220 130 220 170 {lab=#net3}
 N 220 -230 330 -230 {lab=#net3}
 N 330 -230 330 -220 {lab=#net3}
 N 500 -370 500 -310 {lab=#net3}
 N 330 -310 500 -310 {lab=#net3}
 N 330 -310 330 -230 {lab=#net3}
-N 60 -190 60 -90 {lab=#net4}
+N 280 30 280 130 {lab=#net4}
 N 720 -450 840 -450 {lab=VDD}
 N 720 -410 840 -410 {lab=Vbp}
 N 720 -230 840 -230 {lab=Vbn}
 N 720 -190 720 -30 {lab=GND}
 N 780 -190 780 -30 {lab=GND}
 N 750 -410 750 -220 {lab=Vbp}
-N 160 -30 360 -30 {lab=GND}
 N 360 -30 500 -30 {lab=GND}
 N 500 -30 580 -30 {lab=GND}
 N 580 -30 720 -30 {lab=GND}
 N 720 -30 780 -30 {lab=GND}
 N 780 -30 840 -30 {lab=GND}
-N 120 -230 220 -230 {lab=#net3}
-N 60 -30 160 -30 {lab=GND}
+N 280 -30 360 -30 {lab=GND}
+N 220 -230 220 130 {lab=#net3}
 C {code_shown.sym} -370 -280 0 0 {name=SPICE only_toplevel=false value=".param len=4 wid=3"}
 C {madvlsi/pmos3.sym} 190 -370 1 0 {name=M28
 L=\{len\}
@@ -157,7 +156,7 @@ spiceprefix=X
 }
 C {madvlsi/ammeter1.sym} 640 -240 0 0 {name=Vib}
 C {opin.sym} 840 -230 0 0 {name=p15 lab=Vbn}
-C {madvlsi/nmos3.sym} 90 -190 1 0 {name=M34
+C {madvlsi/nmos3.sym} 250 130 3 0 {name=M34
 L=\{len\}
 W=\{wid\}
 body=GND
@@ -187,7 +186,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/resistor.sym} 60 -60 0 0 {name=R4
+C {madvlsi/resistor.sym} 280 0 2 1 {name=R4
 value=100k
 m=1}
 C {madvlsi/nmos3.sym} 750 -190 1 0 {name=M36
