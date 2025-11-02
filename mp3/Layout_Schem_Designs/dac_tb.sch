@@ -67,7 +67,7 @@ C {code_shown.sym} 570 450 0 0 {name=SPICE only_toplevel=false value="*.param le
       alter vd6 $&b6
       save all
       op
-      wrdata ~/Documents/madvlsi/mp3/monte_carlo/dacout\{$&run\}.txt v(b0) v(b1) v(b2) v(b3) v(b4) v(b5) v(b6) i(Vitest) i(Viout) v(Vout) i(v.x3.vib0) i(v.x3.vib1) i(v.x3.vib2) i(v.x3.vib3) i(v.x3.vib4) i(v.x3.vib5) i(v.x3.vib6)
+      wrdata ~/Documents/madvlsi/mp3/monte_carlo/dacout\{$&run\}.txt v(b0) v(b1) v(b2) v(b3) v(b4) v(b5) v(b6) i(Vitest) i(Viout) v(Vout) i(v.x1.vib0) i(v.x1.vib1) i(v.x1.vib2) i(v.x1.vib3) i(v.x1.vib4) i(v.x1.vib5) i(v.x1.vib6)
       if code eq 0
         set appendwrite
         set wr_vecnames = FALSE

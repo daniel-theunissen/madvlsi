@@ -2,7 +2,7 @@ close all;
 clear all;
 data = import_ngspice("dacout.txt");
 
-ib = 1050e-9;
+ib = 784e-9;
 RL = 1000;
 b0 = 0;
 b1 = 0;
@@ -93,13 +93,13 @@ xlabel("Index")
 ylabel("Bits of DNL")
 
 figure;
-plot(data.i_v_x3_vib0_, '.'); hold on
-plot(data.i_v_x3_vib1_, '.')
-plot(data.i_v_x3_vib2_, '.')
-plot(data.i_v_x3_vib3_, '.')
-plot(data.i_v_x3_vib4_, '.')
-plot(data.i_v_x3_vib5_, '.')
-plot(data.i_v_x3_vib6_, '.')
+plot(data.i_v_x1_vib0_, '.'); hold on
+plot(data.i_v_x1_vib1_, '.')
+plot(data.i_v_x1_vib2_, '.')
+plot(data.i_v_x1_vib3_, '.')
+plot(data.i_v_x1_vib4_, '.')
+plot(data.i_v_x1_vib5_, '.')
+plot(data.i_v_x1_vib6_, '.')
 
 %%
 close all;
