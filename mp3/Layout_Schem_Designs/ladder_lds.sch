@@ -789,7 +789,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {ipin.sym} 50 -380 0 0 {name=p33 lab=Vc}
-C {code_shown.sym} -450 -1030 0 0 {name=SPICE only_toplevel=false value=".param len=2 wid=9 len_b=4 wid_b=3 len_p=4 wid_p=1"}
+C {code_shown.sym} 300 -100 0 0 {name=SPICE only_toplevel=false value=".param len=2 wid=9 len_b=4 wid_b=3 len_p=4 wid_p=1"}
 C {madvlsi/ammeter1.sym} 360 -190 0 0 {name=Vib1}
 C {madvlsi/ammeter1.sym} 480 -190 0 0 {name=Vib2}
 C {madvlsi/ammeter1.sym} 600 -190 0 0 {name=Vib3}
