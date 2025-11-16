@@ -144,9 +144,9 @@
 .subckt sky130_fd_sc_hd__nor2_1 A B VGND VNB VPB VPWR Y
 .ends
 
-.subckt controller GND VDD adc_out[0] adc_out[1] adc_out[2] adc_out[3] adc_out[4]
-+ adc_out[5] adc_out[6] adc_out[7] clk comp dac_in[0] dac_in[1] dac_in[2] dac_in[3]
-+ dac_in[4] dac_in[5] dac_in[6] dac_in[7] rst_n
+.subckt controller GND VDD ADC0 ADC1 ADC2 ADC3 ADC4
++ ADC5 ADC6 ADC7 clk comp DAC0 DAC1 DAC2 DAC3
++ DAC4 DAC5 DAC6 DAC7 rst_n
 XFILLER_3_89 GND GND VDD VDD sky130_fd_sc_hd__fill_1
 XTAP_TAPCELL_ROW_8_66 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
 X_062_ net2 _029_ GND GND VDD VDD _030_ sky130_fd_sc_hd__nand2_2
@@ -154,7 +154,7 @@ XFILLER_0_57 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 XFILLER_2_165 GND GND VDD VDD sky130_fd_sc_hd__decap_6
 X_114_ clknet_1_1__leaf_clk _010_ GND GND VDD VDD net3 sky130_fd_sc_hd__dfxtp_1
 XTAP_TAPCELL_ROW_2_35 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
-Xoutput7 net7 GND GND VDD VDD adc_out[4] sky130_fd_sc_hd__buf_2
+Xoutput7 net7 GND GND VDD VDD ADC4 sky130_fd_sc_hd__buf_2
 XFILLER_9_138 GND GND VDD VDD sky130_fd_sc_hd__fill_2
 XFILLER_3_57 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 XTAP_TAPCELL_ROW_8_67 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
@@ -166,8 +166,8 @@ XFILLER_7_225 GND GND VDD VDD sky130_fd_sc_hd__decap_8
 XPHY_EDGE_ROW_6_Right_6 GND GND VDD VDD sky130_fd_sc_hd__decap_3
 XFILLER_0_253 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 XTAP_TAPCELL_ROW_2_36 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
-Xoutput8 net8 GND GND VDD VDD adc_out[5] sky130_fd_sc_hd__buf_2
-Xoutput10 net10 GND GND VDD VDD adc_out[7] sky130_fd_sc_hd__buf_2
+Xoutput8 net8 GND GND VDD VDD ADC5 sky130_fd_sc_hd__buf_2
+Xoutput10 net10 GND GND VDD VDD ADC7 sky130_fd_sc_hd__buf_2
 XFILLER_3_69 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 XTAP_TAPCELL_ROW_8_68 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
 XFILLER_5_131 VDD GND VDD GND sky130_ef_sc_hd__decap_12
@@ -179,10 +179,10 @@ XFILLER_9_57 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 X_112_ clknet_1_0__leaf_clk _008_ GND GND VDD VDD net15 sky130_fd_sc_hd__dfxtp_1
 XFILLER_7_215 GND GND VDD VDD sky130_fd_sc_hd__decap_8
 Xhold10 _016_ GND GND VDD VDD net31 sky130_fd_sc_hd__dlygate4sd3_1
-Xoutput11 net11 GND GND VDD VDD dac_in[0] sky130_fd_sc_hd__buf_2
+Xoutput11 net11 GND GND VDD VDD DAC0 sky130_fd_sc_hd__buf_2
 XFILLER_0_221 GND GND VDD VDD sky130_fd_sc_hd__decap_3
 XTAP_TAPCELL_ROW_2_37 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
-Xoutput9 net9 GND GND VDD VDD adc_out[6] sky130_fd_sc_hd__buf_2
+Xoutput9 net9 GND GND VDD VDD ADC6 sky130_fd_sc_hd__buf_2
 XFILLER_8_195 GND GND VDD VDD sky130_fd_sc_hd__fill_1
 XFILLER_3_15 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 XFILLER_5_7 VDD GND VDD GND sky130_ef_sc_hd__decap_12
@@ -197,7 +197,7 @@ X_111_ clknet_1_0__leaf_clk _007_ GND GND VDD VDD net14 sky130_fd_sc_hd__dfxtp_1
 XFILLER_1_81 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 Xhold11 net3 GND GND VDD VDD net32 sky130_fd_sc_hd__dlygate4sd3_1
 XFILLER_6_15 VDD GND VDD GND sky130_ef_sc_hd__decap_12
-Xoutput12 net12 GND GND VDD VDD dac_in[1] sky130_fd_sc_hd__buf_2
+Xoutput12 net12 GND GND VDD VDD DAC1 sky130_fd_sc_hd__buf_2
 XFILLER_0_277 GND GND VDD VDD sky130_fd_sc_hd__decap_3
 XTAP_TAPCELL_ROW_2_38 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
 XFILLER_3_27 VDD GND VDD GND sky130_ef_sc_hd__decap_12
@@ -211,7 +211,7 @@ X_110_ clknet_1_0__leaf_clk _006_ GND GND VDD VDD net13 sky130_fd_sc_hd__dfxtp_1
 XFILLER_1_93 GND GND VDD VDD sky130_fd_sc_hd__decap_3
 Xhold12 net6 GND GND VDD VDD net33 sky130_fd_sc_hd__dlygate4sd3_1
 XFILLER_6_27 GND GND VDD VDD sky130_fd_sc_hd__fill_1
-Xoutput13 net13 GND GND VDD VDD dac_in[2] sky130_fd_sc_hd__buf_2
+Xoutput13 net13 GND GND VDD VDD DAC2 sky130_fd_sc_hd__buf_2
 XTAP_TAPCELL_ROW_2_39 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
 XFILLER_3_39 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 XFILLER_8_197 GND GND VDD VDD sky130_fd_sc_hd__decap_4
@@ -224,14 +224,14 @@ XTAP_TAPCELL_ROW_9_70 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
 XFILLER_1_3 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 Xhold13 _013_ GND GND VDD VDD net34 sky130_fd_sc_hd__dlygate4sd3_1
 XFILLER_3_276 GND GND VDD VDD sky130_fd_sc_hd__decap_4
-Xoutput14 net14 GND GND VDD VDD dac_in[3] sky130_fd_sc_hd__buf_2
+Xoutput14 net14 GND GND VDD VDD DAC3 sky130_fd_sc_hd__buf_2
 XFILLER_5_113 GND GND VDD VDD sky130_fd_sc_hd__decap_8
 XFILLER_4_83 GND GND VDD VDD sky130_fd_sc_hd__fill_1
 XTAP_TAPCELL_ROW_9_71 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
 X_099_ net18 net24 _049_ GND GND VDD VDD _017_ sky130_fd_sc_hd__mux2_1
 XFILLER_1_51 GND GND VDD VDD sky130_fd_sc_hd__decap_4
 XFILLER_6_29 VDD GND VDD GND sky130_ef_sc_hd__decap_12
-Xoutput15 net15 GND GND VDD VDD dac_in[4] sky130_fd_sc_hd__buf_2
+Xoutput15 net15 GND GND VDD VDD DAC4 sky130_fd_sc_hd__buf_2
 XPHY_EDGE_ROW_1_Right_1 GND GND VDD VDD sky130_fd_sc_hd__decap_3
 XFILLER_0_247 GND GND VDD VDD sky130_fd_sc_hd__decap_4
 XFILLER_0_225 VDD GND VDD GND sky130_ef_sc_hd__decap_12
@@ -245,7 +245,7 @@ XFILLER_6_231 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 X_098_ net17 net30 _049_ GND GND VDD VDD _016_ sky130_fd_sc_hd__mux2_1
 XFILLER_3_201 GND GND VDD VDD sky130_fd_sc_hd__decap_4
 XFILLER_3_212 VDD GND VDD GND sky130_ef_sc_hd__decap_12
-Xoutput16 net16 GND GND VDD VDD dac_in[5] sky130_fd_sc_hd__buf_2
+Xoutput16 net16 GND GND VDD VDD DAC5 sky130_fd_sc_hd__buf_2
 XFILLER_0_237 GND GND VDD VDD sky130_fd_sc_hd__fill_1
 Xclkbuf_0_clk clk GND GND VDD VDD clknet_0_clk sky130_fd_sc_hd__clkbuf_16
 XFILLER_7_51 GND GND VDD VDD sky130_fd_sc_hd__decap_4
@@ -258,7 +258,7 @@ XTAP_TAPCELL_ROW_9_73 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
 XTAP_TAPCELL_ROW_0_20 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
 XFILLER_6_243 GND GND VDD VDD sky130_fd_sc_hd__fill_1
 X_097_ net16 net22 _049_ GND GND VDD VDD _015_ sky130_fd_sc_hd__mux2_1
-Xoutput17 net17 GND GND VDD VDD dac_in[6] sky130_fd_sc_hd__buf_2
+Xoutput17 net17 GND GND VDD VDD DAC6 sky130_fd_sc_hd__buf_2
 XTAP_TAPCELL_ROW_3_42 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
 XFILLER_5_105 GND GND VDD VDD sky130_fd_sc_hd__decap_6
 XFILLER_4_182 VDD GND VDD GND sky130_ef_sc_hd__decap_12
@@ -270,7 +270,7 @@ XPHY_EDGE_ROW_3_Left_13 GND GND VDD VDD sky130_fd_sc_hd__decap_3
 X_096_ net15 net27 _049_ GND GND VDD VDD _014_ sky130_fd_sc_hd__mux2_1
 XFILLER_6_200 GND GND VDD VDD sky130_fd_sc_hd__decap_3
 XFILLER_3_225 VDD GND VDD GND sky130_ef_sc_hd__decap_12
-Xoutput18 net18 GND GND VDD VDD dac_in[7] sky130_fd_sc_hd__buf_2
+Xoutput18 net18 GND GND VDD VDD DAC7 sky130_fd_sc_hd__buf_2
 X_079_ net20 net21 net19 count\[2\] GND GND VDD VDD _041_ sky130_fd_sc_hd__or4b_1
 XPHY_EDGE_ROW_5_Right_5 GND GND VDD VDD sky130_fd_sc_hd__decap_3
 XTAP_TAPCELL_ROW_3_43 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
@@ -565,7 +565,7 @@ XFILLER_6_85 GND GND VDD VDD sky130_fd_sc_hd__decap_4
 XFILLER_9_7 GND GND VDD VDD sky130_fd_sc_hd__fill_2
 XFILLER_1_259 GND GND VDD VDD sky130_fd_sc_hd__decap_4
 XFILLER_0_281 GND GND VDD VDD sky130_fd_sc_hd__decap_3
-Xoutput3 net3 GND GND VDD VDD adc_out[0] sky130_fd_sc_hd__buf_2
+Xoutput3 net3 GND GND VDD VDD ADC0 sky130_fd_sc_hd__buf_2
 X_082_ count\[2\] net19 net20 net21 GND GND VDD VDD _043_ sky130_fd_sc_hd__or4bb_1
 X_065_ net20 net21 _031_ GND GND VDD VDD _001_ sky130_fd_sc_hd__a21oi_1
 XFILLER_2_195 GND GND VDD VDD sky130_fd_sc_hd__fill_1
@@ -576,7 +576,7 @@ X_117_ clknet_1_1__leaf_clk net34 GND GND VDD VDD net6 sky130_fd_sc_hd__dfxtp_1
 XTAP_TAPCELL_ROW_5_53 GND VDD sky130_fd_sc_hd__tapvpwrvgnd_1
 XANTENNA_2 net13 GND GND VDD VDD sky130_fd_sc_hd__diode_2
 XFILLER_6_53 VDD GND VDD GND sky130_ef_sc_hd__decap_12
-Xoutput4 net4 GND GND VDD VDD adc_out[1] sky130_fd_sc_hd__buf_2
+Xoutput4 net4 GND GND VDD VDD ADC1 sky130_fd_sc_hd__buf_2
 XFILLER_9_113 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 XPHY_EDGE_ROW_0_Left_10 GND GND VDD VDD sky130_fd_sc_hd__decap_3
 X_081_ _041_ _042_ _030_ GND GND VDD VDD _006_ sky130_fd_sc_hd__a21oi_1
@@ -591,7 +591,7 @@ XPHY_EDGE_ROW_2_Right_2 GND GND VDD VDD sky130_fd_sc_hd__decap_3
 XFILLER_4_214 VDD GND VDD GND sky130_ef_sc_hd__decap_12
 XANTENNA_3 net13 GND GND VDD VDD sky130_fd_sc_hd__diode_2
 XFILLER_6_65 VDD GND VDD GND sky130_ef_sc_hd__decap_12
-Xoutput5 net5 GND GND VDD VDD adc_out[2] sky130_fd_sc_hd__buf_2
+Xoutput5 net5 GND GND VDD VDD ADC2 sky130_fd_sc_hd__buf_2
 XFILLER_9_125 GND GND VDD VDD sky130_fd_sc_hd__fill_1
 XFILLER_9_103 GND GND VDD VDD sky130_fd_sc_hd__decap_8
 XFILLER_3_55 GND GND VDD VDD sky130_fd_sc_hd__fill_1
@@ -607,7 +607,7 @@ XFILLER_4_226 GND GND VDD VDD sky130_fd_sc_hd__decap_6
 XFILLER_4_248 GND GND VDD VDD sky130_fd_sc_hd__decap_4
 XFILLER_3_281 GND GND VDD VDD sky130_fd_sc_hd__decap_3
 XFILLER_6_77 GND GND VDD VDD sky130_fd_sc_hd__decap_6
-Xoutput6 net6 GND GND VDD VDD adc_out[3] sky130_fd_sc_hd__buf_2
+Xoutput6 net6 GND GND VDD VDD ADC3 sky130_fd_sc_hd__buf_2
 XFILLER_0_251 GND GND VDD VDD sky130_fd_sc_hd__fill_1
 .ends
 

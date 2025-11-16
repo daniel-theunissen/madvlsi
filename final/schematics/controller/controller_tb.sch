@@ -18,8 +18,8 @@ C {madvlsi/gnd.sym} 110 -100 0 0 {name=l3 lab=GND}
 C {madvlsi/vdd.sym} 110 -120 0 0 {name=l4 lab=VDD}
 C {madvlsi/gnd.sym} -180 -150 0 0 {name=l5 lab=GND}
 C {madvlsi/gnd.sym} -250 20 0 0 {name=l6 lab=GND}
-C {code_shown.sym} -110 -350 0 0 {name=SPICE only_toplevel=false value=".save all
-.save DAC0
+C {code_shown.sym} -110 -350 0 0 {name=SPICE only_toplevel=false value=".include controller.spice
+.save all
 .tran 0.1n 1000n
 "}
 C {sky130_fd_pr/corner.sym} -250 -390 0 0 {name=CORNER only_toplevel=false corner=tt}

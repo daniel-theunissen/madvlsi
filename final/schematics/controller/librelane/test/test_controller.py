@@ -18,19 +18,19 @@ async def test_input(dut, input):
     COMP = dut.comp
     DACOUT = dut.sar_reg
     value = int(input, 2)
-    print(value)
+    print(f"Theoretical input: {value}")
 
-    for i in range(20):
+    for i in range(560):
         output_value = int(str(DACOUT.value), 2)
         if output_value > value:
             COMP.value = 1
         else:
             COMP.value = 0
         # await ClockCycles(CLK, 1)
-        await Timer(31, units="ns")
-        print(f"{DACOUT.value} : {output_value} : {COMP.value}")
+        await Timer(1, units="ns")
+        # print(f"{DACOUT.value} : {output_value} : {COMP.value}")
 
-    print(f"{DACOUT.value} : {output_value} : {COMP.value}")
+    print(f"Output: {DACOUT.value} : {output_value}")
 
 
 @cocotb.test()
