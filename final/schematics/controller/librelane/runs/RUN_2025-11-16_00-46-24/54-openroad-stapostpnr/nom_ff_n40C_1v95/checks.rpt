@@ -1,0 +1,97 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+Startpoint: rst_n (input port clocked by clk)
+Endpoint: _119_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (propagated)
+                                 10.000000   10.000000 ^ input external delay
+     1    0.003390    0.016034    0.008793   10.008793 ^ rst_n (in)
+                                                         rst_n (net)
+                      0.016034    0.000000   10.008793 ^ input2/A (sky130_fd_sc_hd__clkbuf_2)
+     5    0.033906    0.143866    0.139146   10.147939 ^ input2/X (sky130_fd_sc_hd__clkbuf_2)
+                                                         net2 (net)
+                      0.143983    0.003341   10.151280 ^ _053_/A (sky130_fd_sc_hd__inv_2)
+     2    0.005419    0.032752    0.020518   10.171798 v _053_/Y (sky130_fd_sc_hd__inv_2)
+                                                         _021_ (net)
+                      0.032752    0.000122   10.171920 v _091_/A (sky130_fd_sc_hd__or2_4)
+     8    0.037609    0.063293    0.191013   10.362932 v _091_/X (sky130_fd_sc_hd__or2_4)
+                                                         _049_ (net)
+                      0.063351    0.001722   10.364655 v _097_/S (sky130_fd_sc_hd__mux2_1)
+     1    0.002462    0.036694    0.186092   10.550746 v _097_/X (sky130_fd_sc_hd__mux2_1)
+                                                         _015_ (net)
+                      0.036694    0.000071   10.550817 v hold2/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.002703    0.037640    0.361479   10.912296 v hold2/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                                         net23 (net)
+                      0.037640    0.000082   10.912378 v _119_/D (sky130_fd_sc_hd__dfxtp_1)
+                                             10.912378   data arrival time
+
+                                 50.000000   50.000000   clock clk (rise edge)
+                                  0.000000   50.000000   clock source latency
+     1    0.021966    0.078007    0.054111   50.054111 ^ clk (in)
+                                                         clk (net)
+                      0.078060    0.000000   50.054111 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     2    0.018553    0.030735    0.096474   50.150585 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_0_clk (net)
+                      0.030742    0.000313   50.150898 ^ clkbuf_1_1__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+    11    0.035391    0.041827    0.094253   50.245152 ^ clkbuf_1_1__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_1_1__leaf_clk (net)
+                      0.041870    0.001101   50.246250 ^ _119_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                 -0.250000   49.996250   clock uncertainty
+                                  0.000000   49.996250   clock reconvergence pessimism
+                                 -0.071067   49.925182   library setup time
+                                             49.925182   data required time
+---------------------------------------------------------------------------------------------
+                                             49.925182   data required time
+                                            -10.912378   data arrival time
+---------------------------------------------------------------------------------------------
+                                             39.012806   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+clkbuf_1_1__f_clk/X                      10     11        (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 1 unannotated drivers.
+ clkload0/X
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 1
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

@@ -1,0 +1,1284 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)
+Loaded SDC plugin
+
+1. Executing Liberty frontend: /usr/local/share/pdk/ciel/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+[INFO] Using SDC file '/home/dt/Documents/madvlsi/final/schematics/controller/librelane/runs/RUN_2025-11-16_00-46-24/06-yosys-synthesis/synthesis.abc.sdc' for ABC…
+
+2. Executing Verilog-2005 frontend: /home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v
+Parsing SystemVerilog input from `/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v' to AST representation.
+Storing AST representation for module `$abstract\controller'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\controller'.
+Generating RTLIL representation for module `\controller'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \controller
+
+4.2. Analyzing design hierarchy..
+Top module:  \controller
+Removing unused module `$abstract\controller'.
+Removed 1 unused modules.
+Renaming module controller to controller.
+
+5. Generating Graphviz representation of design.
+Writing dot description to `/home/dt/Documents/madvlsi/final/schematics/controller/librelane/runs/RUN_2025-11-16_00-46-24/06-yosys-synthesis/hierarchy.dot'.
+Dumping module controller to page 1.
+
+6. Executing TRIBUF pass.
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1. Analyzing design hierarchy..
+Top module:  \controller
+
+7.2. Analyzing design hierarchy..
+Top module:  \controller
+Removed 0 unused modules.
+
+8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+9. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5 in module controller.
+Marked 3 switch rules as full_case in process $proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5 in module controller.
+Removed a total of 1 dead cases.
+
+10. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 5 assignments to connections.
+
+11. Executing PROC_INIT pass (extract init attributes).
+
+12. Executing PROC_ARST pass (detect async resets in processes).
+
+13. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+14. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\controller.$proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5'.
+     1/13: $3$lookahead\sar_reg$4[7:0]$22
+     2/13: $3$bitselwrite$pos$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$1[31:0]$20
+     3/13: $3$bitselwrite$pos$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:42$2[31:0]$21
+     4/13: $2$lookahead\sar_reg$4[7:0]$19
+     5/13: $2$bitselwrite$pos$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$3[31:0]$18
+     6/13: $2$bitselwrite$pos$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:42$2[31:0]$17
+     7/13: $2$bitselwrite$pos$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$1[31:0]$16
+     8/13: $1$lookahead\sar_reg$4[7:0]$14
+     9/13: $0\count[3:0]
+    10/13: $1$bitselwrite$pos$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$3[31:0]$13
+    11/13: $1$bitselwrite$pos$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:42$2[31:0]$12
+    12/13: $1$bitselwrite$pos$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$1[31:0]$11
+    13/13: $0\adc_out[7:0]
+
+15. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+16. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\controller.\adc_out' using process `\controller.$proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5'.
+  created $dff cell `$procdff$126' with positive edge clock.
+Creating register for signal `\controller.\sar_reg' using process `\controller.$proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5'.
+  created $dff cell `$procdff$127' with positive edge clock.
+Creating register for signal `\controller.\count' using process `\controller.$proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5'.
+  created $dff cell `$procdff$128' with positive edge clock.
+Creating register for signal `\controller.$bitselwrite$pos$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$1' using process `\controller.$proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5'.
+  created $dff cell `$procdff$129' with positive edge clock.
+Creating register for signal `\controller.$bitselwrite$pos$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:42$2' using process `\controller.$proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5'.
+  created $dff cell `$procdff$130' with positive edge clock.
+Creating register for signal `\controller.$bitselwrite$pos$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$3' using process `\controller.$proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5'.
+  created $dff cell `$procdff$131' with positive edge clock.
+Creating register for signal `\controller.$lookahead\sar_reg$4' using process `\controller.$proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5'.
+  created $dff cell `$procdff$132' with positive edge clock.
+
+17. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+18. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 3 empty switches in `\controller.$proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5'.
+Removing empty process `controller.$proc$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:22$5'.
+Cleaned up 3 empty switches.
+
+19. Executing CHECK pass (checking for obvious problems).
+Checking module controller...
+Found and reported 0 problems.
+
+20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+<suppressed ~16 debug messages>
+
+21. Executing FLATTEN pass (flatten design).
+
+22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 22 unused cells and 65 unused wires.
+<suppressed ~23 debug messages>
+
+24. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+25. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+<suppressed ~36 debug messages>
+Removed a total of 12 cells.
+
+26. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$82.
+Removed 1 multiplexer ports.
+<suppressed ~4 debug messages>
+
+27. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \controller.
+Performed a total of 0 changes.
+
+28. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+29. Executing OPT_DFF pass (perform DFF optimizations).
+
+30. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 0 unused cells and 13 unused wires.
+<suppressed ~1 debug messages>
+
+31. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+32. Rerunning OPT passes. (Maybe there is more to do…)
+
+33. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+34. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \controller.
+Performed a total of 0 changes.
+
+35. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+36. Executing OPT_DFF pass (perform DFF optimizations).
+
+37. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+
+38. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+39. Executing FSM pass (extract and optimize FSM).
+
+39.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+39.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+39.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+39.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+
+39.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+39.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+39.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+39.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+40. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+41. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+42. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+43. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \controller.
+Performed a total of 0 changes.
+
+44. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+45. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$128 ($dff) from module controller (D = $add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$23_Y [3:0], Q = \count, rval = 4'0000).
+Adding SRST signal on $procdff$127 ($dff) from module controller (D = $2$lookahead\sar_reg$4[7:0]$19 [7:6], Q = \sar_reg [7:6], rval = 2'10).
+Adding SRST signal on $procdff$127 ($dff) from module controller (D = $or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$49_Y [5:0], Q = \sar_reg [5:0], rval = 6'000000).
+Adding EN signal on $procdff$126 ($dff) from module controller (D = \sar_reg, Q = \adc_out).
+
+46. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 5 unused cells and 5 unused wires.
+<suppressed ~6 debug messages>
+
+47. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+48. Rerunning OPT passes. (Maybe there is more to do…)
+
+49. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+50. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \controller.
+Performed a total of 0 changes.
+
+51. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+52. Executing OPT_DFF pass (perform DFF optimizations).
+
+53. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+54. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+55. Rerunning OPT passes. (Maybe there is more to do…)
+
+56. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+57. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \controller.
+Performed a total of 0 changes.
+
+58. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+59. Executing OPT_DFF pass (perform DFF optimizations).
+
+60. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+
+61. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+62. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell controller.$add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$23 ($add).
+Removed top 27 bits (of 32) from port Y of cell controller.$add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$23 ($add).
+Removed top 28 bits (of 32) from port A of cell controller.$sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$24 ($sub).
+Removed top 27 bits (of 32) from port B of cell controller.$sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$24 ($sub).
+Removed top 26 bits (of 32) from port Y of cell controller.$sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$24 ($sub).
+Converting cell controller.$neg$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$25 ($neg) from signed to unsigned.
+Removed top 1 bits (of 33) from port A of cell controller.$neg$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$25 ($neg).
+Removed top 24 bits (of 32) from port Y of cell controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$31 ($or).
+Removed top 24 bits (of 32) from port A of cell controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$31 ($or).
+Removed top 24 bits (of 32) from port B of cell controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$31 ($or).
+Removed top 24 bits (of 32) from port Y of cell controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$40 ($or).
+Removed top 24 bits (of 32) from port A of cell controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$40 ($or).
+Removed top 24 bits (of 32) from port B of cell controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$40 ($or).
+Removed top 30 bits (of 32) from port B of cell controller.$add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$41 ($add).
+Removed top 27 bits (of 32) from port Y of cell controller.$add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$41 ($add).
+Removed top 28 bits (of 32) from port A of cell controller.$sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$42 ($sub).
+Removed top 27 bits (of 32) from port B of cell controller.$sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$42 ($sub).
+Removed top 26 bits (of 32) from port Y of cell controller.$sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$42 ($sub).
+Converting cell controller.$neg$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$43 ($neg) from signed to unsigned.
+Removed top 1 bits (of 33) from port A of cell controller.$neg$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$43 ($neg).
+Removed top 24 bits (of 32) from port Y of cell controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$49 ($or).
+Removed top 24 bits (of 32) from port A of cell controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$49 ($or).
+Removed top 24 bits (of 32) from port B of cell controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$49 ($or).
+Removed top 24 bits (of 32) from port Y of cell controller.$and$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$28 ($and).
+Removed top 24 bits (of 32) from port B of cell controller.$and$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$28 ($and).
+Removed top 24 bits (of 32) from port Y of cell controller.$shift$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$30 ($shift).
+Removed top 24 bits (of 32) from port Y of cell controller.$and$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$46 ($and).
+Removed top 24 bits (of 32) from port B of cell controller.$and$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$46 ($and).
+Removed top 24 bits (of 32) from port Y of cell controller.$not$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$27 ($not).
+Removed top 24 bits (of 32) from port A of cell controller.$not$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$27 ($not).
+Removed top 24 bits (of 32) from port Y of cell controller.$not$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$45 ($not).
+Removed top 24 bits (of 32) from port A of cell controller.$not$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$45 ($not).
+Removed top 24 bits (of 32) from port Y of cell controller.$shift$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$26 ($shift).
+Removed top 24 bits (of 32) from port Y of cell controller.$shift$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$44 ($shift).
+Removed top 27 bits (of 32) from wire controller.$add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$23_Y.
+Removed top 27 bits (of 32) from wire controller.$add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$41_Y.
+Removed top 24 bits (of 32) from wire controller.$and$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$28_Y.
+Removed top 24 bits (of 32) from wire controller.$and$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$46_Y.
+Removed top 24 bits (of 32) from wire controller.$not$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$27_Y.
+Removed top 24 bits (of 32) from wire controller.$not$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$45_Y.
+Removed top 24 bits (of 32) from wire controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$31_Y.
+Removed top 24 bits (of 32) from wire controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$40_Y.
+Removed top 24 bits (of 32) from wire controller.$or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$49_Y.
+
+63. Executing PEEPOPT pass (run peephole optimizers).
+
+64. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~1 debug messages>
+
+65. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module controller:
+  creating $macc model for $add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$23 ($add).
+  creating $macc model for $add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$41 ($add).
+  creating $macc model for $neg$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$25 ($neg).
+  creating $macc model for $neg$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$43 ($neg).
+  creating $macc model for $sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$24 ($sub).
+  creating $macc model for $sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$42 ($sub).
+  merging $macc model for $add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$41 into $sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$42.
+  creating $alu model for $macc $sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$24.
+  creating $alu model for $macc $neg$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$43.
+  creating $alu model for $macc $neg$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$25.
+  creating $alu model for $macc $add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$23.
+  creating $macc cell for $sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:44$42: $auto$alumacc.cc:365:replace_macc$156
+  creating $alu cell for $add$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$23: $auto$alumacc.cc:485:replace_alu$157
+  creating $alu cell for $neg$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$25: $auto$alumacc.cc:485:replace_alu$160
+  creating $alu cell for $neg$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$43: $auto$alumacc.cc:485:replace_alu$163
+  creating $alu cell for $sub$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:40$24: $auto$alumacc.cc:485:replace_alu$166
+  created 4 $alu and 1 $macc cells.
+
+66. Executing SHARE pass (SAT-based resource sharing).
+
+67. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+68. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+69. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+70. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \controller.
+Performed a total of 0 changes.
+
+71. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+72. Executing OPT_DFF pass (perform DFF optimizations).
+
+73. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+74. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+75. Rerunning OPT passes. (Maybe there is more to do…)
+
+76. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+77. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \controller.
+Performed a total of 0 changes.
+
+78. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+79. Executing OPT_DFF pass (perform DFF optimizations).
+
+80. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+
+81. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+82. Executing MEMORY pass.
+
+82.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+82.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+82.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+82.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+82.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+82.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+
+82.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+82.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+82.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+
+82.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+83. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+
+84. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+<suppressed ~4 debug messages>
+
+85. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+86. Executing OPT_DFF pass (perform DFF optimizations).
+
+87. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 1 unused cells and 3 unused wires.
+<suppressed ~2 debug messages>
+
+88. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+89. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+90. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+91. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+92. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \controller.
+Performed a total of 0 changes.
+
+93. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+94. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $mux $procmux$51 in front of them:
+        $or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$31
+        $or$/home/dt/Documents/madvlsi/final/schematics/controller/librelane/controller.v:0$40
+
+95. Executing OPT_DFF pass (perform DFF optimizations).
+
+96. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+97. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+<suppressed ~1 debug messages>
+
+98. Rerunning OPT passes. (Maybe there is more to do…)
+
+99. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+100. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \controller.
+Performed a total of 0 changes.
+
+101. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+102. Executing OPT_SHARE pass.
+
+103. Executing OPT_DFF pass (perform DFF optimizations).
+
+104. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+105. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+106. Rerunning OPT passes. (Maybe there is more to do…)
+
+107. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+108. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \controller.
+Performed a total of 0 changes.
+
+109. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+110. Executing OPT_SHARE pass.
+
+111. Executing OPT_DFF pass (perform DFF optimizations).
+
+112. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+
+113. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+114. Executing TECHMAP pass (map to technology primitives).
+
+114.1. Executing Verilog-2005 frontend: /nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+114.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$943564b9366bbc392bf4bbc801aa0a2d7742a4e0\_90_alu for cells of type $alu.
+Using template $paramod$653d0dc5a667330298513325d0bd1def0e6c1128\_90_alu for cells of type $alu.
+Using template $paramod$99501223b6f7e5af250351eeb57edb5403a5ad0b\_90_alu for cells of type $alu.
+Using template $paramod$constmap:51fb3526f3621c6ba109a6fa670766d42e57f474$paramod$3a55d5cb0043d442f8310a0b82c3ba1d6d3f1032\_90_shift_shiftx for cells of type $shift.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Analyzing pattern of constant bits for this cell:
+  Constant input on bit 0 of port A: 1'0
+Creating constmapped module `$paramod$constmap:9142eda5b8d4816217539d08a829525d6270721e$paramod$3a55d5cb0043d442f8310a0b82c3ba1d6d3f1032\_90_shift_shiftx'.
+
+114.14. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$constmap:9142eda5b8d4816217539d08a829525d6270721e$paramod$3a55d5cb0043d442f8310a0b82c3ba1d6d3f1032\_90_shift_shiftx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$328.
+    dead port 2/2 on $mux $procmux$322.
+    dead port 2/2 on $mux $procmux$316.
+    dead port 2/2 on $mux $procmux$310.
+Removed 4 multiplexer ports.
+<suppressed ~371 debug messages>
+
+114.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$constmap:9142eda5b8d4816217539d08a829525d6270721e$paramod$3a55d5cb0043d442f8310a0b82c3ba1d6d3f1032\_90_shift_shiftx.
+<suppressed ~36 debug messages>
+Removed 55 unused cells and 71 unused wires.
+Using template $paramod$constmap:9142eda5b8d4816217539d08a829525d6270721e$paramod$3a55d5cb0043d442f8310a0b82c3ba1d6d3f1032\_90_shift_shiftx for cells of type $shift.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper maccmap for cells of type $macc.
+  sub \count (4 bits, unsigned)
+  add 6'000110 (6 bits, unsigned)
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000110 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100001 for cells of type $lcu.
+Using template $paramod$00298f3f8094950cb9a5ff2fda48d0d8bde8806c\_90_alu for cells of type $alu.
+No more expansions possible.
+<suppressed ~895 debug messages>
+
+115. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+<suppressed ~822 debug messages>
+
+116. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+<suppressed ~390 debug messages>
+Removed a total of 130 cells.
+
+117. Executing OPT_DFF pass (perform DFF optimizations).
+
+118. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 28 unused cells and 501 unused wires.
+<suppressed ~29 debug messages>
+
+119. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+<suppressed ~1 debug messages>
+
+120. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+121. Executing OPT_DFF pass (perform DFF optimizations).
+
+122. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+123. Executing ABC pass (technology mapping using ABC).
+
+123.1. Extracting gate netlist of module `\controller' to `<abc-temp-dir>/input.blif'..
+Extracted 282 gates and 298 wires to a netlist network with 14 inputs and 14 outputs.
+
+123.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+123.1.2. Re-integrating ABC results.
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:               AND cells:        5
+ABC RESULTS:              XNOR cells:        5
+ABC RESULTS:               NOT cells:       11
+ABC RESULTS:               XOR cells:       11
+ABC RESULTS:             ORNOT cells:        8
+ABC RESULTS:              NAND cells:        5
+ABC RESULTS:            ANDNOT cells:       35
+ABC RESULTS:               MUX cells:        8
+ABC RESULTS:                OR cells:       39
+ABC RESULTS:        internal signals:      270
+ABC RESULTS:           input signals:       14
+ABC RESULTS:          output signals:       14
+Removing temp directory.
+
+124. Executing OPT pass (performing simple optimizations).
+
+124.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+124.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+124.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+124.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 0 unused cells and 146 unused wires.
+<suppressed ~1 debug messages>
+
+124.5. Finished fast OPT passes.
+
+125. Executing HIERARCHY pass (managing design hierarchy).
+
+125.1. Analyzing design hierarchy..
+Top module:  \controller
+
+125.2. Analyzing design hierarchy..
+Top module:  \controller
+Removed 0 unused modules.
+
+126. Executing CHECK pass (checking for obvious problems).
+Checking module controller...
+Found and reported 0 problems.
+
+127. Printing statistics.
+
+=== controller ===
+
+   Number of wires:                129
+   Number of wire bits:            168
+   Number of public wires:           7
+   Number of public wire bits:      31
+   Number of ports:                  5
+   Number of port bits:             19
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                145
+     $_ANDNOT_                      35
+     $_AND_                          3
+     $_DFFE_PP_                      8
+     $_MUX_                          8
+     $_NAND_                         4
+     $_NOR_                          1
+     $_NOT_                         11
+     $_ORNOT_                        8
+     $_OR_                          39
+     $_SDFF_PN0_                     1
+     $_SDFF_PN1_                     1
+     $_SDFF_PP0_                    10
+     $_XNOR_                         5
+     $_XOR_                         11
+
+128. Generating Graphviz representation of design.
+Writing dot description to `/home/dt/Documents/madvlsi/final/schematics/controller/librelane/runs/RUN_2025-11-16_00-46-24/06-yosys-synthesis/primitive_techmap.dot'.
+Dumping module controller to page 1.
+
+129. Executing OPT pass (performing simple optimizations).
+
+129.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+129.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+129.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \controller..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+129.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \controller.
+Performed a total of 0 changes.
+
+129.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\controller'.
+Removed a total of 0 cells.
+
+129.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+129.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+
+129.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module controller.
+
+129.9. Finished OPT passes. (There is nothing left to do.)
+
+130. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/dt/Documents/madvlsi/final/schematics/controller/librelane/runs/RUN_2025-11-16_00-46-24/tmp/baee56b47a94406190368c779895b725.lib ",
+   "modules": {
+      "\\controller": {
+         "num_wires":         128,
+         "num_wire_bits":     160,
+         "num_pub_wires":     6,
+         "num_pub_wire_bits": 23,
+         "num_ports":         5,
+         "num_port_bits":     19,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         145,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 35,
+            "$_AND_": 3,
+            "$_DFFE_PP_": 8,
+            "$_MUX_": 8,
+            "$_NAND_": 4,
+            "$_NOR_": 1,
+            "$_NOT_": 11,
+            "$_ORNOT_": 8,
+            "$_OR_": 39,
+            "$_SDFF_PN0_": 1,
+            "$_SDFF_PN1_": 1,
+            "$_SDFF_PP0_": 10,
+            "$_XNOR_": 5,
+            "$_XOR_": 11
+         }
+      }
+   },
+      "design": {
+         "num_wires":         128,
+         "num_wire_bits":     160,
+         "num_pub_wires":     6,
+         "num_pub_wire_bits": 23,
+         "num_ports":         5,
+         "num_port_bits":     19,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         145,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 35,
+            "$_AND_": 3,
+            "$_DFFE_PP_": 8,
+            "$_MUX_": 8,
+            "$_NAND_": 4,
+            "$_NOR_": 1,
+            "$_NOT_": 11,
+            "$_ORNOT_": 8,
+            "$_OR_": 39,
+            "$_SDFF_PN0_": 1,
+            "$_SDFF_PN1_": 1,
+            "$_SDFF_PP0_": 10,
+            "$_XNOR_": 5,
+            "$_XOR_": 11
+         }
+      }
+}
+
+131. Printing statistics.
+
+=== controller ===
+
+   Number of wires:                128
+   Number of wire bits:            160
+   Number of public wires:           6
+   Number of public wire bits:      23
+   Number of ports:                  5
+   Number of port bits:             19
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                145
+     $_ANDNOT_                      35
+     $_AND_                          3
+     $_DFFE_PP_                      8
+     $_MUX_                          8
+     $_NAND_                         4
+     $_NOR_                          1
+     $_NOT_                         11
+     $_ORNOT_                        8
+     $_OR_                          39
+     $_SDFF_PN0_                     1
+     $_SDFF_PN1_                     1
+     $_SDFF_PP0_                    10
+     $_XNOR_                         5
+     $_XOR_                         11
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_DFFE_PP_ is unknown!
+   Area for cell type $_SDFF_PN0_ is unknown!
+   Area for cell type $_SDFF_PN1_ is unknown!
+   Area for cell type $_SDFF_PP0_ is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/usr/local/share/pdk/ciel/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v'…
+
+132. Executing TECHMAP pass (map to technology primitives).
+
+132.1. Executing Verilog-2005 frontend: /usr/local/share/pdk/ciel/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/usr/local/share/pdk/ciel/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+132.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+133. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/usr/local/share/pdk/ciel/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v'…
+
+134. Executing TECHMAP pass (map to technology primitives).
+
+134.1. Executing Verilog-2005 frontend: /usr/local/share/pdk/ciel/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/usr/local/share/pdk/ciel/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+134.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+135. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+136. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+136.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\controller':
+  mapped 20 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/dt/Documents/madvlsi/final/schematics/controller/librelane/runs/RUN_2025-11-16_00-46-24/tmp/baee56b47a94406190368c779895b725.lib ",
+   "modules": {
+      "\\controller": {
+         "num_wires":         148,
+         "num_wire_bits":     180,
+         "num_pub_wires":     6,
+         "num_pub_wire_bits": 23,
+         "num_ports":         5,
+         "num_port_bits":     19,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         165,
+         "area":              425.408000,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 35,
+            "$_AND_": 3,
+            "$_MUX_": 28,
+            "$_NAND_": 4,
+            "$_NOR_": 1,
+            "$_NOT_": 11,
+            "$_ORNOT_": 8,
+            "$_OR_": 39,
+            "$_XNOR_": 5,
+            "$_XOR_": 11,
+            "sky130_fd_sc_hd__dfxtp_2": 20
+         }
+      }
+   },
+      "design": {
+         "num_wires":         148,
+         "num_wire_bits":     180,
+         "num_pub_wires":     6,
+         "num_pub_wire_bits": 23,
+         "num_ports":         5,
+         "num_port_bits":     19,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         165,
+         "area":              425.408000,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 35,
+            "$_AND_": 3,
+            "$_MUX_": 28,
+            "$_NAND_": 4,
+            "$_NOR_": 1,
+            "$_NOT_": 11,
+            "$_ORNOT_": 8,
+            "$_OR_": 39,
+            "$_XNOR_": 5,
+            "$_XOR_": 11,
+            "sky130_fd_sc_hd__dfxtp_2": 20
+         }
+      }
+}
+
+137. Printing statistics.
+
+=== controller ===
+
+   Number of wires:                148
+   Number of wire bits:            180
+   Number of public wires:           6
+   Number of public wire bits:      23
+   Number of ports:                  5
+   Number of port bits:             19
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                165
+     $_ANDNOT_                      35
+     $_AND_                          3
+     $_MUX_                         28
+     $_NAND_                         4
+     $_NOR_                          1
+     $_NOT_                         11
+     $_ORNOT_                        8
+     $_OR_                          39
+     $_XNOR_                         5
+     $_XOR_                         11
+     sky130_fd_sc_hd__dfxtp_2       20
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+
+   Chip area for module '\controller': 425.408000
+     of which used for sequential elements: 425.408000 (100.00%)
+
+[INFO] Using generated ABC script '/home/dt/Documents/madvlsi/final/schematics/controller/librelane/runs/RUN_2025-11-16_00-46-24/06-yosys-synthesis/AREA_0.abc'…
+
+138. Executing ABC pass (technology mapping using ABC).
+
+138.1. Extracting gate netlist of module `\controller' to `/tmp/yosys-abc-BhIhj6/input.blif'..
+Extracted 145 gates and 169 wires to a netlist network with 22 inputs and 20 outputs.
+
+138.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-BhIhj6/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-BhIhj6/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-BhIhj6/input.blif 
+ABC: + read_lib -w /home/dt/Documents/madvlsi/final/schematics/controller/librelane/runs/RUN_2025-11-16_00-46-24/tmp/baee56b47a94406190368c779895b725.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.02 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/dt/Documents/madvlsi/final/schematics/controller/librelane/runs/RUN_2025-11-16_00-46-24/tmp/baee56b47a94406190368c779895b725.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.03 sec
+ABC: Memory =    9.54 MB. Time =     0.03 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /home/dt/Documents/madvlsi/final/schematics/controller/librelane/runs/RUN_2025-11-16_00-46-24/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2/Y".
+ABC: Setting output load to be 33.442001.
+ABC: + source /home/dt/Documents/madvlsi/final/schematics/controller/librelane/runs/RUN_2025-11-16_00-46-24/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: WireLoad = "none"  Gates =     52 ( 15.4 %)   Cap = 14.6 ff (  8.7 %)   Area =      461.69 ( 57.7 %)   Delay =  1537.70 ps  ( 19.2 %)               
+ABC: Path  0 --       1 : 0   12 pi                      A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  31.9 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      52 : 4    3 sky130_fd_sc_hd__or4b_2 A =  10.01  Df = 681.7 -487.2 ps  S = 121.1 ps  Cin =  1.5 ff  Cout =   7.7 ff  Cmax = 265.5 ff  G =  500  
+ABC: Path  2 --      82 : 2    8 sky130_fd_sc_hd__or2_2  A =   6.26  Df =1059.9 -673.9 ps  S = 152.7 ps  Cin =  1.5 ff  Cout =  28.2 ff  Cmax = 299.4 ff  G = 1876  
+ABC: Path  3 --      83 : 3    1 sky130_fd_sc_hd__mux2_1 A =  11.26  Df =1537.7 -724.7 ps  S = 300.1 ps  Cin =  2.3 ff  Cout =  33.4 ff  Cmax = 173.0 ff  G = 1465  
+ABC: Start-point = pi0 (\count [1]).  End-point = po10 ($auto$rtlil.cc:2739:MuxGate$2258).
+ABC: netlist                       : i/o =   22/   20  lat =    0  nd =    52  edge =    145  area =461.69  delay = 3.00  lev = 3
+ABC: + write_blif /tmp/yosys-abc-BhIhj6/output.blif 
+
+138.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand3_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4bb_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__or4b_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:        1
+ABC RESULTS:        internal signals:      127
+ABC RESULTS:           input signals:       22
+ABC RESULTS:          output signals:       20
+Removing temp directory.
+
+139. Executing SETUNDEF pass (replace undef values with defined constants).
+
+140. Executing HILOMAP pass (mapping to constant drivers).
+
+141. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+142. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \controller..
+Removed 1 unused cells and 180 unused wires.
+<suppressed ~2 debug messages>
+
+143. Executing INSBUF pass (insert buffer cells for connected wires).
+
+144. Executing CHECK pass (checking for obvious problems).
+Checking module controller...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/dt/Documents/madvlsi/final/schematics/controller/librelane/runs/RUN_2025-11-16_00-46-24/tmp/baee56b47a94406190368c779895b725.lib ",
+   "modules": {
+      "\\controller": {
+         "num_wires":         61,
+         "num_wire_bits":     75,
+         "num_pub_wires":     9,
+         "num_pub_wire_bits": 23,
+         "num_ports":         5,
+         "num_port_bits":     19,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         72,
+         "area":              887.100800,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a21o_2": 1,
+            "sky130_fd_sc_hd__a21oi_2": 8,
+            "sky130_fd_sc_hd__a311o_2": 1,
+            "sky130_fd_sc_hd__and2b_2": 1,
+            "sky130_fd_sc_hd__and4_2": 1,
+            "sky130_fd_sc_hd__dfxtp_2": 20,
+            "sky130_fd_sc_hd__inv_2": 8,
+            "sky130_fd_sc_hd__mux2_1": 14,
+            "sky130_fd_sc_hd__nand2_2": 2,
+            "sky130_fd_sc_hd__nand3_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 1,
+            "sky130_fd_sc_hd__nor3_2": 1,
+            "sky130_fd_sc_hd__o21a_2": 1,
+            "sky130_fd_sc_hd__o21ai_2": 2,
+            "sky130_fd_sc_hd__o31a_2": 1,
+            "sky130_fd_sc_hd__or2_2": 2,
+            "sky130_fd_sc_hd__or4b_2": 4,
+            "sky130_fd_sc_hd__or4bb_2": 3
+         }
+      }
+   },
+      "design": {
+         "num_wires":         61,
+         "num_wire_bits":     75,
+         "num_pub_wires":     9,
+         "num_pub_wire_bits": 23,
+         "num_ports":         5,
+         "num_port_bits":     19,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         72,
+         "area":              887.100800,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a21o_2": 1,
+            "sky130_fd_sc_hd__a21oi_2": 8,
+            "sky130_fd_sc_hd__a311o_2": 1,
+            "sky130_fd_sc_hd__and2b_2": 1,
+            "sky130_fd_sc_hd__and4_2": 1,
+            "sky130_fd_sc_hd__dfxtp_2": 20,
+            "sky130_fd_sc_hd__inv_2": 8,
+            "sky130_fd_sc_hd__mux2_1": 14,
+            "sky130_fd_sc_hd__nand2_2": 2,
+            "sky130_fd_sc_hd__nand3_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 1,
+            "sky130_fd_sc_hd__nor3_2": 1,
+            "sky130_fd_sc_hd__o21a_2": 1,
+            "sky130_fd_sc_hd__o21ai_2": 2,
+            "sky130_fd_sc_hd__o31a_2": 1,
+            "sky130_fd_sc_hd__or2_2": 2,
+            "sky130_fd_sc_hd__or4b_2": 4,
+            "sky130_fd_sc_hd__or4bb_2": 3
+         }
+      }
+}
+
+145. Printing statistics.
+
+=== controller ===
+
+   Number of wires:                 61
+   Number of wire bits:             75
+   Number of public wires:           9
+   Number of public wire bits:      23
+   Number of ports:                  5
+   Number of port bits:             19
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 72
+     sky130_fd_sc_hd__a21o_2         1
+     sky130_fd_sc_hd__a21oi_2        8
+     sky130_fd_sc_hd__a311o_2        1
+     sky130_fd_sc_hd__and2b_2        1
+     sky130_fd_sc_hd__and4_2         1
+     sky130_fd_sc_hd__dfxtp_2       20
+     sky130_fd_sc_hd__inv_2          8
+     sky130_fd_sc_hd__mux2_1        14
+     sky130_fd_sc_hd__nand2_2        2
+     sky130_fd_sc_hd__nand3_2        1
+     sky130_fd_sc_hd__nor2_2         1
+     sky130_fd_sc_hd__nor3_2         1
+     sky130_fd_sc_hd__o21a_2         1
+     sky130_fd_sc_hd__o21ai_2        2
+     sky130_fd_sc_hd__o31a_2         1
+     sky130_fd_sc_hd__or2_2          2
+     sky130_fd_sc_hd__or4b_2         4
+     sky130_fd_sc_hd__or4bb_2        3
+
+   Chip area for module '\controller': 887.100800
+     of which used for sequential elements: 425.408000 (47.95%)
+
+146. Executing Verilog backend.
+Dumping module `\controller'.
+
+147. Executing JSON backend.
