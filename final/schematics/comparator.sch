@@ -49,6 +49,11 @@ N -90 -10 -90 40 {lab=#net1}
 N -270 -220 -240 -220 {lab=Vin+}
 N -270 -180 -240 -180 {lab=Vin-}
 N -270 -260 -240 -260 {lab=Vbn}
+N -270 -140 -240 -140 {lab=phi1}
+N -270 -100 -240 -100 {lab=phi2}
+N -270 -60 -240 -60 {lab=Q}
+N -270 -20 -240 -20 {lab=Qbar}
+N -270 -300 -240 -300 {lab=Vp}
 C {madvlsi/nmos3.sym} -100 -60 0 0 {name=M1
 L=0.15
 W=1
@@ -246,3 +251,18 @@ C {lab_pin.sym} -60 70 3 0 {name=p9 sig_type=std_logic lab=Vbn}
 C {ipin.sym} -270 -220 0 0 {name=p10 lab=Vin+}
 C {ipin.sym} -270 -180 0 0 {name=p11 lab=Vin-}
 C {ipin.sym} -270 -260 0 0 {name=p12 lab=Vbn}
+C {ipin.sym} -270 -140 0 0 {name=p13 lab=phi1}
+C {ipin.sym} -270 -100 0 0 {name=p14 lab=phi2}
+C {lab_pin.sym} -240 -260 2 0 {name=p17 sig_type=std_logic lab=Vbn}
+C {lab_pin.sym} -240 -220 2 0 {name=p18 sig_type=std_logic lab=Vin+}
+C {lab_pin.sym} -240 -180 2 0 {name=p19 sig_type=std_logic lab=Vin-}
+C {lab_pin.sym} -240 -140 2 0 {name=p20 sig_type=std_logic lab=phi1}
+C {lab_pin.sym} -240 -100 2 0 {name=p21 sig_type=std_logic lab=phi2}
+C {opin.sym} -270 -60 2 0 {name=p15 lab=Q}
+C {opin.sym} -270 -20 2 0 {name=p16 lab=Qbar}
+C {lab_pin.sym} -240 -60 2 0 {name=p22 sig_type=std_logic lab=Q}
+C {lab_pin.sym} -240 -20 2 0 {name=p23 sig_type=std_logic lab=Qbar}
+C {lab_pin.sym} 140 -280 1 0 {name=p24 sig_type=std_logic lab=VP}
+C {lab_pin.sym} 380 -280 1 0 {name=p25 sig_type=std_logic lab=VP}
+C {ipin.sym} -270 -300 0 0 {name=p26 lab=VP}
+C {lab_pin.sym} -240 -300 2 0 {name=p27 sig_type=std_logic lab=VP}
