@@ -31,7 +31,7 @@ module controller #(
       begin
         count <= 0;
         adc_out <= sar_reg;
-        sar_reg <= {1'b1, {(NUM_BITS - 2){1'b0}}};
+        sar_reg <= {1'b1, {(NUM_BITS - 1){1'b0}}};
       end
       else
       begin

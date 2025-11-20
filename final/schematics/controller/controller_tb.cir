@@ -1,0 +1,26 @@
+** sch_path: /home/dt/Documents/madvlsi/final/schematics/controller/controller_tb.sch
+**.subckt controller_tb
+A1 [CLK COMP RST_N] [DAC7 DAC6 DAC5 DAC4 DAC3 DAC2 DAC1 DAC0 ADC7 ADC6 ADC5 ADC4 ADC3 ADC2 ADC1 ADC0] null controller
+.model controller d_cosim simulation="librelane/controller.so"
+
+.param vcc=1.8
+vcc vcc 0 {vcc}
+
+* Digital clock signal
+
+aclock 0 CLK clock
+.model clock d_osc cntl_array=[-1 1] freq_array=[10Meg 10Meg]
+
+* comparator signal
+
+Vcomp COMP 0 0
+
+* reset signal
+
+Vreset RST_N 0 PULSE 3 0 1n 20p 20p 1u 500u
+
+.control
+tran 0.1n 1000n
+plot DAC0 DAC2 DAC7 DAC6
+.endc
+.end
