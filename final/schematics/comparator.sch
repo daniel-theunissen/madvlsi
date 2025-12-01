@@ -36,15 +36,15 @@ N 170 70 220 70 {lab=Qbar}
 N 220 70 290 30 {lab=Qbar}
 N 290 30 380 30 {lab=Qbar}
 N 260 -30 260 -10 {lab=phi2}
-N 40 100 40 120 {lab=#net4}
-N 140 100 140 120 {lab=#net5}
-N 380 100 380 120 {lab=#net6}
-N 480 100 480 120 {lab=#net7}
+N 40 100 40 120 {lab=GND}
+N 140 100 140 120 {lab=GND}
+N 380 100 380 120 {lab=GND}
+N 480 100 480 120 {lab=GND}
 N 140 20 140 40 {lab=Q}
 N 380 20 380 40 {lab=Qbar}
 N 0 10 140 10 {lab=Q}
 N 380 10 520 10 {lab=Qbar}
-N -90 100 -90 120 {lab=VN}
+N -90 100 -90 120 {lab=GND}
 N -90 -10 -90 40 {lab=#net1}
 N -270 -220 -240 -220 {lab=Vin+}
 N -270 -180 -240 -180 {lab=Vin-}
@@ -53,8 +53,8 @@ N -270 -140 -240 -140 {lab=phi1}
 N -270 -100 -240 -100 {lab=phi2}
 N -270 -60 -240 -60 {lab=Q}
 N -270 -20 -240 -20 {lab=Qbar}
-N -270 -300 -240 -300 {lab=VP}
-N -270 20 -240 20 {lab=VN}
+N -270 -300 -240 -300 {lab=VDD}
+N -270 20 -240 20 {lab=GND}
 C {madvlsi/nmos3.sym} -100 -60 0 0 {name=M1
 L=0.15
 W=1
@@ -258,14 +258,14 @@ C {opin.sym} -270 -60 2 0 {name=p15 lab=Q}
 C {opin.sym} -270 -20 2 0 {name=p16 lab=Qbar}
 C {lab_pin.sym} -240 -60 2 0 {name=p22 sig_type=std_logic lab=Q}
 C {lab_pin.sym} -240 -20 2 0 {name=p23 sig_type=std_logic lab=Qbar}
-C {lab_pin.sym} 140 -280 1 0 {name=p24 sig_type=std_logic lab=VP}
-C {lab_pin.sym} 380 -280 1 0 {name=p25 sig_type=std_logic lab=VP}
-C {lab_pin.sym} -240 -300 2 0 {name=p27 sig_type=std_logic lab=VP}
-C {iopin.sym} -270 -300 2 0 {name=p26 lab=VP}
-C {iopin.sym} -270 20 2 0 {name=p28 lab=VN}
-C {lab_pin.sym} -240 20 2 0 {name=p29 sig_type=std_logic lab=VN}
-C {lab_pin.sym} -90 120 3 0 {name=p30 sig_type=std_logic lab=VN}
-C {lab_pin.sym} 40 120 3 0 {name=p31 sig_type=std_logic lab=VN}
-C {lab_pin.sym} 140 120 3 0 {name=p32 sig_type=std_logic lab=VN}
-C {lab_pin.sym} 380 120 3 0 {name=p33 sig_type=std_logic lab=VN}
-C {lab_pin.sym} 480 120 3 0 {name=p34 sig_type=std_logic lab=VN}
+C {lab_pin.sym} 140 -280 1 0 {name=p24 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} 380 -280 1 0 {name=p25 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} -240 -300 2 0 {name=p27 sig_type=std_logic lab=VDD}
+C {iopin.sym} -270 -300 2 0 {name=p26 lab=VDD}
+C {iopin.sym} -270 20 2 0 {name=p28 lab=GND}
+C {lab_pin.sym} -240 20 2 0 {name=p29 sig_type=std_logic lab=GND}
+C {lab_pin.sym} -90 120 3 0 {name=p30 sig_type=std_logic lab=GND}
+C {lab_pin.sym} 40 120 3 0 {name=p31 sig_type=std_logic lab=GND}
+C {lab_pin.sym} 140 120 3 0 {name=p32 sig_type=std_logic lab=GND}
+C {lab_pin.sym} 380 120 3 0 {name=p33 sig_type=std_logic lab=GND}
+C {lab_pin.sym} 480 120 3 0 {name=p34 sig_type=std_logic lab=GND}

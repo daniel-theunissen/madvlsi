@@ -5,9 +5,9 @@ V {}
 S {}
 F {}
 E {}
-N -60 50 -60 140 {lab=VN}
-N -60 140 30 140 {lab=VN}
-N -20 140 -20 160 {lab=VN}
+N -60 50 -60 140 {lab=VDD}
+N -60 140 30 140 {lab=VDD}
+N -20 140 -20 160 {lab=VDD}
 N 30 50 30 80 {lab=#net1}
 N -20 60 30 60 {lab=#net1}
 N -20 20 -20 60 {lab=#net1}
@@ -83,7 +83,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {ipin.sym} -90 -20 0 0 {name=p1 lab=Iin}
-C {iopin.sym} -20 160 1 0 {name=p2 lab=VN}
+C {iopin.sym} -20 160 1 0 {name=p2 lab=GND}
 C {iopin.sym} 160 80 1 0 {name=p3 lab=Vmid}
 C {ipin.sym} 0 110 0 0 {name=p4 lab=Vbn}
 C {ipin.sym} 190 20 2 0 {name=p5 lab=Vgate}
