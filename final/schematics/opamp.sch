@@ -9,16 +9,16 @@ N 90 -100 90 -50 {lab=Vout}
 N -40 -100 -40 -50 {lab=#net1}
 N -40 10 90 10 {lab=#net2}
 N 30 10 30 30 {lab=#net2}
-N -40 -170 -40 -160 {lab=VP}
-N -40 -170 90 -170 {lab=VP}
-N 90 -170 90 -160 {lab=VP}
-N 30 -190 30 -170 {lab=VP}
+N -40 -170 -40 -160 {lab=VDD}
+N -40 -170 90 -170 {lab=VDD}
+N 90 -170 90 -160 {lab=VDD}
+N 30 -190 30 -170 {lab=VDD}
 N -10 -130 60 -130 {lab=#net1}
 N 10 -130 10 -100 {lab=#net1}
 N -40 -100 10 -100 {lab=#net1}
 N -80 -20 -70 -20 {lab=Vplus}
 N 30 90 30 100 {lab=VN}
-N -10 60 0 60 {lab=#net3}
+N -10 60 0 60 {lab=Vbn}
 N 120 -20 130 -20 {lab=Vminus}
 N 90 -80 130 -80 {lab=Vout}
 C {madvlsi/nmos3.sym} -40 -20 0 0 {name=M1
@@ -96,8 +96,8 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {iopin.sym} 30 -190 3 0 {name=p1 lab=VP}
-C {iopin.sym} 30 100 1 0 {name=p2 lab=VN}
+C {iopin.sym} 30 -190 3 0 {name=p1 lab=VDD}
+C {iopin.sym} 30 100 1 0 {name=p2 lab=GND}
 C {ipin.sym} -80 -20 0 0 {name=p3 lab=Vplus}
 C {ipin.sym} 130 -20 2 0 {name=p4 lab=Vminus}
 C {opin.sym} 130 -80 0 0 {name=p5 lab=Vout}
