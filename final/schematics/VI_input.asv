@@ -1,0 +1,13 @@
+close all;
+data = import_ngspice("VI_input.txt")
+Iref = data.i_vib_(1);
+Vin_p = data.;
+Vin_n = 0.5;
+R = 30e3;
+Ir = (Vin_p - Vin_n) ./ R;
+
+Iout_p = Iref + Ir;
+Iout_n = Iref - Ir;
+
+plot(Iout_n, "r--"); hold on
+plot(Iout_p, "g--")

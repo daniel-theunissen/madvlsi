@@ -28,44 +28,46 @@ C {lab_pin.sym} -250 -40 1 0 {name=p3 sig_type=std_logic lab=COMP}
 C {lab_pin.sym} 110 -240 0 0 {name=p4 sig_type=std_logic lab=COMP}
 C {lab_pin.sym} -170 -40 1 0 {name=p5 sig_type=std_logic lab=RST_N}
 C {lab_pin.sym} 110 -220 0 0 {name=p6 sig_type=std_logic lab=RST_N}
-C {lab_pin.sym} 205 -360 1 0 {name=p7 sig_type=std_logic lab=DAC0}
-C {lab_pin.sym} 225 -360 1 0 {name=p8 sig_type=std_logic lab=DAC1}
-C {lab_pin.sym} 245 -360 1 0 {name=p9 sig_type=std_logic lab=DAC2}
-C {lab_pin.sym} 265 -360 1 0 {name=p11 sig_type=std_logic lab=DAC3}
-C {lab_pin.sym} 285 -360 1 0 {name=p12 sig_type=std_logic lab=DAC4}
-C {lab_pin.sym} 305 -360 1 0 {name=p13 sig_type=std_logic lab=DAC5}
-C {lab_pin.sym} 325 -360 1 0 {name=p14 sig_type=std_logic lab=DAC6}
-C {lab_pin.sym} 460 -260 2 0 {name=p15 sig_type=std_logic lab=ADC0}
-C {lab_pin.sym} 345 -360 1 0 {name=p10 sig_type=std_logic lab=DAC7}
-C {lab_pin.sym} 460 -240 2 0 {name=p16 sig_type=std_logic lab=ADC1}
-C {lab_pin.sym} 460 -220 2 0 {name=p17 sig_type=std_logic lab=ADC2}
-C {lab_pin.sym} 460 -200 2 0 {name=p18 sig_type=std_logic lab=ADC3}
-C {lab_pin.sym} 460 -180 2 0 {name=p19 sig_type=std_logic lab=ADC4}
-C {lab_pin.sym} 460 -160 2 0 {name=p20 sig_type=std_logic lab=ADC5}
-C {lab_pin.sym} 460 -140 2 0 {name=p21 sig_type=std_logic lab=ADC6}
-C {lab_pin.sym} 460 -120 2 0 {name=p22 sig_type=std_logic lab=ADC7}
+C {lab_pin.sym} 225 -480 2 0 {name=p7 sig_type=std_logic lab=DAC0A}
+C {lab_pin.sym} 225 -460 2 0 {name=p8 sig_type=std_logic lab=DAC1A}
+C {lab_pin.sym} 225 -440 2 0 {name=p9 sig_type=std_logic lab=DAC2A}
+C {lab_pin.sym} 225 -420 2 0 {name=p11 sig_type=std_logic lab=DAC3A}
+C {lab_pin.sym} 225 -400 2 0 {name=p12 sig_type=std_logic lab=DAC4A}
+C {lab_pin.sym} 225 -380 2 0 {name=p13 sig_type=std_logic lab=DAC5A}
+C {lab_pin.sym} 225 -360 2 0 {name=p14 sig_type=std_logic lab=DAC6A}
+C {lab_pin.sym} 225 -340 2 0 {name=p10 sig_type=std_logic lab=DAC7A}
 C {controller.sym} 270 -100 0 0 {name=A1}
-C {devices/dac_bridge.sym} 205 -330 3 0 {name=A2 dac_bridge_model= dac_buff
+C {devices/dac_bridge.sym} 195 -480 0 0 {name=A2 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
-C {devices/dac_bridge.sym} 225 -330 3 0 {name=A3 dac_bridge_model= dac_buff
+C {devices/dac_bridge.sym} 195 -460 0 0 {name=A3 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
-C {devices/dac_bridge.sym} 245 -330 3 0 {name=A4 dac_bridge_model= dac_buff
+C {devices/dac_bridge.sym} 195 -440 0 0 {name=A4 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
-C {devices/dac_bridge.sym} 265 -330 3 0 {name=A5 dac_bridge_model= dac_buff
+C {devices/dac_bridge.sym} 195 -420 0 0 {name=A5 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
-C {devices/dac_bridge.sym} 285 -330 3 0 {name=A6 dac_bridge_model= dac_buff
+C {devices/dac_bridge.sym} 195 -400 0 0 {name=A6 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
-C {devices/dac_bridge.sym} 305 -330 3 0 {name=A7 dac_bridge_model= dac_buff
+C {devices/dac_bridge.sym} 195 -380 0 0 {name=A7 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
-C {devices/dac_bridge.sym} 325 -330 3 0 {name=A8 dac_bridge_model= dac_buff
+C {devices/dac_bridge.sym} 195 -360 0 0 {name=A8 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
-C {devices/dac_bridge.sym} 345 -330 3 0 {name=A9 dac_bridge_model= dac_buff
+C {devices/dac_bridge.sym} 195 -340 0 0 {name=A9 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
+C {lab_pin.sym} 350 -235 2 0 {name=p15 sig_type=std_logic lab=DAC[7..0]}
+C {lab_pin.sym} 165 -480 2 1 {name=p16 sig_type=std_logic lab=DAC0}
+C {lab_pin.sym} 165 -460 2 1 {name=p17 sig_type=std_logic lab=DAC1}
+C {lab_pin.sym} 165 -440 2 1 {name=p18 sig_type=std_logic lab=DAC2}
+C {lab_pin.sym} 165 -420 2 1 {name=p19 sig_type=std_logic lab=DAC3}
+C {lab_pin.sym} 165 -400 2 1 {name=p20 sig_type=std_logic lab=DAC4}
+C {lab_pin.sym} 165 -380 2 1 {name=p21 sig_type=std_logic lab=DAC5}
+C {lab_pin.sym} 165 -360 2 1 {name=p22 sig_type=std_logic lab=DAC6}
+C {lab_pin.sym} 165 -340 2 1 {name=p23 sig_type=std_logic lab=DAC7}
+C {lab_pin.sym} 350 -260 2 0 {name=p24 sig_type=std_logic lab=ADC[7..0]}

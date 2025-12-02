@@ -17,8 +17,8 @@ N 60 100 130 100 {lab=Vout}
 N -40 150 30 150 {lab=#net2}
 N -70 100 -20 100 {lab=#net2}
 N -20 100 -20 150 {lab=#net2}
-N -270 0 -210 0 {lab=V_}
-N -270 40 -210 40 {lab=V+}
+N -270 0 -210 0 {lab=V_n}
+N -270 40 -210 40 {lab=V_p}
 N -270 80 -210 80 {lab=Vout}
 N -270 -120 -210 -120 {lab=Vbp}
 C {madvlsi/pmos3.sym} 0 -60 0 0 {name=M1
@@ -103,12 +103,12 @@ C {iopin.sym} -270 -40 2 0 {name=p4 lab=GND}
 C {lab_pin.sym} -210 -40 2 0 {name=p5 sig_type=std_logic lab=GND}
 C {lab_pin.sym} -70 180 3 0 {name=p6 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 60 180 3 0 {name=p7 sig_type=std_logic lab=GND}
-C {lab_pin.sym} -100 40 0 0 {name=p8 sig_type=std_logic lab=V_}
-C {lab_pin.sym} 90 40 2 0 {name=p9 sig_type=std_logic lab=V+}
-C {lab_pin.sym} -210 0 2 0 {name=p10 sig_type=std_logic lab=V_}
-C {lab_pin.sym} -210 40 2 0 {name=p11 sig_type=std_logic lab=V+}
-C {ipin.sym} -270 0 0 0 {name=p12 lab=V_}
-C {ipin.sym} -270 40 0 0 {name=p13 lab=V+}
+C {lab_pin.sym} -100 40 0 0 {name=p8 sig_type=std_logic lab=V_n}
+C {lab_pin.sym} 90 40 2 0 {name=p9 sig_type=std_logic lab=V_p}
+C {lab_pin.sym} -210 0 2 0 {name=p10 sig_type=std_logic lab=V_n}
+C {lab_pin.sym} -210 40 2 0 {name=p11 sig_type=std_logic lab=V_p}
+C {ipin.sym} -270 0 0 0 {name=p12 lab=V_n}
+C {ipin.sym} -270 40 0 0 {name=p13 lab=V_p}
 C {lab_pin.sym} 130 100 2 0 {name=p14 sig_type=std_logic lab=Vout}
 C {opin.sym} -270 80 2 0 {name=p15 lab=Vout}
 C {lab_pin.sym} -210 80 2 0 {name=p16 sig_type=std_logic lab=Vout}
