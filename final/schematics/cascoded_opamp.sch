@@ -37,8 +37,8 @@ N -380 -120 -360 -120 {lab=VDD}
 N -380 -80 -360 -80 {lab=GND}
 N -380 -40 -360 -40 {lab=Vout}
 C {madvlsi/nmos3.sym} -160 -30 0 0 {name=M1
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 body=GND
 nf=1
 mult=1
@@ -52,8 +52,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {madvlsi/nmos3.sym} -200 -130 0 0 {name=M2
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 body=GND
 nf=1
 mult=1
@@ -67,8 +67,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {madvlsi/nmos3.sym} -100 -130 2 0 {name=M3
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 body=GND
 nf=1
 mult=1
@@ -82,8 +82,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {madvlsi/pmos3.sym} 20 -270 0 0 {name=M4
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 body=VDD
 nf=1
 mult=1
@@ -97,8 +97,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {madvlsi/pmos3.sym} 120 -270 0 0 {name=M5
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 body=VDD
 nf=1
 mult=1
@@ -112,8 +112,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {madvlsi/pmos3.sym} 20 -150 0 0 {name=M6
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 body=VDD
 nf=1
 mult=1
@@ -127,8 +127,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {madvlsi/pmos3.sym} 120 -150 0 0 {name=M7
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 body=VDD
 nf=1
 mult=1
@@ -142,8 +142,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {madvlsi/nmos3.sym} 20 -30 2 0 {name=M8
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 body=GND
 nf=1
 mult=1
@@ -157,8 +157,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {madvlsi/nmos3.sym} 120 -30 0 0 {name=M9
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 body=GND
 nf=1
 mult=1
@@ -173,8 +173,8 @@ spiceprefix=X
 }
 C {lab_pin.sym} 20 -320 0 0 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 120 -320 0 0 {name=p2 sig_type=std_logic lab=VDD}
-C {lab_pin.sym} -230 -130 0 0 {name=p3 sig_type=std_logic lab=Vminus}
-C {lab_pin.sym} -70 -130 3 0 {name=p4 sig_type=std_logic lab=Vplus}
+C {lab_pin.sym} -230 -130 0 0 {name=p3 sig_type=std_logic lab=Vplus}
+C {lab_pin.sym} -70 -130 3 0 {name=p4 sig_type=std_logic lab=Vminus}
 C {lab_pin.sym} -190 -30 0 0 {name=p5 sig_type=std_logic lab=Vbn}
 C {lab_pin.sym} 20 20 0 0 {name=p8 sig_type=std_logic lab=GND}
 C {lab_pin.sym} -160 20 0 0 {name=p9 sig_type=std_logic lab=GND}
@@ -198,3 +198,6 @@ C {lab_pin.sym} -360 -320 2 0 {name=p24 sig_type=std_logic lab=Vbp}
 C {lab_pin.sym} -360 -280 2 0 {name=p25 sig_type=std_logic lab=Vplus}
 C {lab_pin.sym} -360 -240 2 0 {name=p26 sig_type=std_logic lab=Vminus}
 C {lab_pin.sym} -360 -160 2 0 {name=p27 sig_type=std_logic lab=Vbn}
+C {code_shown.sym} -250 -330 0 0 {name=SPICE only_toplevel=false value="
+.param wid=3 len=0.5
+"}
