@@ -13,10 +13,10 @@ N 250 -190 260 -190 {lab=A}
 N 290 -140 310 -140 {lab=Y}
 N 230 -140 250 -140 {lab=A}
 N 290 -90 290 -60 {lab=VN}
-N 290 -220 290 -190 {lab=VP}
+N 290 -220 290 -190 {lab=VDD}
 C {madvlsi/nmos4.sym} 290 -90 0 0 {name=M1
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -29,8 +29,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {madvlsi/pmos4.sym} 290 -190 0 0 {name=M2
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -43,8 +43,11 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {ipin.sym} 230 -140 0 0 {name=p1 lab=A}
-C {iopin.sym} 290 -220 3 0 {name=p2 lab=VP
+C {iopin.sym} 290 -220 3 0 {name=p2 lab=VDD
 }
-C {iopin.sym} 290 -60 1 0 {name=p3 lab=VN
+C {iopin.sym} 290 -60 1 0 {name=p3 lab=GND
 }
 C {opin.sym} 310 -140 0 0 {name=p4 lab=Y}
+C {code_shown.sym} 400 -260 0 0 {name=SPICE only_toplevel=false value="
+.param wid=3 len=0.5
+"}
