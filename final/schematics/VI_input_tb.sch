@@ -6,12 +6,13 @@ S {}
 F {}
 E {}
 N -250 -120 -210 -120 {lab=#net1}
-N -270 -120 -270 20 {lab=#net1}
 N -260 -120 -250 -120 {lab=#net1}
 N -270 -120 -260 -120 {lab=#net1}
-N -210 -90 -210 20 {lab=#net2}
-N 100 -190 130 -190 {lab=#net3}
-N 100 -90 130 -90 {lab=#net4}
+N -210 -90 -210 20 {lab=VPROBE}
+N 100 -190 130 -190 {lab=#net2}
+N 100 -90 130 -90 {lab=#net3}
+N -270 -120 -270 -60 {lab=#net1}
+N -270 -50 -270 20 {lab=VPROBE1}
 C {VI_input.sym} -60 -140 0 0 {name=x1}
 C {code_shown.sym} 180 -130 0 0 {name=SPICE only_toplevel=false value="
 .control
@@ -22,7 +23,7 @@ C {code_shown.sym} 180 -130 0 0 {name=SPICE only_toplevel=false value="
   * tran 1u 100m
   dc Vinp 0 1.8 0.01
   write VI_input_tb.raw
-  wrdata ~/Documents/madvlsi/final/schematics/VI_input.txt v(vin_p) i(vib) i(viout_p) i(viout_n)
+  wrdata ~/Documents/madvlsi/final/schematics/VI_input.txt v(vin_p) i(v.x1.vib) i(viout_p) i(viout_n)
   quit
 .endc
 "}
@@ -43,7 +44,7 @@ C {madvlsi/gnd.sym} -520 -120 0 0 {name=l8 lab=GND}
 C {lab_pin.sym} -210 -190 0 0 {name=p3 sig_type=std_logic lab=Vin_p}
 C {lab_pin.sym} -520 -180 1 0 {name=p4 sig_type=std_logic lab=Vin_p}
 C {madvlsi/vsource.sym} -600 -150 0 0 {name=Vinn
-value=0.9}
+value=0.5}
 C {madvlsi/gnd.sym} -600 -120 0 0 {name=Vinn1 lab=GND
 value=0.9}
 C {lab_pin.sym} -600 -180 1 0 {name=Vinn2 sig_type=std_logic lab=Vin_n
@@ -71,7 +72,7 @@ C {madvlsi/gnd.sym} -650 100 0 0 {name=l10 lab=GND}
 C {madvlsi/ammeter1.sym} -650 30 0 0 {name=VIb}
 C {lab_pin.sym} -400 50 2 0 {name=p5 sig_type=std_logic lab=Vbn}
 C {madvlsi/vdd.sym} -650 30 0 0 {name=l12 lab=VDD}
-C {lab_pin.sym} -210 -150 0 0 {name=p2 sig_type=std_logic lab=Vbn}
+C {lab_pin.sym} -130 -60 3 0 {name=p2 sig_type=std_logic lab=Vbn}
 C {madvlsi/resistor.sym} 130 -120 0 0 {name=R2
 value=1k
 m=1}
@@ -85,3 +86,14 @@ C {lab_pin.sym} 90 -90 1 0 {name=p7 sig_type=std_logic lab=VIN}
 C {madvlsi/resistor.sym} -240 20 1 0 {name=R1
 value=100k
 m=1}
+C {cascode_bias_lds.sym} -350 280 0 0 {name=x3}
+C {madvlsi/vdd.sym} -310 100 0 0 {name=l5 lab=VDD}
+C {madvlsi/gnd.sym} -310 300 0 0 {name=l13 lab=GND}
+C {lab_pin.sym} -400 30 2 0 {name=p8 sig_type=std_logic lab=Vbp}
+C {lab_pin.sym} -110 -60 3 0 {name=p9 sig_type=std_logic lab=Vbp}
+C {lab_pin.sym} -370 200 0 0 {name=p10 sig_type=std_logic lab=Vbp}
+C {lab_pin.sym} -250 200 2 0 {name=p11 sig_type=std_logic lab=Vcn}
+C {lab_pin.sym} -150 -60 3 0 {name=p12 sig_type=std_logic lab=Vcn}
+C {madvlsi/ammeter1.sym} -270 -50 2 0 {name=VIr}
+C {lab_pin.sym} -210 20 3 0 {name=p13 sig_type=std_logic lab=VPROBE}
+C {lab_pin.sym} -270 20 3 0 {name=p14 sig_type=std_logic lab=VPROBE1}
