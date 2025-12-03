@@ -5,9 +5,9 @@ V {}
 S {}
 F {}
 E {}
-N -60 50 -60 140 {lab=VDD}
-N -60 140 30 140 {lab=VDD}
-N -20 140 -20 160 {lab=VDD}
+N -60 50 -60 140 {lab=GND}
+N -60 140 30 140 {lab=GND}
+N -20 140 -20 160 {lab=GND}
 N 30 50 30 80 {lab=#net1}
 N -20 60 30 60 {lab=#net1}
 N -20 20 -20 60 {lab=#net1}
@@ -24,8 +24,8 @@ N 160 50 160 80 {lab=Vmid}
 N -90 -20 -60 -20 {lab=Iin}
 N 160 -20 220 -20 {lab=Iin}
 C {madvlsi/pmos3.sym} -60 20 0 1 {name=M1
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 body=VDD
 nf=1
 mult=1
@@ -39,8 +39,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {madvlsi/pmos4.sym} 30 20 0 0 {name=M2
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -53,8 +53,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {madvlsi/nmos3.sym} 30 110 0 0 {name=M3
-L=0.15
-W=1
+L=\{len\}
+W=\{wid\}
 body=GND
 nf=1
 mult=1
@@ -68,7 +68,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {madvlsi/nmos3.sym} 160 20 0 1 {name=M4
-L=0.15
+L=4
 W=1
 body=GND
 nf=1
@@ -88,3 +88,6 @@ C {iopin.sym} 160 80 1 0 {name=p3 lab=Vmid}
 C {ipin.sym} 0 110 0 0 {name=p4 lab=Vbn}
 C {ipin.sym} 190 20 2 0 {name=p5 lab=Vgate}
 C {opin.sym} 220 -20 0 0 {name=p6 lab=Vout}
+C {code_shown.sym} 250 100 0 0 {name=SPICE only_toplevel=false value="
+.param wid=3 len=0.5
+"}

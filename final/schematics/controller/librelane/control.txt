@@ -1,0 +1,27 @@
+.control
+  set wr_vecnames
+  set wr_singlescale
+  
+  let vgate_runs = 19
+  let i = 1
+  let vgate_sweep = 0
+  dowhile i <= vgate_runs
+    let vmid_runs = 19
+    let j = 1
+    let vmid_sweep = 0
+    dowhile j <= vmid_runs
+        alter vgate vgate_sweep
+        alter vmid vmid_sweep
+        save all
+        dc iin 0 25u 0.1u
+        wrdata ~/Documents/madvlsi/final/schematics/ivsweep/ivsweep{$&i}_{$&j}.txt v(vout) i(viin) v(vgate) v(vmid)
+        reset
+        let j = j + 1
+        let vmid_sweep = vmid_sweep + 0.1
+    end
+    reset
+    let i = i + 1
+    let vgate_sweep = vgate_sweep + 0.1
+  end
+  quit
+.endc

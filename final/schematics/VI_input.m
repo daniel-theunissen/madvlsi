@@ -1,10 +1,12 @@
 close all;
-data = import_ngspice("VI_input.txt")
-Iref = data.i_v_x1_vib_(53);
+data = import_ngspice("brad_VI_input.txt")
+Iref = data.i_v_x4_vibx2_(1) - data.i_v_x4_vib_(1);
+% Iref = 7e-6;
 Vin_p = data.v_vin_p_;
-Vin_n = 0.5;
-R = 100e3;
+Vin_n = 0;
+R = 210e3;
 Ir = (Vin_p - Vin_n) ./ R;
+% Ir = data.i_vir_;
 
 Iout_p = Iref + Ir;
 Iout_n = Iref - Ir;
@@ -16,12 +18,13 @@ plot(Vin_p, data.i_viout_n_, "m.")
 plot(Vin_p, data.i_viout_p_, "c.")
 xlabel("V+ (V)")
 ylabel("I (A)")
-title("Iout+, Iout- @ V- = 0.5V")
+title("Iout+, Iout- @ V- = 0V")
 legend("Iout- (theory)", "Iout+ (theory)", "Iout- (sim)", "Iout+ (sim)")
 
 figure;
-plot(Vin_p, data.i_v_x1_vib_, "r.")
+plot(Vin_p, data.i_v_x4_vib_, "r."); hold on
+plot(Vin_p, data.i_v_x4_vibx2_, "m.")
 xlabel("V+ (V)")
 ylabel("Iref (A)")
 title("Diff Pair Reference Current")
-legend("Ib thru diff pair", location="southeast")
+legend("Ib", "Ic", location="southeast")

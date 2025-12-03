@@ -5,6 +5,50 @@ V {}
 S {}
 F {}
 E {}
+B 2 -570 -650 230 -250 {flags=graph
+y1=0
+y2=20u
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=1.0587912e-22
+x2=1e-05
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node=i(viin)
+color=4
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=$netlist_dir/IV_converter_tb.raw
+sim_type=tran}
+B 2 250 -650 1050 -250 {flags=graph
+y1=0
+y2=2
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=1.0587912e-22
+x2=1e-05
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node=vout
+color=4
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=$netlist_dir/IV_converter_tb.raw
+sim_type=tran}
 N 30 50 30 80 {lab=#net1}
 N -20 60 30 60 {lab=#net1}
 N -20 20 -20 60 {lab=#net1}
@@ -56,15 +100,38 @@ C {madvlsi/vsource.sym} -430 -30 0 0 {name=Vdd
 value=1.8}
 C {code_shown.sym} 360 -10 0 0 {name=SPICE only_toplevel=false value="
 .param wid=3 len=0.5
+*.control
+*  save all
+*  tran 1n 10u
+*  write IV_converter_tb.raw
+*  quit
+*.endc
+
 .control
-  save all
   set wr_vecnames
   set wr_singlescale
-  remzerovec
-  * tran 1n 20u
-  dc Iin 0 11.5u 0.1u
-  write IV_converter_tb.raw
-  * wrdata ~/Documents/madvlsi/final/schematics/cccc.txt v(vin_p) i(vib) i(viout_p) i(viout_n)
+  
+  let vgate_runs = 19
+  let i = 1
+  let vgate_sweep = 0
+  dowhile i <= vgate_runs
+    let vmid_runs = 19
+    let j = 1
+    let vmid_sweep = 0
+    dowhile j <= vmid_runs
+        alter vgate vgate_sweep
+        alter vmid vmid_sweep
+        save all
+        dc iin 0 25u 0.1u
+        wrdata ~/Documents/madvlsi/final/schematics/ivsweep/ivsweep\{$&i\}_\{$&j\}.txt v(vout) i(viin) v(vgate) v(vmid)
+        reset
+        let j = j + 1
+        let vmid_sweep = vmid_sweep + 0.1
+    end
+    reset
+    let i = i + 1
+    let vgate_sweep = vgate_sweep + 0.1
+  end
   quit
 .endc
 "}
@@ -75,7 +142,7 @@ C {lab_pin.sym} 160 80 3 0 {name=p17 sig_type=std_logic lab=Vmid}
 C {madvlsi/gnd.sym} 30 140 0 0 {name=l1 lab=GND}
 C {madvlsi/gnd.sym} -60 50 0 0 {name=l2 lab=GND}
 C {madvlsi/isource.sym} -90 -70 0 0 {name=Iin
-value=0}
+value="pwl(0 0 10u 20u)"}
 C {madvlsi/isource.sym} -340 120 0 0 {name=I2
 value=11.5u}
 C {madvlsi/nmos3.sym} -340 180 0 0 {name=M5
@@ -99,10 +166,10 @@ C {lab_pin.sym} 0 110 0 0 {name=p2 sig_type=std_logic lab=Vbn}
 C {lab_pin.sym} 190 20 2 0 {name=p3 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} 220 -20 2 0 {name=p4 sig_type=std_logic lab=Vout}
 C {madvlsi/vsource.sym} -340 -30 0 0 {name=Vmid
-value=1.2}
+value=0}
 C {madvlsi/gnd.sym} -340 0 0 0 {name=l4 lab=GND}
 C {madvlsi/vsource.sym} -250 -30 0 0 {name=Vgate
-value=1.8}
+value=0}
 C {madvlsi/gnd.sym} -250 0 0 0 {name=l6 lab=GND}
 C {lab_pin.sym} -250 -60 1 0 {name=p5 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} -340 -60 1 0 {name=p6 sig_type=std_logic lab=Vmid}
@@ -122,8 +189,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {madvlsi/nmos3.sym} 160 20 0 1 {name=M4
-L=1
-W=\{wid\}
+L=4
+W=1
 body=GND
 nf=1
 mult=1
@@ -137,3 +204,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {madvlsi/ammeter1.sym} -90 -40 0 0 {name=VIin}
+C {launcher.sym} -460 -200 0 0 {name=h5
+descr="load waves" 
+tclcommand="xschem raw_read $netlist_dir/IV_converter_tb.raw tran"
+}

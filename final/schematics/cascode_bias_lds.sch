@@ -155,3 +155,4 @@ C {iopin.sym} 260 -80 3 1 {name=p17 lab=GND}
 C {opin.sym} 70 -80 3 1 {name=p18 lab=Vc}
 C {iopin.sym} 120 -310 1 1 {name=p19 lab=VDD}
 C {ipin.sym} 70 -310 3 1 {name=p20 lab=Vbp}
+C {opin.sym} 320 -140 1 1 {name=p1 lab=Vdssat}
