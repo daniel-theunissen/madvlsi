@@ -34,11 +34,10 @@ N 440 -80 440 -50 {lab=GND}
 N 520 -80 520 -50 {lab=GND}
 N -40 -80 600 -80 {lab=GND}
 N -300 -90 -260 -90 {lab=sb0}
-N -470 -30 -430 -30 {lab=Vout}
 N -440 -60 -430 -60 {lab=GND}
 N -470 -60 -440 -60 {lab=GND}
 N -470 -90 -430 -90 {lab=VDD}
-N -470 0 -430 0 {lab=Vg}
+N -470 -30 -430 -30 {lab=Vg}
 N -300 -60 -260 -60 {lab=sb1}
 N -300 -30 -260 -30 {lab=sb2}
 N -300 0 -260 0 {lab=sb3}
@@ -55,17 +54,19 @@ N 320 60 320 170 {lab=Isense}
 N 400 60 400 170 {lab=Isense}
 N 480 60 480 170 {lab=Isense}
 N -80 170 590 170 {lab=Isense}
-N -40 60 -40 200 {lab=#net1}
-N 40 60 40 200 {lab=#net1}
-N 120 60 120 200 {lab=#net1}
-N 200 60 200 200 {lab=#net1}
-N 280 60 280 200 {lab=#net1}
-N 360 60 360 200 {lab=#net1}
-N 440 60 440 200 {lab=#net1}
-N 520 60 520 200 {lab=#net1}
-N -40 200 590 200 {lab=#net1}
-N -470 40 -430 40 {lab=Isense}
-N -470 80 -430 80 {lab=Idump}
+N -40 60 -40 200 {lab=Idump}
+N 40 60 40 200 {lab=Idump}
+N 120 60 120 200 {lab=Idump}
+N 200 60 200 200 {lab=Idump}
+N 280 60 280 200 {lab=Idump}
+N 360 60 360 200 {lab=Idump}
+N 440 60 440 200 {lab=Idump}
+N 520 60 520 200 {lab=Idump}
+N -40 200 590 200 {lab=Idump}
+N -470 10 -430 10 {lab=Isense}
+N -470 50 -430 50 {lab=Idump}
+N 570 20 570 200 {lab=Idump}
+N -480 80 -430 80 {lab=Iin}
 C {daccell.sym} -75 5 0 0 {name=x1}
 C {daccell.sym} 5 5 0 0 {name=x2}
 C {daccell.sym} 85 5 0 0 {name=x3}
@@ -80,15 +81,11 @@ C {lab_pin.sym} -430 -60 2 0 {name=p27 sig_type=std_logic lab=GND
 }
 C {lab_pin.sym} -430 -90 2 0 {name=p28 sig_type=std_logic lab=VDD
 }
-C {lab_pin.sym} -430 -30 2 0 {name=p32 sig_type=std_logic lab=Vout
-}
 C {iopin.sym} -470 -90 2 0 {name=p33 lab=VDD}
 C {iopin.sym} -470 -60 2 0 {name=p34 lab=GND}
-C {opin.sym} -470 -30 2 0 {name=p35 lab=Vout}
 C {ipin.sym} -300 -90 0 0 {name=p36 lab=sb0}
-C {lab_pin.sym} -430 0 2 0 {name=p37 sig_type=std_logic lab=Vg
+C {lab_pin.sym} -430 -30 2 0 {name=p37 sig_type=std_logic lab=Vg
 }
-C {opin.sym} -470 0 2 0 {name=p38 lab=Vg}
 C {ipin.sym} -300 -60 0 0 {name=p40 lab=sb1}
 C {ipin.sym} -300 -30 0 0 {name=p42 lab=sb2}
 C {ipin.sym} -300 0 0 0 {name=p44 lab=sb3}
@@ -117,13 +114,17 @@ C {lab_pin.sym} 600 -100 2 0 {name=p13 sig_type=std_logic lab=VDD
 }
 C {lab_pin.sym} 600 -80 2 0 {name=p14 sig_type=std_logic lab=GND
 }
-C {opin.sym} -470 40 2 0 {name=p15 lab=Isense}
-C {opin.sym} -470 80 2 0 {name=p16 lab=Idump}
-C {lab_pin.sym} -430 40 2 0 {name=p17 sig_type=std_logic lab=Isense
+C {opin.sym} -470 10 2 0 {name=p15 lab=Isense}
+C {opin.sym} -470 50 2 0 {name=p16 lab=Idump}
+C {lab_pin.sym} -430 10 2 0 {name=p17 sig_type=std_logic lab=Isense
 }
-C {lab_pin.sym} -430 80 2 0 {name=p18 sig_type=std_logic lab=Idump
+C {lab_pin.sym} -430 50 2 0 {name=p18 sig_type=std_logic lab=Idump
 }
 C {lab_pin.sym} 590 170 2 0 {name=p19 sig_type=std_logic lab=Isense
 }
 C {lab_pin.sym} 590 200 2 0 {name=p20 sig_type=std_logic lab=Idump
 }
+C {ipin.sym} -470 -30 0 0 {name=p21 lab=Vg}
+C {lab_pin.sym} -110 -20 2 1 {name=p22 sig_type=std_logic lab=Iin}
+C {ipin.sym} -480 80 0 0 {name=p23 lab=Iin}
+C {lab_pin.sym} -430 80 0 1 {name=p24 sig_type=std_logic lab=Iin}

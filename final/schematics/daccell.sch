@@ -47,7 +47,7 @@ C {lab_pin.sym} -300 -120 2 0 {name=p16 sig_type=std_logic lab=GND}
 C {lab_pin.sym} -300 -80 2 0 {name=p17 sig_type=std_logic lab=Iin}
 C {lab_pin.sym} -300 -40 2 0 {name=p18 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} -300 0 2 0 {name=p20 sig_type=std_logic lab=D}
-C {lab_pin.sym} -300 40 2 0 {name=p22 sig_type=std_logic lab=Iout}
+C {lab_pin.sym} -300 40 2 0 {name=p22 sig_type=std_logic lab=Isense}
 C {lab_pin.sym} -300 80 2 0 {name=p23 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} -300 120 2 0 {name=p24 sig_type=std_logic lab=Idump}
 C {madvlsi/nmos3.sym} -80 -40 0 0 {name=M5
@@ -112,7 +112,7 @@ spiceprefix=X
 }
 C {iopin.sym} -340 -120 2 0 {name=p3 lab=GND}
 C {iopin.sym} -330 80 2 0 {name=p4 lab=VDD}
-C {opin.sym} -330 40 2 0 {name=p5 lab=Iout}
+C {opin.sym} -330 40 2 0 {name=p5 lab=Isense}
 C {opin.sym} -330 120 2 0 {name=p6 lab=Idump}
 C {ipin.sym} -340 -80 0 0 {name=p19 lab=Iin}
 C {opin.sym} -340 -160 2 0 {name=p21 lab=Iprime}
