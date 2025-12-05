@@ -21,5 +21,5 @@ end
 %%
 close all;
 figure;
-plot(data.run19_1.i_viin_, data.run12_9.v_vout_)
+plot(data.run19_1.i_viin_, data.run8_5.v_vout_)
 

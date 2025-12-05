@@ -5,9 +5,38 @@ V {}
 S {}
 F {}
 E {}
-N -160 -130 10 -130 {lab=#net1}
-N -160 -110 -160 -10 {lab=#net2}
-N -160 -110 10 -110 {lab=#net2}
+B 2 -525 -705 275 -305 {flags=graph
+y1=-0.36
+y2=1.9
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=2e-05
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="q
+qbar
+iin_p
+iin_n"
+color="6 7 12 8"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+sim_type=tran
+rawfile=$netlist_dir/comparator_tb_2.raw}
+N -160 -130 10 -130 {lab=Iin_p}
+N -160 -110 10 -110 {lab=Iin_n}
+N -310 -160 -160 -160 {lab=Iin_p}
+N -160 -160 -160 -130 {lab=Iin_p}
+N -310 -40 -160 -40 {lab=Iin_n}
+N -160 -110 -160 -40 {lab=Iin_n}
+N -385 -60 -350 -60 {lab=GND}
 C {comparator.sym} 160 -90 0 0 {name=x1}
 C {IV_converter.sym} -310 -110 0 0 {name=x2}
 C {IV_converter.sym} -310 10 0 0 {name=x3}
@@ -26,7 +55,7 @@ C {lab_pin.sym} -735 225 1 0 {name=p10 sig_type=std_logic lab=phi1}
 C {lab_pin.sym} -455 255 0 0 {name=p11 sig_type=std_logic lab=phi1}
 C {madvlsi/vdd.sym} 160 -160 0 0 {name=l1 lab=VDD}
 C {madvlsi/gnd.sym} -350 60 0 0 {name=l2 lab=GND}
-C {madvlsi/gnd.sym} -350 -60 0 0 {name=l3 lab=GND}
+C {madvlsi/gnd.sym} -385 -60 0 0 {name=l3 lab=GND}
 C {madvlsi/gnd.sym} 160 -20 0 0 {name=l4 lab=GND}
 C {lab_pin.sym} 10 -90 0 0 {name=p1 sig_type=std_logic lab=phi1}
 C {lab_pin.sym} 10 -70 0 0 {name=p2 sig_type=std_logic lab=phi2}
@@ -41,30 +70,19 @@ C {lab_pin.sym} 310 -130 2 0 {name=p6 sig_type=std_logic lab=Q}
 C {lab_pin.sym} 310 -50 2 0 {name=p7 sig_type=std_logic lab=QBAR}
 C {lab_pin.sym} 10 -50 0 0 {name=p9 sig_type=std_logic lab=Vbn}
 C {sky130_fd_pr/corner.sym} -80 50 0 0 {name=CORNER only_toplevel=false corner=tt}
-C {madvlsi/vsource.sym} -640 60 0 0 {name=Vmid
-value=0.9}
-C {madvlsi/gnd.sym} -640 90 0 0 {name=l5 lab=GND}
-C {madvlsi/vsource.sym} -735 60 0 0 {name=Vgate
-value=1.2}
-C {madvlsi/gnd.sym} -735 90 0 0 {name=l14 lab=GND}
-C {lab_pin.sym} -735 30 1 0 {name=p12 sig_type=std_logic lab=Vgate}
+C {lab_pin.sym} -905 35 0 0 {name=p12 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} -460 10 0 0 {name=p13 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} -460 -110 0 0 {name=p14 sig_type=std_logic lab=Vgate}
-C {lab_pin.sym} -640 30 1 0 {name=p16 sig_type=std_logic lab=Vmid}
-C {lab_pin.sym} -260 60 0 0 {name=p17 sig_type=std_logic lab=Vmid}
 C {lab_pin.sym} -260 -60 0 0 {name=p18 sig_type=std_logic lab=Vmid}
 C {madvlsi/isource.sym} -460 -230 0 0 {name=I1
-value=-0.1u}
-C {madvlsi/isource.sym} -280 -230 0 0 {name=I2
-value=0.1u}
+value="pwl(0 11.45u 9u 11.45u 10u 11.55u)"}
+C {madvlsi/isource.sym} -155 -230 0 0 {name=I2
+value="pwl(0 11.55u 9u 11.55u 10u 11.45u)"}
 C {lab_pin.sym} -460 -200 2 0 {name=p19 sig_type=std_logic lab=Iin_p}
-C {lab_pin.sym} -280 -200 2 0 {name=p20 sig_type=std_logic lab=Iin_n
+C {lab_pin.sym} -155 -200 2 0 {name=p20 sig_type=std_logic lab=Iin_n
 }
-C {lab_pin.sym} -460 -10 0 0 {name=p21 sig_type=std_logic lab=Iin_n
-}
-C {lab_pin.sym} -460 -130 0 0 {name=p22 sig_type=std_logic lab=Iin_p}
+C {lab_pin.sym} -310 -160 0 0 {name=p22 sig_type=std_logic lab=Iin_p}
 C {code_shown.sym} 85 55 0 0 {name=SPICE only_toplevel=false value="
-.param wid=3 len=0.5
 .control
   save all
   set wr_vecnames
@@ -72,8 +90,19 @@ C {code_shown.sym} 85 55 0 0 {name=SPICE only_toplevel=false value="
   remzerovec
   tran 1n 20u
   * dc Vin_p 0 1.8 0.01
-  write comparator_tb.raw
+  write comparator_tb_2.raw
   * wrdata ~/Documents/madvlsi/final/schematics/cccc.txt v(vin_p) i(vib) i(viout_p) i(viout_n)
   quit
 .endc
 "}
+C {lab_pin.sym} -310 -40 0 0 {name=p23 sig_type=std_logic lab=Iin_n
+}
+C {launcher.sym} -740 -325 0 0 {name=h5
+descr="load waves" 
+tclcommand="xschem raw_read $netlist_dir/comparator_tb_2.raw tran"
+}
+C {inverter.sym} -905 35 0 0 {name=X6}
+C {lab_pin.sym} -840 35 2 0 {name=p24 sig_type=std_logic lab=Vgate}
+C {madvlsi/gnd.sym} -875 65 0 0 {name=l13 lab=GND}
+C {madvlsi/vdd.sym} -875 5 0 0 {name=l14 lab=VDD}
+C {lab_pin.sym} -260 60 3 0 {name=p16 sig_type=std_logic lab=Vbn}

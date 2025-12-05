@@ -5,27 +5,6 @@ V {}
 S {}
 F {}
 E {}
-B 2 -640 370 160 770 {flags=graph
-y1=0
-y2=2
-ypos1=0
-ypos2=2
-divy=5
-subdivy=1
-unity=1
-x1=6.736011e-06
-x2=1.6736011e-05
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-node=""
-color=""
-dataset=-1
-unitx=1
-logx=0
-logy=0
-}
 N -250 -120 -210 -120 {lab=#net1}
 N -260 -120 -250 -120 {lab=#net1}
 N -270 -120 -260 -120 {lab=#net1}
@@ -55,7 +34,9 @@ C {madvlsi/vsource.sym} -450 -150 0 0 {name=Vdd
 value=1.8}
 C {madvlsi/gnd.sym} -450 -120 0 0 {name=l3 lab=GND}
 C {madvlsi/vdd.sym} -450 -180 0 0 {name=l4 lab=VDD}
-C {madvlsi/gnd.sym} -540 280 0 0 {name=l7 lab=GND}
+C {/home/dt/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} -510 110 0 0 {name=x2}
+C {madvlsi/vdd.sym} -460 -30 0 0 {name=l6 lab=VDD}
+C {madvlsi/gnd.sym} -460 110 0 0 {name=l7 lab=GND}
 C {lab_pin.sym} -680 70 0 0 {name=p1 sig_type=std_logic lab=Vbn}
 C {madvlsi/vsource.sym} -520 -150 0 0 {name=Vinp
 value=0}
@@ -89,7 +70,7 @@ spiceprefix=X
 }
 C {madvlsi/gnd.sym} -650 100 0 0 {name=l10 lab=GND}
 C {madvlsi/ammeter1.sym} -650 30 0 0 {name=VIb}
-C {lab_pin.sym} -480 220 2 0 {name=p5 sig_type=std_logic lab=Vbn}
+C {lab_pin.sym} -400 50 2 0 {name=p5 sig_type=std_logic lab=Vbn}
 C {madvlsi/vdd.sym} -650 30 0 0 {name=l12 lab=VDD}
 C {lab_pin.sym} -130 -60 3 0 {name=p2 sig_type=std_logic lab=Vbn}
 C {madvlsi/resistor.sym} 130 -120 0 0 {name=R2
@@ -108,7 +89,7 @@ m=1}
 C {cascode_bias_lds.sym} -350 280 0 0 {name=x3}
 C {madvlsi/vdd.sym} -310 100 0 0 {name=l5 lab=VDD}
 C {madvlsi/gnd.sym} -310 300 0 0 {name=l13 lab=GND}
-C {lab_pin.sym} -480 200 2 0 {name=p8 sig_type=std_logic lab=Vbp}
+C {lab_pin.sym} -400 30 2 0 {name=p8 sig_type=std_logic lab=Vbp}
 C {lab_pin.sym} -110 -60 3 0 {name=p9 sig_type=std_logic lab=Vbp}
 C {lab_pin.sym} -370 200 0 0 {name=p10 sig_type=std_logic lab=Vbp}
 C {lab_pin.sym} -250 200 2 0 {name=p11 sig_type=std_logic lab=Vcn}
@@ -116,9 +97,3 @@ C {lab_pin.sym} -150 -60 3 0 {name=p12 sig_type=std_logic lab=Vcn}
 C {madvlsi/ammeter1.sym} -270 -50 2 0 {name=VIr}
 C {lab_pin.sym} -210 20 3 0 {name=p13 sig_type=std_logic lab=VPROBE}
 C {lab_pin.sym} -270 20 3 0 {name=p14 sig_type=std_logic lab=VPROBE1}
-C {/home/madvlsi/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} -590 280 0 0 {name=x4}
-C {madvlsi/vdd.sym} -540 140 0 0 {name=l14 lab=VDD}
-C {launcher.sym} -580 810 0 0 {name=h5
-descr="load waves" 
-tclcommand="xschem raw_read $netlist_dir/VI_input_tb.raw tran"
-}

@@ -1,0 +1,42 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  analyze_dac_currents.m
+%
+%  Loads NGSPICE DAC sweep data using import_ngspice() and plots:
+%     - Isense
+%     - Idump
+%     - Itotal
+%  vs DAC code.
+%
+%  Make sure import_ngspice.m is in the same folder!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+clear; clc; close all;
+
+%% ---------------- USER SETTINGS ----------------
+filename = 'dactest/dac_tb1.txt';   % Change to the file NGSPICE generated
+
+%% ------------------- LOAD DATA -------------------
+% import_ngspice.m must be in the same directory!
+data = import_ngspice(filename);
+
+% Extract vectors from the struct (MATLAB sanitized header names)
+code   = data.code;
+Isense = data.i_visense_;     % field name from i(Vsense)
+Idump  = data.i_vidump_;      % field name from i(VDump)
+% Itotal = data.i_Vtotal;     % field name from i(Vtotal)
+
+%% -------------------- PLOTTING -------------------
+figure; hold on; grid on;
+
+plot(code, Isense, 'b.-', 'LineWidth', 1.5);
+plot(code, Idump,  'r.-', 'LineWidth', 1.5);
+% plot(code, Itotal, 'k.-', 'LineWidth', 1.5);
+
+xlabel('DAC Code');
+ylabel('Current (A)');
+title(['DAC Current Sweep: ', filename], 'Interpreter', 'none');
+legend('Isense', 'Idump');
+
+%%
+
+disp(data.i_vidump_(1) + data.i_visense_(1))

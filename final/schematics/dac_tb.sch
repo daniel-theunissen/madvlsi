@@ -7,12 +7,8 @@ F {}
 E {}
 N 140 -60 190 -60 {lab=#net1}
 N 140 80 190 80 {lab=#net2}
-N 200 -60 260 -60 {lab=#net3}
-N 260 -60 260 20 {lab=#net3}
-N 260 30 260 80 {lab=#net4}
-N 200 80 260 80 {lab=#net4}
 C {dac.sym} -10 10 0 0 {name=x1}
-C {sky130_fd_pr/corner.sym} -440 -90 0 0 {name=CORNER only_toplevel=false corner=tt_mm}
+C {sky130_fd_pr/corner.sym} -440 -90 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {devices/code.sym} -440 90 0 0 {name=SPICE1 only_toplevel=false value="
 .control
   let mc_runs = 1
@@ -22,7 +18,7 @@ C {devices/code.sym} -440 90 0 0 {name=SPICE1 only_toplevel=false value="
     set appendwrite = FALSE
     set wr_singlescale
     let code = 0
-    while code < 128
+    while code < 256
       if code eq 0
         let b0 = 0
       else
@@ -58,6 +54,11 @@ C {devices/code.sym} -440 90 0 0 {name=SPICE1 only_toplevel=false value="
       else
         let b6 = floor(code / 64) % 2
       end
+      if floor(code / 128) eq 0
+        let b7 = 0
+      else
+        let b7 = floor(code / 128) % 2
+      end
       alter vb0 $&b0
       alter vb1 $&b1
       alter vb2 $&b2
@@ -65,9 +66,10 @@ C {devices/code.sym} -440 90 0 0 {name=SPICE1 only_toplevel=false value="
       alter vb4 $&b4
       alter vb5 $&b5
       alter vb6 $&b6
+      alter vb7 $&b7
       save all
       op
-      wrdata ~/Documents/madvlsi/final/schematics/dac_tb\{$&run\}.txt code v(sb0) v(sb1) v(sb2) v(sb3) v(sb4) v(sb5) v(sb6) i(Vsense) i(VDump) i(Vtotal)
+      wrdata ~/Documents/madvlsi/final/schematics/dactest/dac_tb\{$&run\}.txt code v(sb0) v(sb1) v(sb2) v(sb3) v(sb4) v(sb5) v(sb6) v(sb7) i(visense) i(vidump)
       if code eq 0
         set appendwrite
         set wr_vecnames = FALSE
@@ -137,8 +139,7 @@ C {lab_pin.sym} -560 -410 3 1 {name=p22 sig_type=std_logic lab=sb4}
 C {lab_pin.sym} -480 -410 3 1 {name=p23 sig_type=std_logic lab=sb5}
 C {lab_pin.sym} -400 -410 3 1 {name=p24 sig_type=std_logic lab=sb6}
 C {madvlsi/ammeter1.sym} 190 -60 3 0 {name=VIsense}
-C {madvlsi/ammeter1.sym} 190 80 3 0 {name=Vdump}
-C {madvlsi/ammeter1.sym} 260 20 0 0 {name=VItotal}
+C {madvlsi/ammeter1.sym} 190 80 3 0 {name=Vidump}
 C {madvlsi/vsource.sym} -880 -240 0 0 {name=Vb7
 value=1}
 C {madvlsi/gnd.sym} -880 -210 0 0 {name=l1 lab=GND}
@@ -151,32 +152,12 @@ C {madvlsi/vsource.sym} -880 -80 0 0 {name=V2
 value=1.8}
 C {madvlsi/gnd.sym} -880 -50 0 0 {name=l4 lab=GND}
 C {madvlsi/vdd.sym} -880 -110 0 0 {name=l5 lab=VDD}
-C {/home/madvlsi/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} -820 180 0 0 {name=x2}
 C {madvlsi/vdd.sym} -770 40 0 0 {name=l6 lab=VDD}
 C {madvlsi/gnd.sym} -770 180 0 0 {name=l7 lab=GND}
-C {madvlsi/pmos3.sym} -1020 100 1 0 {name=M1
-L=0.15
-W=1
-body=VDD
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
-spiceprefix=X
-}
-C {madvlsi/vdd.sym} -1050 100 3 0 {name=l8 lab=VDD}
 C {lab_pin.sym} -710 100 2 0 {name=p3 sig_type=std_logic lab=Vbp}
 C {lab_pin.sym} -710 120 2 0 {name=p4 sig_type=std_logic lab=Vbn}
-C {lab_pin.sym} -1020 70 1 0 {name=p5 sig_type=std_logic lab=Vbp}
 C {madvlsi/vdd.sym} -10 -120 0 0 {name=l9 lab=VDD}
 C {madvlsi/gnd.sym} -10 120 0 0 {name=l10 lab=GND}
-C {lab_pin.sym} -990 100 2 0 {name=p6 sig_type=std_logic lab=Dac_In}
-C {lab_pin.sym} -160 -90 0 0 {name=p7 sig_type=std_logic lab=Dac_In}
 C {lab_pin.sym} -160 -70 2 1 {name=p8 sig_type=std_logic lab=sb0}
 C {lab_pin.sym} -160 -50 2 1 {name=p9 sig_type=std_logic lab=sb1}
 C {lab_pin.sym} -160 -10 2 1 {name=p20 sig_type=std_logic lab=sb2}
@@ -190,3 +171,23 @@ value=0.9}
 C {madvlsi/gnd.sym} -810 -50 0 0 {name=l11 lab=GND}
 C {lab_pin.sym} -810 -110 2 0 {name=p30 sig_type=std_logic lab=Vg}
 C {lab_pin.sym} -160 -30 0 0 {name=p31 sig_type=std_logic lab=Vg}
+C {/home/dt/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} -820 180 0 0 {name=x2}
+C {madvlsi/gnd.sym} 200 80 0 0 {name=l12 lab=GND}
+C {madvlsi/gnd.sym} 200 -60 0 0 {name=l13 lab=GND}
+C {madvlsi/pmos3.sym} -160 -120 0 0 {name=M1
+L=0.5
+W=3
+body=VDD
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {lab_pin.sym} -190 -120 0 0 {name=p5 sig_type=std_logic lab=Vbp}
+C {madvlsi/vdd.sym} -160 -150 0 0 {name=l8 lab=VDD}

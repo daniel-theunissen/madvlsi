@@ -307,12 +307,13 @@ C {code_shown.sym} 630 -130 0 0 {name=SPICE only_toplevel=false value="
 C {sky130_fd_pr/corner.sym} 620 -290 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {madvlsi/gnd.sym} -280 -140 0 0 {name=l8 lab=GND}
 C {madvlsi/vdd.sym} -280 -200 0 0 {name=l9 lab=VDD}
+C {inverter.sym} -110 250 0 0 {name=X1}
 C {madvlsi/vsource.sym} -360 200 0 0 {name=Vclk
 value="pulse 0 1.8 250n 10n 10n 230n 500n"}
 C {madvlsi/gnd.sym} -360 230 0 0 {name=l10 lab=GND}
-C {madvlsi/gnd.sym} 430 270 0 0 {name=l11 lab=GND}
-C {madvlsi/vdd.sym} 430 210 0 0 {name=l12 lab=VDD}
-C {lab_pin.sym} 465 240 2 0 {name=p15 sig_type=std_logic lab=phi2}
+C {madvlsi/gnd.sym} -80 280 0 0 {name=l11 lab=GND}
+C {madvlsi/vdd.sym} -80 220 0 0 {name=l12 lab=VDD}
+C {lab_pin.sym} -45 250 2 0 {name=p15 sig_type=std_logic lab=phi2}
 C {madvlsi/vsource.sym} -360 20 0 0 {name=Vin_n
 value=0.9}
 C {madvlsi/gnd.sym} -360 50 0 0 {name=l13 lab=GND}
@@ -322,7 +323,7 @@ C {madvlsi/gnd.sym} -280 50 0 0 {name=l15 lab=GND}
 C {lab_pin.sym} -280 -10 1 0 {name=p17 sig_type=std_logic lab=Vin_p}
 C {lab_pin.sym} -360 -10 1 0 {name=p18 sig_type=std_logic lab=Vin_n}
 C {lab_pin.sym} -360 170 1 0 {name=p10 sig_type=std_logic lab=phi1}
-C {lab_pin.sym} 400 240 0 0 {name=p11 sig_type=std_logic lab=phi1}
+C {lab_pin.sym} -110 250 0 0 {name=p11 sig_type=std_logic lab=phi1}
 C {madvlsi/nmos3.sym} 210 250 0 0 {name=M13
 L=\{len\}
 W=\{wid\}
@@ -346,4 +347,3 @@ C {launcher.sym} -510 -330 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/comparator_tb.raw tran"
 }
-C {inverter.sym} 400 240 0 0 {name=X2}

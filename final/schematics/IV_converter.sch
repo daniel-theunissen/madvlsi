@@ -15,14 +15,14 @@ N -30 20 -0 20 {lab=#net1}
 N 30 20 100 20 {lab=Vmid}
 N 100 20 100 50 {lab=Vmid}
 N 100 50 160 50 {lab=Vmid}
-N -60 -20 -60 -10 {lab=Iin}
-N -60 -20 160 -20 {lab=Iin}
-N 160 -20 160 -10 {lab=Iin}
+N -60 -20 -60 -10 {lab=Iin_Vout}
+N -60 -20 160 -20 {lab=Iin_Vout}
+N 160 -20 160 -10 {lab=Iin_Vout}
 N 30 -10 40 -10 {lab=Vmid}
 N 40 -10 40 20 {lab=Vmid}
 N 160 50 160 80 {lab=Vmid}
-N -90 -20 -60 -20 {lab=Iin}
-N 160 -20 220 -20 {lab=Iin}
+N -90 -20 -60 -20 {lab=Iin_Vout}
+N 160 -20 220 -20 {lab=Iin_Vout}
 C {madvlsi/pmos3.sym} -60 20 0 1 {name=M1
 L=\{len\}
 W=\{wid\}
@@ -82,12 +82,11 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {ipin.sym} -90 -20 0 0 {name=p1 lab=Iin}
+C {iopin.sym} 60 -20 3 0 {name=p1 lab=Iin_Vout}
 C {iopin.sym} -20 160 1 0 {name=p2 lab=GND}
 C {iopin.sym} 160 80 1 0 {name=p3 lab=Vmid}
 C {ipin.sym} 0 110 0 0 {name=p4 lab=Vbn}
 C {ipin.sym} 190 20 2 0 {name=p5 lab=Vgate}
-C {opin.sym} 220 -20 0 0 {name=p6 lab=Vout}
 C {code_shown.sym} 250 100 0 0 {name=SPICE only_toplevel=false value="
 .param wid=3 len=0.5
 "}
