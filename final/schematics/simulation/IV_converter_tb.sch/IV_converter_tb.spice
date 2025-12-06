@@ -1,0 +1,65 @@
+** sch_path: /home/dt/Documents/madvlsi/final/schematics/IV_converter_tb.sch
+**.subckt IV_converter_tb
+XM1 GND net1 Vout VDD sky130_fd_pr__pfet_01v8 L={len} W={wid} nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net1 net1 Vmid Vmid sky130_fd_pr__pfet_01v8 L={len} W={wid} nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+Vdd VDD GND 1.8
+Iin net2 net3 pwl(0 0 20u 20u)
+I2 net4 Vbn 11.5u
+XM5 Vbn Vbn GND GND sky130_fd_pr__nfet_01v8 L={len} W={wid} nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+Vmid Vmid GND 0
+Vgate Vgate GND 0
+XM3 net1 Vbn GND GND sky130_fd_pr__nfet_01v8 L={len} W={wid} nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 Vout Vgate Vmid GND sky130_fd_pr__nfet_01v8 L=4 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+VIin net3 Vout 0
+.save i(viin)
+**** begin user architecture code
+
+
+.param wid=3 len=0.5
+*.control
+*  save all
+*  tran 1n 10u
+*  write IV_converter_tb.raw
+*  quit
+*.endc
+
+.control
+  set wr_vecnames
+  set wr_singlescale
+
+  let vgate_runs = 19
+  let i = 1
+  let vgate_sweep = 0
+  dowhile i <= vgate_runs
+    let vmid_runs = 19
+    let j = 1
+    let vmid_sweep = 0
+    dowhile j <= vmid_runs
+        alter vgate vgate_sweep
+        alter vmid vmid_sweep
+        save all
+        dc iin 0 30u 0.1u
+        wrdata ~/Documents/madvlsi/final/schematics/ivsweep/ivsweep{$&i}_{$&j}.txt v(vout) i(viin) v(vgate) v(vmid)
+        reset
+        let j = j + 1
+        let vmid_sweep = vmid_sweep + 0.1
+    end
+    reset
+    let i = i + 1
+    let vgate_sweep = vgate_sweep + 0.1
+  end
+  quit
+.endc
+
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.GLOBAL VDD
+.end

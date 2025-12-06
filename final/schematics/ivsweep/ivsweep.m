@@ -17,9 +17,11 @@ for i = 1:19
     xline(11.5e-6/4, '--')
     xline(11.5e-6/2, '--')
     xline(11.5e-6, '--')
+    xline(16.6e-6, 'r--')
 end
 %%
 close all;
 figure;
-plot(data.run19_1.i_viin_, data.run8_5.v_vout_)
+plot(data.run19_1.i_viin_, data.run15_1.v_vout_); hold on
+xline(16.6e-6, 'r--')
 

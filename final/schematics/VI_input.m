@@ -4,7 +4,7 @@ Iref = data.i_v_x4_vibx2_(1) - data.i_v_x4_vib_(1);
 % Iref = 7e-6;
 Vin_p = data.v_vin_p_;
 Vin_n = 0;
-R = 330e3;
+R = 190e3;
 Ir = (Vin_p - Vin_n) ./ R;
 % Ir = data.i_vir_;
 
@@ -28,3 +28,6 @@ xlabel("V+ (V)")
 ylabel("Iref (A)")
 title("Diff Pair Reference Current")
 legend("Ib", "Ic", location="southeast")
+
+figure;
+plot(Vin_p, data.i_vir_, 'r.')

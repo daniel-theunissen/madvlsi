@@ -51,8 +51,8 @@ C {lab_pin.sym} -300 40 2 0 {name=p22 sig_type=std_logic lab=Isense}
 C {lab_pin.sym} -300 80 2 0 {name=p23 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} -300 120 2 0 {name=p24 sig_type=std_logic lab=Idump}
 C {madvlsi/nmos3.sym} -80 -40 0 0 {name=M5
-L=2
-W=9
+L=\{len\}
+W=\{wid\}
 body=GND
 nf=1
 mult=1
@@ -110,8 +110,8 @@ C {code_shown.sym} 195 -205 0 0 {name=SPICE only_toplevel=false value="
 C {lab_pin.sym} 85 100 2 0 {name=p8 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 40 60 0 0 {name=p13 sig_type=std_logic lab=D}
 C {madvlsi/nmos3.sym} 20 -90 3 0 {name=M1
-L=2
-W=9
+L=\{len\}
+W=\{wid\}
 body=GND
 nf=1
 mult=1

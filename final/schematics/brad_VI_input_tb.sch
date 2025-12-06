@@ -20,7 +20,7 @@ C {code_shown.sym} -500 -460 0 0 {name=SPICE only_toplevel=false value="
   * tran 1u 100m
   dc Vinp 0 1.8 0.01
   write brad_VI_input_tb.raw
-  wrdata ~/Documents/madvlsi/final/schematics/brad_VI_input.txt v(vin_p) i(v.x4.vib) i(v.x4.vibx2) i(vir) i(viout_p) i(viout_n)
+  wrdata ~/Documents/madvlsi/final/schematics/brad_VI_input.txt v(vin_p) i(v.x4.vib) i(v.x4.vibx2) v(x4.min1) v(x4.min2) i(vir) i(viout_p) i(viout_n)
   quit
 .endc
 "}

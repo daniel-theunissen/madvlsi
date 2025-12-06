@@ -49,25 +49,26 @@ logx=0
 logy=0
 rawfile=$netlist_dir/IV_converter_tb.raw
 sim_type=tran}
-N 30 50 30 80 {lab=#net1}
-N -20 60 30 60 {lab=#net1}
-N -20 20 -20 60 {lab=#net1}
-N -30 20 -0 20 {lab=#net1}
-N 30 20 100 20 {lab=Vmid}
-N 100 20 100 50 {lab=Vmid}
-N 100 50 160 50 {lab=Vmid}
-N -60 -20 -60 -10 {lab=Vout}
+N 80 50 80 80 {lab=#net1}
+N 30 60 80 60 {lab=#net1}
+N 30 20 30 60 {lab=#net1}
+N 20 20 50 20 {lab=#net1}
+N 80 20 150 20 {lab=Vmid}
+N 150 20 150 50 {lab=Vmid}
+N 150 50 210 50 {lab=Vmid}
+N -10 -20 -10 -10 {lab=Vout}
 N -60 -20 160 -20 {lab=Vout}
-N 160 -20 160 -10 {lab=Vout}
-N 30 -10 40 -10 {lab=Vmid}
-N 40 -10 40 20 {lab=Vmid}
-N 160 50 160 80 {lab=Vmid}
+N 210 -20 210 -10 {lab=Vout}
+N 80 -10 90 -10 {lab=Vmid}
+N 90 -10 90 20 {lab=Vmid}
+N 210 50 210 80 {lab=Vmid}
 N -90 -20 -60 -20 {lab=Vout}
 N 160 -20 220 -20 {lab=Vout}
 N -370 150 -340 150 {lab=Vbn}
 N -370 150 -370 180 {lab=Vbn}
 N -90 -30 -90 -20 {lab=Vout}
-C {madvlsi/pmos3.sym} -60 20 0 1 {name=M1
+N 220 -20 260 -20 {lab=Vout}
+C {madvlsi/pmos3.sym} -10 20 0 1 {name=M1
 L=\{len\}
 W=\{wid\}
 body=VDD
@@ -82,7 +83,7 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {madvlsi/pmos4.sym} 30 20 0 0 {name=M2
+C {madvlsi/pmos4.sym} 80 20 0 0 {name=M2
 L=\{len\}
 W=\{wid\}
 nf=1
@@ -122,7 +123,7 @@ C {code_shown.sym} 360 -10 0 0 {name=SPICE only_toplevel=false value="
         alter vgate vgate_sweep
         alter vmid vmid_sweep
         save all
-        dc iin 0 25u 0.1u
+        dc iin 0 30u 0.1u
         wrdata ~/Documents/madvlsi/final/schematics/ivsweep/ivsweep\{$&i\}_\{$&j\}.txt v(vout) i(viin) v(vgate) v(vmid)
         reset
         let j = j + 1
@@ -138,11 +139,11 @@ C {code_shown.sym} 360 -10 0 0 {name=SPICE only_toplevel=false value="
 C {sky130_fd_pr/corner.sym} 350 -170 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {madvlsi/gnd.sym} -430 0 0 0 {name=l8 lab=GND}
 C {madvlsi/vdd.sym} -430 -60 0 0 {name=l9 lab=VDD}
-C {lab_pin.sym} 160 80 3 0 {name=p17 sig_type=std_logic lab=Vmid}
-C {madvlsi/gnd.sym} 30 140 0 0 {name=l1 lab=GND}
-C {madvlsi/gnd.sym} -60 50 0 0 {name=l2 lab=GND}
+C {lab_pin.sym} 210 80 3 0 {name=p17 sig_type=std_logic lab=Vmid}
+C {madvlsi/gnd.sym} 80 140 0 0 {name=l1 lab=GND}
+C {madvlsi/gnd.sym} -10 50 0 0 {name=l2 lab=GND}
 C {madvlsi/isource.sym} -90 -70 0 0 {name=Iin
-value="pwl(0 0 10u 20u)"}
+value="pwl(0 0 20u 20u)"}
 C {madvlsi/isource.sym} -340 120 0 0 {name=I2
 value=11.5u}
 C {madvlsi/nmos3.sym} -340 180 0 0 {name=M5
@@ -162,9 +163,9 @@ spiceprefix=X
 }
 C {lab_pin.sym} -370 150 0 0 {name=p1 sig_type=std_logic lab=Vbn}
 C {madvlsi/gnd.sym} -340 210 0 0 {name=l3 lab=GND}
-C {lab_pin.sym} 0 110 0 0 {name=p2 sig_type=std_logic lab=Vbn}
-C {lab_pin.sym} 190 20 2 0 {name=p3 sig_type=std_logic lab=Vgate}
-C {lab_pin.sym} 220 -20 2 0 {name=p4 sig_type=std_logic lab=Vout}
+C {lab_pin.sym} 50 110 0 0 {name=p2 sig_type=std_logic lab=Vbn}
+C {lab_pin.sym} 240 20 2 0 {name=p3 sig_type=std_logic lab=Vgate}
+C {lab_pin.sym} 260 -20 2 0 {name=p4 sig_type=std_logic lab=Vout}
 C {madvlsi/vsource.sym} -340 -30 0 0 {name=Vmid
 value=0}
 C {madvlsi/gnd.sym} -340 0 0 0 {name=l4 lab=GND}
@@ -173,7 +174,7 @@ value=0}
 C {madvlsi/gnd.sym} -250 0 0 0 {name=l6 lab=GND}
 C {lab_pin.sym} -250 -60 1 0 {name=p5 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} -340 -60 1 0 {name=p6 sig_type=std_logic lab=Vmid}
-C {madvlsi/nmos3.sym} 30 110 0 0 {name=M3
+C {madvlsi/nmos3.sym} 80 110 0 0 {name=M3
 L=\{len\}
 W=\{wid\}
 body=GND
@@ -188,7 +189,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {madvlsi/nmos3.sym} 160 20 0 1 {name=M4
+C {madvlsi/nmos3.sym} 210 20 0 1 {name=M4
 L=4
 W=1
 body=GND

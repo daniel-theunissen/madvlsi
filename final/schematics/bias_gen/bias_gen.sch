@@ -33,7 +33,7 @@ N 0 -680 0 -600 {lab=#net2}
 N 400 -700 400 -650 {lab=Vbn}
 N 400 -640 400 -620 {lab=Vbn}
 N 400 -620 400 -600 {lab=Vbn}
-N -140 -540 -140 -520 {lab=#net3}
+N -140 -540 -140 -520 {lab=Vconst}
 N -160 -490 -160 -460 {lab=GND}
 N -160 -460 -140 -460 {lab=GND}
 N 400 -650 400 -640 {lab=Vbn}
@@ -180,12 +180,12 @@ model=res_high_po_0p35
 spiceprefix=X
 mult=1}
 C {iopin.sym} -310 -600 2 0 {name=p5 lab=VDD}
-C {opin.sym} -330 -510 0 0 {name=p6 lab=Vbp}
+C {opin.sym} -310 -510 2 0 {name=p6 lab=Vbp}
 C {iopin.sym} -310 -570 2 0 {name=p7 lab=GND}
 C {lab_pin.sym} 340 -660 2 0 {name=p8 sig_type=std_logic lab=Vbp}
-C {lab_pin.sym} -330 -510 0 0 {name=p9 sig_type=std_logic lab=Vbp}
-C {opin.sym} -330 -470 0 0 {name=p3 lab=Vbn}
-C {lab_pin.sym} -330 -470 0 0 {name=p10 sig_type=std_logic lab=Vbn}
+C {lab_pin.sym} -310 -510 2 0 {name=p9 sig_type=std_logic lab=Vbp}
+C {opin.sym} -310 -540 2 0 {name=p3 lab=Vbn}
+C {lab_pin.sym} -310 -540 2 0 {name=p10 sig_type=std_logic lab=Vbn}
 C {lab_pin.sym} -310 -600 2 0 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} -140 -760 1 0 {name=p2 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 0 -760 1 0 {name=p11 sig_type=std_logic lab=VDD}
@@ -198,3 +198,6 @@ C {lab_pin.sym} 90 -460 3 0 {name=p17 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 190 -460 3 0 {name=p18 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 260 -540 3 0 {name=p19 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 400 -540 3 0 {name=p20 sig_type=std_logic lab=GND}
+C {lab_pin.sym} -140 -520 0 0 {name=p21 sig_type=std_logic lab=Vconst}
+C {lab_pin.sym} -310 -480 2 0 {name=p22 sig_type=std_logic lab=Vconst}
+C {opin.sym} -310 -480 2 0 {name=p23 lab=Vconst}

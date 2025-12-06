@@ -13,7 +13,7 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
+x1=2.1175824e-22
 x2=2e-05
 divx=5
 subdivx=1
@@ -70,14 +70,12 @@ C {lab_pin.sym} 310 -130 2 0 {name=p6 sig_type=std_logic lab=Q}
 C {lab_pin.sym} 310 -50 2 0 {name=p7 sig_type=std_logic lab=QBAR}
 C {lab_pin.sym} 10 -50 0 0 {name=p9 sig_type=std_logic lab=Vbn}
 C {sky130_fd_pr/corner.sym} -80 50 0 0 {name=CORNER only_toplevel=false corner=tt}
-C {lab_pin.sym} -905 35 0 0 {name=p12 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} -460 10 0 0 {name=p13 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} -460 -110 0 0 {name=p14 sig_type=std_logic lab=Vgate}
-C {lab_pin.sym} -260 -60 0 0 {name=p18 sig_type=std_logic lab=Vmid}
 C {madvlsi/isource.sym} -460 -230 0 0 {name=I1
-value="pwl(0 11.45u 9u 11.45u 10u 11.55u)"}
+value="pwl(0 16.59u 9u 16.59u 10u 16.61u)"}
 C {madvlsi/isource.sym} -155 -230 0 0 {name=I2
-value="pwl(0 11.55u 9u 11.55u 10u 11.45u)"}
+value="pwl(0 16.61u 9u 16.61u 10u 16.59u)"}
 C {lab_pin.sym} -460 -200 2 0 {name=p19 sig_type=std_logic lab=Iin_p}
 C {lab_pin.sym} -155 -200 2 0 {name=p20 sig_type=std_logic lab=Iin_n
 }
@@ -101,8 +99,13 @@ C {launcher.sym} -740 -325 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/comparator_tb_2.raw tran"
 }
-C {inverter.sym} -905 35 0 0 {name=X6}
-C {lab_pin.sym} -840 35 2 0 {name=p24 sig_type=std_logic lab=Vgate}
-C {madvlsi/gnd.sym} -875 65 0 0 {name=l13 lab=GND}
-C {madvlsi/vdd.sym} -875 5 0 0 {name=l14 lab=VDD}
-C {lab_pin.sym} -260 60 3 0 {name=p16 sig_type=std_logic lab=Vbn}
+C {madvlsi/vsource.sym} -760 -110 0 0 {name=Vgate
+value=1.5}
+C {madvlsi/gnd.sym} -760 -80 0 0 {name=l5 lab=GND}
+C {madvlsi/vsource.sym} -880 -110 0 0 {name=Vmid
+value=0}
+C {madvlsi/gnd.sym} -880 -80 0 0 {name=l14 lab=GND}
+C {lab_pin.sym} -760 -140 1 0 {name=p12 sig_type=std_logic lab=Vgate}
+C {lab_pin.sym} -260 -60 0 0 {name=p16 sig_type=std_logic lab=Vmid}
+C {lab_pin.sym} -260 60 0 0 {name=p17 sig_type=std_logic lab=Vmid}
+C {lab_pin.sym} -880 -140 1 0 {name=p18 sig_type=std_logic lab=Vmid}
