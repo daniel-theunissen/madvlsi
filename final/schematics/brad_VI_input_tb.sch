@@ -89,7 +89,6 @@ m=1}
 C {madvlsi/vdd.sym} -590 -630 0 0 {name=l16 lab=VDD}
 C {lab_pin.sym} -630 -570 1 0 {name=p21 sig_type=std_logic lab=VIP}
 C {lab_pin.sym} -630 -450 1 0 {name=p22 sig_type=std_logic lab=VIN}
-C {/home/dt/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} -1360 -20 0 0 {name=x1}
 C {lab_pin.sym} -980 -100 2 0 {name=p2 sig_type=std_logic lab=Vdssat}
 C {lab_pin.sym} -930 -570 0 0 {name=p3 sig_type=std_logic lab=Vdssat}
 C {madvlsi/vdd.sym} -780 -600 0 0 {name=l1 lab=VDD}
@@ -106,3 +105,4 @@ C {madvlsi/vdd.sym} -775 -175 0 0 {name=l11 lab=VDD}
 C {lab_pin.sym} -665 -115 2 0 {name=p7 sig_type=std_logic lab=Vcp}
 C {lab_pin.sym} -850 -600 1 0 {name=p9 sig_type=std_logic lab=Vcn}
 C {lab_pin.sym} -830 -600 1 0 {name=p12 sig_type=std_logic lab=Vcp}
+C {/home/madvlsi/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} -1360 -20 0 0 {name=x1}

@@ -5,21 +5,21 @@ V {}
 S {}
 F {}
 E {}
-N -0 -80 -0 -40 {lab=#net1}
-N -40 -40 80 -40 {lab=#net1}
-N -10 -10 110 -10 {lab=#net2}
-N 110 -10 130 -10 {lab=#net2}
-N -200 -60 -200 -40 {lab=#net1}
-N -200 -60 -0 -60 {lab=#net1}
-N -40 20 80 20 {lab=#net2}
-N 30 -110 130 -110 {lab=#net2}
-N 130 -110 130 -10 {lab=#net2}
-N 20 20 20 50 {lab=#net2}
-N 20 40 130 40 {lab=#net2}
-N 130 -10 130 40 {lab=#net2}
+N -0 -80 -0 -40 {lab=Vdssat_p}
+N -40 -40 80 -40 {lab=Vdssat_p}
+N -10 -10 110 -10 {lab=#net1}
+N 110 -10 130 -10 {lab=#net1}
+N -200 -60 -200 -40 {lab=Vdssat_p}
+N -200 -60 -0 -60 {lab=Vdssat_p}
+N -40 20 80 20 {lab=#net1}
+N 30 -110 130 -110 {lab=#net1}
+N 130 -110 130 -10 {lab=#net1}
+N 20 20 20 50 {lab=#net1}
+N 20 40 130 40 {lab=#net1}
+N 130 -10 130 40 {lab=#net1}
 N 50 80 50 270 {lab=Vbn}
-N 20 110 20 140 {lab=#net3}
-N 20 200 20 240 {lab=#net4}
+N 20 110 20 140 {lab=#net2}
+N 20 200 20 240 {lab=#net3}
 N -200 20 -200 240 {lab=Vcp}
 N -170 -10 -170 40 {lab=Vcp}
 N -200 40 -170 40 {lab=Vcp}
@@ -29,6 +29,7 @@ N -420 -120 -400 -120 {lab=Vbn}
 N -420 -80 -400 -80 {lab=VDD}
 N -420 -40 -400 -40 {lab=GND}
 N -420 0 -400 0 {lab=Vcp}
+N -420 -150 -400 -150 {lab=Vdssat_p}
 C {madvlsi/pmos3.sym} 0 -110 2 0 {name=M1
 L=\{len\}
 W=\{wid\}
@@ -162,3 +163,6 @@ C {lab_pin.sym} -400 -40 2 0 {name=p10 sig_type=std_logic lab=GND}
 C {lab_pin.sym} -400 0 2 0 {name=p11 sig_type=std_logic lab=Vcp}
 C {lab_pin.sym} -400 -120 2 0 {name=p12 sig_type=std_logic lab=Vbn}
 C {code_shown.sym} 160 -160 0 0 {name=SPICE only_toplevel=false value=".param len=0.5 wid=3"}
+C {lab_pin.sym} -140 -60 1 0 {name=p13 sig_type=std_logic lab=Vdssat_p}
+C {lab_pin.sym} -400 -150 2 0 {name=p14 sig_type=std_logic lab=Vdssat_p}
+C {opin.sym} -420 -150 2 0 {name=p15 lab=Vdssat_p}
