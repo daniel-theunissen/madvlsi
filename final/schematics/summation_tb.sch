@@ -184,7 +184,6 @@ value=0.7
 C {madvlsi/gnd.sym} 90 -180 0 0 {name=l6 lab=GND}
 C {lab_pin.sym} 20 -240 1 0 {name=p37 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} 90 -240 1 0 {name=p38 sig_type=std_logic lab=Vmid}
-C {/home/dt/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} 600 -50 0 0 {name=x7}
 C {lab_pin.sym} -210 50 0 0 {name=p24 sig_type=std_logic lab=D2}
 C {lab_pin.sym} -280 30 1 0 {name=p25 sig_type=std_logic lab=D1}
 C {lab_pin.sym} -260 -50 1 0 {name=p39 sig_type=std_logic lab=I2}
@@ -199,3 +198,4 @@ C {madvlsi/ammeter1.sym} -320 -70 1 0 {name=Vi2}
 C {madvlsi/ammeter1.sym} -150 -70 2 0 {name=Vi1}
 C {lab_pin.sym} 150 -60 2 0 {name=p31 sig_type=std_logic lab=Iin_Vout}
 C {lab_pin.sym} 150 40 2 0 {name=p36 sig_type=std_logic lab=Iin_Vout1}
+C {/home/madvlsi/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} 600 -50 0 0 {name=x4}

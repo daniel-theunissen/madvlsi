@@ -36,7 +36,6 @@ C {lab_pin.sym} 225 -400 2 0 {name=p12 sig_type=std_logic lab=DAC4A}
 C {lab_pin.sym} 225 -380 2 0 {name=p13 sig_type=std_logic lab=DAC5A}
 C {lab_pin.sym} 225 -360 2 0 {name=p14 sig_type=std_logic lab=DAC6A}
 C {lab_pin.sym} 225 -340 2 0 {name=p10 sig_type=std_logic lab=DAC7A}
-C {controller.sym} 270 -100 0 0 {name=A1}
 C {devices/dac_bridge.sym} 195 -480 0 0 {name=A2 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
@@ -71,3 +70,4 @@ C {lab_pin.sym} 165 -380 2 1 {name=p21 sig_type=std_logic lab=DAC5}
 C {lab_pin.sym} 165 -360 2 1 {name=p22 sig_type=std_logic lab=DAC6}
 C {lab_pin.sym} 165 -340 2 1 {name=p23 sig_type=std_logic lab=DAC7}
 C {lab_pin.sym} 350 -260 2 0 {name=p24 sig_type=std_logic lab=ADC[7..0]}
+C {/home/madvlsi/Documents/madvlsi/final/schematics/controller/controller.sym} 270 -100 0 0 {name=A1}

@@ -94,7 +94,6 @@ C {launcher.sym} -290 770 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/cascoded_opamp_pmos_tb.raw tran"
 }
-C {/home/dt/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} 170 200 0 0 {name=x2}
 C {madvlsi/nmos3.sym} 520 100 0 0 {name=M1
 L=\{len\}
 W=\{wid\}
@@ -133,3 +132,4 @@ C {lab_pin.sym} 80 190 2 0 {name=p15 sig_type=std_logic lab=Vdssat}
 C {lab_pin.sym} -50 -90 0 0 {name=p16 sig_type=std_logic lab=Vdssat}
 C {madvlsi/isource.sym} 630 150 1 0 {name=I1
 value=2.5u}
+C {/home/madvlsi/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} 170 200 0 0 {name=x2}
