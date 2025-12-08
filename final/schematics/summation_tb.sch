@@ -6,7 +6,7 @@ S {}
 F {}
 E {}
 B 2 -220 240 580 640 {flags=graph
-y2=2e-05
+y2=2.3e-05
 ypos1=0
 ypos2=2
 divy=5
@@ -31,7 +31,7 @@ i(v.x1.vbiaspr)
 i(v.x1.vbiaspl)
 i(v.x1.vbiasnr)
 i(v.x1.vbiasnl)"
-y1=-8.1e-06}
+y1=-5.2e-06}
 B 2 650 240 1450 640 {flags=graph
 y1=0.11
 y2=1.7
@@ -140,7 +140,7 @@ C {lab_pin.sym} 710 -140 2 0 {name=p29 sig_type=std_logic lab=Vbp}
 C {madvlsi/isource.sym} -360 -70 1 0 {name=I2
 value="pwl(0 15.2u 20u 15.2u 20.1u 9.8u 40u 9.8u 40.1u 12.47u)"}
 C {madvlsi/isource.sym} -210 145 2 0 {name=I4
-value="pwl(0 5.3u 20u 0 20.1u 5.3u 40u 0 40.1u 5.3u 60u 0)"}
+value="pwl(0 5.5u 20u 0 20.1u 5.5u 40u 0 40.1u 5.5u 60u 0)"}
 C {madvlsi/vsource.sym} -60 -210 0 0 {name=V1
 value=1.8
 }
@@ -192,7 +192,7 @@ C {lab_pin.sym} -150 -70 0 0 {name=p40 sig_type=std_logic lab=I1}
 C {madvlsi/isource.sym} -150 -110 2 0 {name=I1
 value="pwl(0 9.8u 20u 9.8u 20.1u 15.2u 40u 15.2u 40.1u 12.47u)"}
 C {madvlsi/isource.sym} -300 70 2 0 {name=I3
-value="pwl(0 0 20u 5.3u 20.1u 0 40u 5.3u 40.1u 0 60u 5.3u)"}
+value="pwl(0 0 20u 5.5u 20.1u 0 40u 5.5u 40.1u 0 60u 5.5u)"}
 C {madvlsi/ammeter1.sym} -210 115 2 0 {name=Vidump}
 C {madvlsi/ammeter1.sym} -300 40 2 0 {name=Visense}
 C {madvlsi/ammeter1.sym} -320 -70 1 0 {name=Vi2}
