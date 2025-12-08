@@ -1,6 +1,6 @@
 close all;
 data = import_ngspice("brad_VI_input.txt")
-Iref = data.i_v_x4_vibx2_(1) - data.i_v_x4_vib_(1);
+Iref = data.i_v_x4_vibx2_(180) - data.i_v_x4_vib_(180);
 % Iref = 7e-6;
 Vin_p = data.v_vin_p_;
 Vin_n = 0;

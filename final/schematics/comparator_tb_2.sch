@@ -60,8 +60,8 @@ C {madvlsi/gnd.sym} 160 -20 0 0 {name=l4 lab=GND}
 C {lab_pin.sym} 10 -90 0 0 {name=p1 sig_type=std_logic lab=phi1}
 C {lab_pin.sym} 10 -70 0 0 {name=p2 sig_type=std_logic lab=phi2}
 C {madvlsi/vdd.sym} -255 195 0 0 {name=l6 lab=VDD}
-C {lab_pin.sym} -195 255 2 0 {name=p5 sig_type=std_logic lab=Vbp}
-C {lab_pin.sym} -195 275 2 0 {name=p8 sig_type=std_logic lab=Vbn}
+C {lab_pin.sym} -195 245 2 0 {name=p5 sig_type=std_logic lab=Vbp}
+C {lab_pin.sym} -195 265 2 0 {name=p8 sig_type=std_logic lab=Vbn}
 C {madvlsi/gnd.sym} -255 335 0 0 {name=l7 lab=GND}
 C {/home/dt/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} -305 335 0 0 {name=x5}
 C {lab_pin.sym} -460 30 0 0 {name=p3 sig_type=std_logic lab=Vbn}
@@ -73,9 +73,9 @@ C {sky130_fd_pr/corner.sym} -80 50 0 0 {name=CORNER only_toplevel=false corner=t
 C {lab_pin.sym} -460 10 0 0 {name=p13 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} -460 -110 0 0 {name=p14 sig_type=std_logic lab=Vgate}
 C {madvlsi/isource.sym} -460 -230 0 0 {name=I1
-value="pwl(0 16.59u 9u 16.59u 10u 16.61u)"}
+value="pwl(0 -0.02u 9u -0.02u 10u 0.02u)"}
 C {madvlsi/isource.sym} -155 -230 0 0 {name=I2
-value="pwl(0 16.61u 9u 16.61u 10u 16.59u)"}
+value="pwl(0 0.02u 9u 0.02u 10u -0.02u)"}
 C {lab_pin.sym} -460 -200 2 0 {name=p19 sig_type=std_logic lab=Iin_p}
 C {lab_pin.sym} -155 -200 2 0 {name=p20 sig_type=std_logic lab=Iin_n
 }
@@ -100,10 +100,10 @@ descr="load waves"
 tclcommand="xschem raw_read $netlist_dir/comparator_tb_2.raw tran"
 }
 C {madvlsi/vsource.sym} -760 -110 0 0 {name=Vgate
-value=1.5}
+value=1.3}
 C {madvlsi/gnd.sym} -760 -80 0 0 {name=l5 lab=GND}
 C {madvlsi/vsource.sym} -880 -110 0 0 {name=Vmid
-value=0}
+value=0.7}
 C {madvlsi/gnd.sym} -880 -80 0 0 {name=l14 lab=GND}
 C {lab_pin.sym} -760 -140 1 0 {name=p12 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} -260 -60 0 0 {name=p16 sig_type=std_logic lab=Vmid}

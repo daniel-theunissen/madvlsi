@@ -6,14 +6,14 @@ S {}
 F {}
 E {}
 B 2 -220 240 580 640 {flags=graph
-y2=1.6e-05
+y2=2e-05
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=3.5931121e-07
-x2=8.6697198e-06
+x1=0
+x2=6e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -25,20 +25,93 @@ logy=0
 rawfile=$netlist_dir/summation_tb.raw
 sim_type=tran
 color="18 5 16 4 12 17"
-node="i(v.x1.v-d1)
-i(v.x1.vd1)
+node="i(v.x1.vdi_p)
+i(v.x1.vdi_n)
 i(v.x1.vbiaspr)
 i(v.x1.vbiaspl)
 i(v.x1.vbiasnr)
 i(v.x1.vbiasnl)"
-y1=-6.1e-08}
-N -280 30 -150 30 {lab=#net1}
-N -210 50 -150 50 {lab=#net2}
-N -300 -50 -150 -50 {lab=#net3}
-N -300 -70 -300 -50 {lab=#net3}
-N -320 -70 -300 -70 {lab=#net3}
-N 150 -60 150 -30 {lab=Iin_Vout}
-N 150 40 150 70 {lab=Iin_Vout1}
+y1=-8.1e-06}
+B 2 650 240 1450 640 {flags=graph
+y1=0.11
+y2=1.7
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=6e-05
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="d1
+d2
+
+i1
+
+i2"
+color="4 12 8 7"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=$netlist_dir/summation_tb.raw
+sim_type=tran}
+B 2 615 710 1415 1110 {flags=graph
+y1=0
+y2=1.6e-05
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=6e-05
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="i(vidump)
+i(visense)
+
+i(vi2)
+i(vi1)"
+color="18 10 4 6"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+B 2 1240 -220 2040 180 {flags=graph
+y1=0.24
+y2=1.3
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=6e-05
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="iin_vout1
+iin_vout"
+color="6 12"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+N -210 50 -150 50 {lab=D2}
+N -300 -50 -150 -50 {lab=I2}
+N -300 -70 -300 -50 {lab=I2}
+N -320 -70 -300 -70 {lab=I2}
+N -300 30 -150 30 {lab=D1}
+N -210 50 -210 105 {lab=D2}
 C {summation.sym} 0 0 0 0 {name=x1}
 C {cascode_bias_pmos.sym} 330 -110 0 0 {name=x2}
 C {cascode_bias_lds.sym} 310 160 0 0 {name=x3}
@@ -60,19 +133,14 @@ C {lab_pin.sym} -150 90 0 0 {name=p20 sig_type=std_logic lab=Vcn}
 C {lab_pin.sym} -150 110 0 0 {name=p21 sig_type=std_logic lab=Vcp}
 C {lab_pin.sym} 0 -100 0 0 {name=p22 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 0 140 0 0 {name=p23 sig_type=std_logic lab=GND}
-C {/home/madvlsi/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} 600 -50 0 0 {name=x4}
 C {lab_pin.sym} 650 -190 0 0 {name=p26 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 650 -50 0 0 {name=p27 sig_type=std_logic lab=GND}
-C {lab_pin.sym} 710 -110 2 0 {name=p28 sig_type=std_logic lab=Vbn}
-C {lab_pin.sym} 710 -130 2 0 {name=p29 sig_type=std_logic lab=Vbp}
-C {madvlsi/isource.sym} -150 -100 2 0 {name=I1
-value=16u}
-C {madvlsi/isource.sym} -350 -70 1 0 {name=I2
-value=16u}
-C {madvlsi/isource.sym} -310 30 3 0 {name=I3
-value=1.25u}
-C {madvlsi/isource.sym} -210 80 2 0 {name=I4
-value=1.25u}
+C {lab_pin.sym} 710 -120 2 0 {name=p28 sig_type=std_logic lab=Vbn}
+C {lab_pin.sym} 710 -140 2 0 {name=p29 sig_type=std_logic lab=Vbp}
+C {madvlsi/isource.sym} -360 -70 1 0 {name=I2
+value="pwl(0 15.2u 20u 15.2u 20.1u 9.8u 40u 9.8u 40.1u 12.47u)"}
+C {madvlsi/isource.sym} -210 145 2 0 {name=I4
+value="pwl(0 5.3u 20u 0 20.1u 5.3u 40u 0 40.1u 5.3u 60u 0)"}
 C {madvlsi/vsource.sym} -60 -210 0 0 {name=V1
 value=1.8
 }
@@ -84,7 +152,7 @@ C {code_shown.sym} 510 20 0 0 {name=SPICE only_toplevel=false value="
   set wr_vecnames
   set wr_singlescale
   remzerovec
-  tran 1n 20u
+  tran 1n 60u
   write summation_tb.raw
   quit
 .endc
@@ -100,21 +168,34 @@ C {lab_pin.sym} 970 80 0 0 {name=p14 sig_type=std_logic lab=Vmid}
 C {lab_pin.sym} 770 30 0 0 {name=p15 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} 770 50 0 0 {name=p17 sig_type=std_logic lab=Vbn}
 C {lab_pin.sym} 920 -20 0 0 {name=p18 sig_type=std_logic lab=Iin_Vout}
-C {lab_pin.sym} 150 -30 2 0 {name=p31 sig_type=std_logic lab=Iin_Vout}
 C {IV_converter.sym} 1030 160 0 0 {name=x6}
 C {lab_pin.sym} 990 210 0 0 {name=p30 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 1080 210 0 0 {name=p32 sig_type=std_logic lab=Vmid}
 C {lab_pin.sym} 880 160 0 0 {name=p33 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} 880 180 0 0 {name=p34 sig_type=std_logic lab=Vbn}
 C {lab_pin.sym} 1030 110 0 0 {name=p35 sig_type=std_logic lab=Iin_Vout1}
-C {lab_pin.sym} 150 70 2 0 {name=p36 sig_type=std_logic lab=Iin_Vout1}
 C {madvlsi/vsource.sym} 20 -210 0 0 {name=Vgate
-value=1.5
+value=1.3
 }
 C {madvlsi/gnd.sym} 20 -180 0 0 {name=l4 lab=GND}
 C {madvlsi/vsource.sym} 90 -210 0 0 {name=Vmid
-value=0
+value=0.7
 }
 C {madvlsi/gnd.sym} 90 -180 0 0 {name=l6 lab=GND}
 C {lab_pin.sym} 20 -240 1 0 {name=p37 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} 90 -240 1 0 {name=p38 sig_type=std_logic lab=Vmid}
+C {/home/dt/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} 600 -50 0 0 {name=x7}
+C {lab_pin.sym} -210 50 0 0 {name=p24 sig_type=std_logic lab=D2}
+C {lab_pin.sym} -280 30 1 0 {name=p25 sig_type=std_logic lab=D1}
+C {lab_pin.sym} -260 -50 1 0 {name=p39 sig_type=std_logic lab=I2}
+C {lab_pin.sym} -150 -70 0 0 {name=p40 sig_type=std_logic lab=I1}
+C {madvlsi/isource.sym} -150 -110 2 0 {name=I1
+value="pwl(0 9.8u 20u 9.8u 20.1u 15.2u 40u 15.2u 40.1u 12.47u)"}
+C {madvlsi/isource.sym} -300 70 2 0 {name=I3
+value="pwl(0 0 20u 5.3u 20.1u 0 40u 5.3u 40.1u 0 60u 5.3u)"}
+C {madvlsi/ammeter1.sym} -210 115 2 0 {name=Vidump}
+C {madvlsi/ammeter1.sym} -300 40 2 0 {name=Visense}
+C {madvlsi/ammeter1.sym} -320 -70 1 0 {name=Vi2}
+C {madvlsi/ammeter1.sym} -150 -70 2 0 {name=Vi1}
+C {lab_pin.sym} 150 -60 2 0 {name=p31 sig_type=std_logic lab=Iin_Vout}
+C {lab_pin.sym} 150 40 2 0 {name=p36 sig_type=std_logic lab=Iin_Vout1}

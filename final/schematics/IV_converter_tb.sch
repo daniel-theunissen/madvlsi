@@ -123,7 +123,7 @@ C {code_shown.sym} 360 -10 0 0 {name=SPICE only_toplevel=false value="
         alter vgate vgate_sweep
         alter vmid vmid_sweep
         save all
-        dc iin 0 30u 0.1u
+        dc iin -6u 6u 0.1u
         wrdata ~/Documents/madvlsi/final/schematics/ivsweep/ivsweep\{$&i\}_\{$&j\}.txt v(vout) i(viin) v(vgate) v(vmid)
         reset
         let j = j + 1

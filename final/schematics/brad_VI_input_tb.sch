@@ -36,7 +36,7 @@ value=0}
 C {madvlsi/gnd.sym} -1200 -450 0 0 {name=l8 lab=GND}
 C {lab_pin.sym} -1200 -510 1 0 {name=p4 sig_type=std_logic lab=Vin_p}
 C {madvlsi/vsource.sym} -1280 -480 0 0 {name=Vinn
-value=0}
+value=0.25}
 C {madvlsi/gnd.sym} -1280 -450 0 0 {name=Vinn1 lab=GND
 value=0.9}
 C {lab_pin.sym} -1280 -510 1 0 {name=Vinn2 sig_type=std_logic lab=Vin_n
@@ -64,8 +64,8 @@ C {madvlsi/vdd.sym} -1040 -230 0 0 {name=l5 lab=VDD}
 C {madvlsi/gnd.sym} -1040 -30 0 0 {name=l13 lab=GND}
 C {lab_pin.sym} -1100 -130 0 0 {name=p10 sig_type=std_logic lab=Vbp}
 C {lab_pin.sym} -980 -130 2 0 {name=p11 sig_type=std_logic lab=Vcn}
-C {lab_pin.sym} -1250 -100 2 0 {name=p5 sig_type=std_logic lab=Vbp}
-C {lab_pin.sym} -1250 -80 2 0 {name=p8 sig_type=std_logic lab=Vbn}
+C {lab_pin.sym} -1250 -110 2 0 {name=p5 sig_type=std_logic lab=Vbp}
+C {lab_pin.sym} -1250 -90 2 0 {name=p8 sig_type=std_logic lab=Vbn}
 C {madvlsi/gnd.sym} -1310 -20 0 0 {name=l7 lab=GND}
 C {brad_VI_input.sym} -780 -500 0 0 {name=x4}
 C {lab_pin.sym} -930 -510 0 0 {name=p16 sig_type=std_logic lab=Vbn}
