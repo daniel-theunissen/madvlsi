@@ -13,6 +13,7 @@ Vlng::Vlng(VerilatedContext* _vcontextp__, const char* _vcname__)
     , comp{vlSymsp->TOP.comp}
     , rst_n{vlSymsp->TOP.rst_n}
     , dac_in{vlSymsp->TOP.dac_in}
+    , comparator_clk{vlSymsp->TOP.comparator_clk}
     , adc_out{vlSymsp->TOP.adc_out}
     , rootp{&(vlSymsp->TOP)}
 {

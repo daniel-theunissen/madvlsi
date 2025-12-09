@@ -15,6 +15,8 @@ N -375 -575 -375 -465 {lab=VPROBE}
 N -435 -535 -435 -465 {lab=VPROBE1}
 N -435 -595 -375 -595 {lab=#net4}
 N -435 -595 -435 -545 {lab=#net4}
+N -685 -175 -670 -175 {lab=Iin_Vout}
+N -685 -275 -670 -275 {lab=Iin_Vout1}
 C {summation.sym} -845 -215 0 0 {name=x1}
 C {cascode_bias_pmos.sym} 95 -685 0 0 {name=x2}
 C {cascode_bias_lds.sym} 75 -415 0 0 {name=x3}
@@ -53,7 +55,7 @@ C {lab_pin.sym} -185 -85 0 0 {name=p32 sig_type=std_logic lab=Vmid}
 C {lab_pin.sym} -385 -115 0 0 {name=p34 sig_type=std_logic lab=Vbn}
 C {lab_pin.sym} -235 -185 0 0 {name=p35 sig_type=std_logic lab=Iin_Vout1}
 C {madvlsi/vsource.sym} -155 -285 0 0 {name=Vgate
-value=1.3
+value=1.1
 }
 C {madvlsi/gnd.sym} -155 -255 0 0 {name=l4 lab=GND}
 C {madvlsi/vsource.sym} -85 -285 0 0 {name=Vmid
@@ -70,8 +72,8 @@ C {madvlsi/ammeter1.sym} -1055 -130 2 0 {name=Vidump}
 C {madvlsi/ammeter1.sym} -1145 -175 2 0 {name=Visense}
 C {madvlsi/ammeter1.sym} -1165 -285 1 0 {name=Vi2}
 C {madvlsi/ammeter1.sym} -995 -285 2 0 {name=Vi1}
-C {lab_pin.sym} -695 -275 2 0 {name=p31 sig_type=std_logic lab=Iin_Vout}
-C {lab_pin.sym} -695 -175 2 0 {name=p36 sig_type=std_logic lab=Iin_Vout1}
+C {lab_pin.sym} -670 -175 2 0 {name=p31 sig_type=std_logic lab=Iin_Vout}
+C {lab_pin.sym} -670 -275 2 0 {name=p36 sig_type=std_logic lab=Iin_Vout1}
 C {comparator.sym} 250 -200 0 0 {name=x4}
 C {lab_pin.sym} -995 -295 1 0 {name=p43 sig_type=std_logic lab=I1}
 C {madvlsi/vdd.sym} -845 -315 0 0 {name=l3 lab=VDD}
@@ -98,76 +100,69 @@ C {lab_pin.sym} 400 -160 2 0 {name=p49 sig_type=std_logic lab=Qbar}
 C {dac.sym} -920 -580 0 0 {name=x8}
 C {devices/code.sym} -465 -970 0 0 {name=SPICE1 only_toplevel=false value="
 .control
-  let mc_runs = 1
-  let run = 1
-  dowhile run <= mc_runs
-    set wr_vecnames
-    set appendwrite = FALSE
-    set wr_singlescale
-    let code = 0
-    while code < 256
-      if code eq 0
-        let b0 = 0
-      else
-        let b0 = code % 2
-      end
-      if floor(code / 2) eq 0
-        let b1 = 0
-      else
-        let b1 = floor(code / 2) % 2
-      end
-      if floor(code / 4) eq 0
-        let b2 = 0
-      else
-        let b2 = floor(code / 4) % 2
-      end
-      if floor(code / 8) eq 0
-        let b3 = 0
-      else
-        let b3 = floor(code / 8) % 2
-      end
-      if floor(code / 16) eq 0
-        let b4 = 0
-      else 
-        let b4 = floor(code / 16) % 2
-      end
-      if floor(code / 32) eq 0
-        let b5 = 0
-      else
-        let b5 = floor(code / 32) % 2
-      end
-      if floor(code / 64) eq 0
-        let b6 = 0
-      else
-        let b6 = floor(code / 64) % 2
-      end
-      if floor(code / 128) eq 0
-        let b7 = 0
-      else
-        let b7 = floor(code / 128) % 2
-      end
-      alter vb0 $&b0
-      alter vb1 $&b1
-      alter vb2 $&b2
-      alter vb3 $&b3
-      alter vb4 $&b4
-      alter vb5 $&b5
-      alter vb6 $&b6
-      alter vb7 $&b7
-      save all
-      op
-      wrdata ~/Documents/madvlsi/final/schematics/adctest/adc_tb\{$&run\}.txt code v(sb0) v(sb1) v(sb2) v(sb3) v(sb4) v(sb5) v(sb6) v(sb7) i(vib) i(visense) i(vidump) v(q) v(qbar)
-      if code eq 0
-        set appendwrite
-        set wr_vecnames = FALSE
-      end
-      let code = code + 1
-    end
-    reset
-    let run = run + 1
+  set wr_vecnames
+  set wr_singlescale
+  let vin = -0.5
+  let code = 0
+
+  if code eq 0
+    let b0 = 0
+  else
+    let b0 = code % 2
   end
-quit
-.endc"}
+  if floor(code / 2) eq 0
+    let b1 = 0
+  else
+    let b1 = floor(code / 2) % 2
+  end
+  if floor(code / 4) eq 0
+    let b2 = 0
+  else
+    let b2 = floor(code / 4) % 2
+  end
+  if floor(code / 8) eq 0
+    let b3 = 0
+  else
+    let b3 = floor(code / 8) % 2
+  end
+  if floor(code / 16) eq 0
+    let b4 = 0
+  else 
+    let b4 = floor(code / 16) % 2
+  end
+  if floor(code / 32) eq 0
+    let b5 = 0
+  else
+    let b5 = floor(code / 32) % 2
+  end
+  if floor(code / 64) eq 0
+    let b6 = 0
+  else
+    let b6 = floor(code / 64) % 2
+  end
+  if floor(code / 128) eq 0
+    let b7 = 0
+  else
+    let b7 = floor(code / 128) % 2
+  end
+    
+  alter vb0 $&b0
+  alter vb1 $&b1
+  alter vb2 $&b2
+  alter vb3 $&b3
+  alter vb4 $&b4
+  alter vb5 $&b5
+  alter vb6 $&b6
+  alter vb7 $&b7
+  alter vinp $&vin
+  save all
+  tran 1n 1000n
+  wrdata ~/Documents/madvlsi/final/schematics/adctest/adc_tb.txt v(sb0) v(sb1) v(sb2) v(sb3) v(sb4) v(sb5) v(sb6) v(sb7) i(vib) i(visense) i(vidump) i(vdi) i(vdi_n) i(vi1) i(vi2) v(q) v(qbar) v(vin_p) v(iin_vout) v(iin_vout1)
+  quit
+.endc
+
+
+"}
 C {madvlsi/vsource.sym} -550 -865 0 0 {name=Vb0
 value=1
 }
@@ -302,3 +297,5 @@ C {lab_pin.sym} -770 -510 2 0 {name=p83 sig_type=std_logic lab=D2}
 C {lab_pin.sym} -495 -265 0 0 {name=p15 sig_type=std_logic lab=Vg}
 C {lab_pin.sym} -385 -135 0 0 {name=p33 sig_type=std_logic lab=Vg}
 C {lab_pin.sym} 100 -160 0 0 {name=p87 sig_type=std_logic lab=Vbn}
+C {madvlsi/ammeter1.sym} -695 -275 3 0 {name=VdI}
+C {madvlsi/ammeter1.sym} -695 -175 3 0 {name=VdI_n}

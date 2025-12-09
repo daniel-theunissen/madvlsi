@@ -16,12 +16,13 @@ async def reset(dut):
 async def test_input(dut, input):
     CLK = dut.clk
     COMP = dut.comp
-    DACOUT = dut.sar_reg
+    SAR_REG = dut.sar_reg
+    ADC_OUT = dut.adc_out
     value = int(input, 2)
     print(f"Theoretical input: {value}")
 
-    for i in range(560):
-        output_value = int(str(DACOUT.value), 2)
+    for i in range(801):
+        output_value = int(str(SAR_REG.value), 2)
         if output_value > value:
             COMP.value = 1
         else:
@@ -29,19 +30,23 @@ async def test_input(dut, input):
         # await ClockCycles(CLK, 1)
         await Timer(1, units="ns")
         # print(f"{DACOUT.value} : {output_value} : {COMP.value}")
-
-    print(f"Output: {DACOUT.value} : {output_value}")
+    final_value = int(str(ADC_OUT.value), 2)
+    print(f"Output: {ADC_OUT.value} : {final_value}")
 
 
 @cocotb.test()
 async def test_controller(dut):
     CLK = dut.clk
-    clock = Clock(CLK, 62.5, units="ns")
+    clock = Clock(CLK, 50, units="ns")
     cocotb.start_soon(clock.start())
 
     await reset(dut)
 
     value = "10111001"
+
+    await test_input(dut, value)
+
+    value = "00010100"
 
     await test_input(dut, value)
 

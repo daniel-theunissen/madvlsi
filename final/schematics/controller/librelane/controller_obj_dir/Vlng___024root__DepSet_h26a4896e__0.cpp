@@ -12,19 +12,32 @@ void Vlng___024root___eval_act(Vlng___024root* vlSelf) {
 }
 
 void Vlng___024root___nba_sequent__TOP__0(Vlng___024root* vlSelf);
+void Vlng___024root___nba_sequent__TOP__1(Vlng___024root* vlSelf);
 
 void Vlng___024root___eval_nba(Vlng___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vlng___024root___eval_nba\n"); );
     Vlng__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    if ((1ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
+    if ((2ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         Vlng___024root___nba_sequent__TOP__0(vlSelf);
+    }
+    if ((1ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
+        Vlng___024root___nba_sequent__TOP__1(vlSelf);
     }
 }
 
 VL_INLINE_OPT void Vlng___024root___nba_sequent__TOP__0(Vlng___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vlng___024root___nba_sequent__TOP__0\n"); );
+    Vlng__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.comparator_clk = ((IData)(vlSelfRef.rst_n) 
+                                && (1U & (~ (IData)(vlSelfRef.comparator_clk))));
+}
+
+VL_INLINE_OPT void Vlng___024root___nba_sequent__TOP__1(Vlng___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vlng___024root___nba_sequent__TOP__1\n"); );
     Vlng__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Init
@@ -37,7 +50,7 @@ VL_INLINE_OPT void Vlng___024root___nba_sequent__TOP__0(Vlng___024root* vlSelf) 
             __Vdly__controller__DOT__count = 0U;
             vlSelfRef.adc_out = vlSelfRef.controller__DOT__sar_reg;
             vlSelfRef.controller__DOT__sar_reg = 0x80U;
-        } else {
+        } else if (vlSelfRef.comparator_clk) {
             if (vlSelfRef.comp) {
                 vlSelfRef.controller__DOT__sar_reg 
                     = ((~ ((IData)(1U) << (7U & (- 
@@ -79,7 +92,7 @@ bool Vlng___024root___eval_phase__act(Vlng___024root* vlSelf) {
     Vlng__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Init
-    VlTriggerVec<1> __VpreTriggered;
+    VlTriggerVec<2> __VpreTriggered;
     CData/*0:0*/ __VactExecute;
     // Body
     Vlng___024root___eval_triggers__act(vlSelf);

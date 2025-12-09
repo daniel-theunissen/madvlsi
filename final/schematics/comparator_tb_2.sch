@@ -6,14 +6,14 @@ S {}
 F {}
 E {}
 B 2 -525 -705 275 -305 {flags=graph
-y1=-0.36
+y1=-0.24
 y2=1.9
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.1175824e-22
+x1=0
 x2=2e-05
 divx=5
 subdivx=1

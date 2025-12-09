@@ -121,6 +121,9 @@ VL_ATTR_COLD void Vlng___024root___dump_triggers__act(Vlng___024root* vlSelf) {
     if ((1ULL & vlSelfRef.__VactTriggered.word(0U))) {
         VL_DBG_MSGF("         'act' region trigger index 0 is active: @(posedge clk)\n");
     }
+    if ((2ULL & vlSelfRef.__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 1 is active: @(negedge clk)\n");
+    }
 }
 #endif  // VL_DEBUG
 
@@ -136,6 +139,9 @@ VL_ATTR_COLD void Vlng___024root___dump_triggers__nba(Vlng___024root* vlSelf) {
     if ((1ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         VL_DBG_MSGF("         'nba' region trigger index 0 is active: @(posedge clk)\n");
     }
+    if ((2ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 1 is active: @(negedge clk)\n");
+    }
 }
 #endif  // VL_DEBUG
 
@@ -148,6 +154,7 @@ VL_ATTR_COLD void Vlng___024root___ctor_var_reset(Vlng___024root* vlSelf) {
     vlSelf->comp = VL_RAND_RESET_I(1);
     vlSelf->rst_n = VL_RAND_RESET_I(1);
     vlSelf->dac_in = VL_RAND_RESET_I(8);
+    vlSelf->comparator_clk = VL_RAND_RESET_I(1);
     vlSelf->adc_out = VL_RAND_RESET_I(8);
     vlSelf->controller__DOT__sar_reg = VL_RAND_RESET_I(8);
     vlSelf->controller__DOT__count = VL_RAND_RESET_I(4);
