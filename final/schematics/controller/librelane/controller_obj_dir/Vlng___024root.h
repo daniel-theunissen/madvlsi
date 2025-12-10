@@ -18,10 +18,11 @@ class alignas(VL_CACHE_LINE_BYTES) Vlng___024root final : public VerilatedModule
     VL_IN8(comp,0,0);
     VL_IN8(rst_n,0,0);
     VL_OUT8(dac_in,7,0);
+    VL_OUT8(dac_in_n,7,0);
     VL_OUT8(comparator_clk,0,0);
     VL_OUT8(adc_out,7,0);
+    VL_OUT8(count,3,0);
     CData/*7:0*/ controller__DOT__sar_reg;
-    CData/*3:0*/ controller__DOT__count;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
     CData/*0:0*/ __VactContinue;

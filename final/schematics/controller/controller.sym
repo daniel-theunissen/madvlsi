@@ -1,7 +1,7 @@
 v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {type=primitive
-format="@name [ @@clk @@comp @@rst_n ] [ @@DAC[7..0] @@DAC_N[7..0] @@COMP_CLK @@ADC[7..0] ] null @symname
+format="@name [ @@clk @@comp @@rst_n ] [ @@DAC[7..0] @@DAC_N[7..0] @@COMP_CLK @@ADC[7..0] @@COUNT[3..0] ] null @symname
 .model controller d_cosim simulation=\\"../../Documents/madvlsi/final/schematics/controller/librelane/controller.so\\""
 template="name=A1"}
 V {}
@@ -15,6 +15,7 @@ L 4 50 -160 80 -160 {}
 L 4 50 -140 80 -140 {}
 L 4 50 -95 80 -95 {}
 L 4 50 -120 80 -120 {}
+L 4 -75 -80 -75 -50 {}
 B 5 -162.5 -162.5 -157.5 -157.5 {name=clk
 dir=in}
 B 5 -162.5 -142.5 -157.5 -137.5 {name=comp
@@ -29,6 +30,8 @@ B 5 77.5 -97.5 82.5 -92.5 {name=COMP_CLK
 dir=out}
 B 5 77.5 -122.5 82.5 -117.5 {name=DAC_N[7..0]
 dir=out}
+B 5 -77.5 -52.5 -72.5 -47.5 {name=COUNT[3..0]
+dir=out}
 P 4 5 50 -170 -130 -170 -130 -80 50 -80 50 -170 {}
 T {@symname} -69 -191 0 0 0.2 0.2 {}
 T {@name} -60 -72 0 0 0.2 0.2 {}
@@ -39,3 +42,4 @@ T {clk} -125 -165 0 0 0.2 0.2 {}
 T {dac_in[7:0]} -10 -145 0 0 0.2 0.2 {}
 T {comparator_clk} -30 -100 0 0 0.2 0.2 {}
 T {dac_in_n[7:0]} -20 -125 0 0 0.2 0.2 {}
+T {count[3:0]} -70 -135 1 0 0.2 0.2 {}

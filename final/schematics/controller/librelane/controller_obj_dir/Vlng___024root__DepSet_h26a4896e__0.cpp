@@ -41,48 +41,48 @@ VL_INLINE_OPT void Vlng___024root___nba_sequent__TOP__1(Vlng___024root* vlSelf) 
     Vlng__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Init
-    CData/*3:0*/ __Vdly__controller__DOT__count;
-    __Vdly__controller__DOT__count = 0;
+    CData/*3:0*/ __Vdly__count;
+    __Vdly__count = 0;
     // Body
-    __Vdly__controller__DOT__count = vlSelfRef.controller__DOT__count;
+    __Vdly__count = vlSelfRef.count;
     if (vlSelfRef.rst_n) {
-        if ((8U == (IData)(vlSelfRef.controller__DOT__count))) {
-            __Vdly__controller__DOT__count = 0U;
-            vlSelfRef.adc_out = vlSelfRef.controller__DOT__sar_reg;
-            vlSelfRef.controller__DOT__sar_reg = 0x80U;
-        } else if (vlSelfRef.comparator_clk) {
-            if (vlSelfRef.comp) {
-                vlSelfRef.controller__DOT__sar_reg 
-                    = ((~ ((IData)(1U) << (7U & (- 
+        if (vlSelfRef.comparator_clk) {
+            if ((8U == (IData)(vlSelfRef.count))) {
+                __Vdly__count = 0U;
+                vlSelfRef.adc_out = vlSelfRef.controller__DOT__sar_reg;
+                vlSelfRef.controller__DOT__sar_reg = 0x80U;
+            } else {
+                if (vlSelfRef.comp) {
+                    vlSelfRef.controller__DOT__sar_reg 
+                        = ((~ ((IData)(1U) << (7U & 
+                                               (- ((IData)(1U) 
+                                                   + (IData)(vlSelfRef.count)))))) 
+                           & (IData)(vlSelfRef.controller__DOT__sar_reg));
+                } else if ((1U & (~ (IData)(vlSelfRef.comp)))) {
+                    vlSelfRef.controller__DOT__sar_reg 
+                        = ((IData)(vlSelfRef.controller__DOT__sar_reg) 
+                           | (0xffU & ((IData)(1U) 
+                                       << (7U & (- 
                                                  ((IData)(1U) 
-                                                  + (IData)(vlSelfRef.controller__DOT__count)))))) 
-                       & (IData)(vlSelfRef.controller__DOT__sar_reg));
-            } else if ((1U & (~ (IData)(vlSelfRef.comp)))) {
+                                                  + (IData)(vlSelfRef.count)))))));
+                }
                 vlSelfRef.controller__DOT__sar_reg 
                     = ((IData)(vlSelfRef.controller__DOT__sar_reg) 
                        | (0xffU & ((IData)(1U) << (7U 
                                                    & (- 
-                                                      ((IData)(1U) 
-                                                       + (IData)(vlSelfRef.controller__DOT__count)))))));
+                                                      ((IData)(2U) 
+                                                       + (IData)(vlSelfRef.count)))))));
+                __Vdly__count = (0xfU & ((IData)(1U) 
+                                         + (IData)(vlSelfRef.count)));
             }
-            vlSelfRef.controller__DOT__sar_reg = ((IData)(vlSelfRef.controller__DOT__sar_reg) 
-                                                  | (0xffU 
-                                                     & ((IData)(1U) 
-                                                        << 
-                                                        (7U 
-                                                         & (- 
-                                                            ((IData)(2U) 
-                                                             + (IData)(vlSelfRef.controller__DOT__count)))))));
-            __Vdly__controller__DOT__count = (0xfU 
-                                              & ((IData)(1U) 
-                                                 + (IData)(vlSelfRef.controller__DOT__count)));
         }
     } else {
-        __Vdly__controller__DOT__count = 0U;
+        __Vdly__count = 0U;
         vlSelfRef.controller__DOT__sar_reg = 0x80U;
     }
-    vlSelfRef.controller__DOT__count = __Vdly__controller__DOT__count;
+    vlSelfRef.count = __Vdly__count;
     vlSelfRef.dac_in = vlSelfRef.controller__DOT__sar_reg;
+    vlSelfRef.dac_in_n = (0xffU & (~ (IData)(vlSelfRef.controller__DOT__sar_reg)));
 }
 
 void Vlng___024root___eval_triggers__act(Vlng___024root* vlSelf);

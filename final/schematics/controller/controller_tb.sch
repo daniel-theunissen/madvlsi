@@ -21,7 +21,7 @@ xlabmag=1.0
 ylabmag=1.0
 node="phi1a
 clk"
-color="10 4"
+color="7 6"
 dataset=-1
 unitx=1
 logx=0
@@ -142,8 +142,8 @@ C {lab_pin.sym} 385 -340 2 1 {name=p41 sig_type=std_logic lab=ADC7}
 C {devices/dac_bridge.sym} 635 -480 0 0 {name=A18 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
-C {lab_pin.sym} 605 -480 0 0 {name=p42 sig_type=std_logic lab=phi1}
-C {lab_pin.sym} 665 -480 2 0 {name=p43 sig_type=std_logic lab=phi1A}
+C {lab_pin.sym} 665 -480 2 0 {name=p42 sig_type=std_logic lab=phi1A}
+C {lab_pin.sym} 605 -480 0 0 {name=p43 sig_type=std_logic lab=phi1}
 C {launcher.sym} 370 -40 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/controller_tb.raw tran"

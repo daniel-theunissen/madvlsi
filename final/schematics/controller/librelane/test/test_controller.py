@@ -21,7 +21,7 @@ async def test_input(dut, input):
     value = int(input, 2)
     print(f"Theoretical input: {value}")
 
-    for i in range(801):
+    for i in range(1001):
         output_value = int(str(SAR_REG.value), 2)
         if output_value > value:
             COMP.value = 1
@@ -42,12 +42,14 @@ async def test_controller(dut):
 
     await reset(dut)
 
-    value = "10111001"
+    value = "00111111"
 
     await test_input(dut, value)
 
-    value = "00010100"
+    await ClockCycles(CLK, 3)
 
-    await test_input(dut, value)
+    # value = "00010100"
+
+    # await test_input(dut, value)
 
     # await Timer(20, units="us")

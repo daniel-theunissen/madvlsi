@@ -24,3 +24,44 @@ figure;
 plot(data.time, data.v_iin_vout1_, 'g-'); hold on
 plot(data.time, data.v_iin_vout_, 'm-')
 title("Comparator Input Voltages")
+
+
+%% 
+close all
+data = import_ngspice("adctest/adc_tb2.txt");
+
+b0 = data.v_sb0_ >= 1.099;
+b1 = data.v_sb1_ >= 1.099;
+b2 = data.v_sb2_ >= 1.099;
+b3 = data.v_sb3_ >= 1.099;
+b4 = data.v_sb4_ >= 1.099;
+b5 = data.v_sb5_ >= 1.099;
+b6 = data.v_sb6_ >= 1.099;
+b7 = data.v_sb7_ >= 1.099;
+
+words_raw = cat(2,b7,b6,b5,b4,b3,b2,b1,b0);
+[words,words_idx] = unique(words_raw,'rows','stable');
+
+adc0 = data.v_adc0a_ == 1.8;
+adc1 = data.v_adc1a_ == 1.8;
+adc2 = data.v_adc2a_ == 1.8;
+adc3 = data.v_adc3a_ == 1.8;
+adc4 = data.v_adc4a_ == 1.8;
+adc5 = data.v_adc5a_ == 1.8;
+adc6 = data.v_adc6a_ == 1.8;
+adc7 = data.v_adc7a_ == 1.8;
+
+adc_out_raw = cat(2,adc7,adc6,adc5,adc4,adc3,adc2,adc1,adc0);
+[adc_out,adc_out_idx,~] = unique(adc_out_raw,'rows','stable');
+
+count0 = data.v_count0a_ == 1.8;
+count1 = data.v_count1a_ == 1.8;
+count2 = data.v_count2a_ == 1.8;
+count3 = data.v_count3a_ == 1.8;
+
+count_raw = cat(2,count3,count2,count1,count0);
+[count,count_idx,~] = unique(count_raw,'rows','stable');
+
+% figure;
+% plot(data.time, data.v_sb7_); hold on
+% plot(data.time, data.v_sb6_);

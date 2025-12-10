@@ -90,6 +90,7 @@ VL_ATTR_COLD void Vlng___024root___stl_sequent__TOP__0(Vlng___024root* vlSelf) {
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     vlSelfRef.dac_in = vlSelfRef.controller__DOT__sar_reg;
+    vlSelfRef.dac_in_n = (0xffU & (~ (IData)(vlSelfRef.controller__DOT__sar_reg)));
 }
 
 VL_ATTR_COLD void Vlng___024root___eval_triggers__stl(Vlng___024root* vlSelf);
@@ -154,9 +155,10 @@ VL_ATTR_COLD void Vlng___024root___ctor_var_reset(Vlng___024root* vlSelf) {
     vlSelf->comp = VL_RAND_RESET_I(1);
     vlSelf->rst_n = VL_RAND_RESET_I(1);
     vlSelf->dac_in = VL_RAND_RESET_I(8);
+    vlSelf->dac_in_n = VL_RAND_RESET_I(8);
     vlSelf->comparator_clk = VL_RAND_RESET_I(1);
     vlSelf->adc_out = VL_RAND_RESET_I(8);
+    vlSelf->count = VL_RAND_RESET_I(4);
     vlSelf->controller__DOT__sar_reg = VL_RAND_RESET_I(8);
-    vlSelf->controller__DOT__count = VL_RAND_RESET_I(4);
     vlSelf->__Vtrigprevexpr___TOP__clk__0 = VL_RAND_RESET_I(1);
 }

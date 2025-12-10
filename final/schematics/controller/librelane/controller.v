@@ -13,14 +13,15 @@ module controller #(
     output wire [NUM_BITS - 1:0] dac_in,
     output wire [NUM_BITS - 1:0] dac_in_n,
     output reg comparator_clk,
-    output reg [NUM_BITS - 1:0] adc_out
+    output reg [NUM_BITS - 1:0] adc_out,
+    output reg [$clog2(NUM_BITS):0] count
   );
 
   reg [NUM_BITS - 1:0] sar_reg;
   assign dac_in = sar_reg;
   assign dac_in_n = ~dac_in;
 
-  reg [$clog2(NUM_BITS):0] count;
+  //reg [$clog2(NUM_BITS):0] count;
 
   always @(posedge clk)
   begin
@@ -29,7 +30,8 @@ module controller #(
       count <= 0;
       sar_reg <= {1'b1, {(NUM_BITS - 1){1'b0}}};
     end
-    else
+    else if (comparator_clk)
+    begin
       if (count == (NUM_BITS))
       begin
         count <= 0;
@@ -37,17 +39,17 @@ module controller #(
         sar_reg <= {1'b1, {(NUM_BITS - 1){1'b0}}};
       end
       else
-        if (comparator_clk)
-        begin
-          case (comp)
-            1'b1:
-              sar_reg[NUM_BITS - (count+1)] <= 0;
-            1'b0:
-              sar_reg[NUM_BITS - (count+1)] <= 1;
-          endcase
-          sar_reg[NUM_BITS - (count + 2)] <= 1;
-          count <= count + 1;
-        end
+      begin
+        case (comp)
+          1'b1:
+            sar_reg[NUM_BITS - (count+1)] <= 0;
+          1'b0:
+            sar_reg[NUM_BITS - (count+1)] <= 1;
+        endcase
+        sar_reg[NUM_BITS - (count + 2)] <= 1;
+        count <= count + 1;
+      end
+    end
   end
 
   always @(negedge clk)
