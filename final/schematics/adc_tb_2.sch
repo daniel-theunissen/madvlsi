@@ -141,7 +141,6 @@ value=0.7
 C {madvlsi/gnd.sym} -85 -255 0 0 {name=l6 lab=GND}
 C {lab_pin.sym} -155 -315 1 0 {name=p37 sig_type=std_logic lab=Vg}
 C {lab_pin.sym} -85 -315 1 0 {name=p38 sig_type=std_logic lab=Vmid}
-C {/home/dt/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} 365 -625 0 0 {name=x7}
 C {lab_pin.sym} -1055 -130 3 0 {name=p24 sig_type=std_logic lab=D2}
 C {lab_pin.sym} -1145 -175 3 0 {name=p25 sig_type=std_logic lab=D1}
 C {lab_pin.sym} -1175 -285 1 0 {name=p39 sig_type=std_logic lab=I2}
@@ -461,3 +460,4 @@ C {devices/dac_bridge.sym} 1160 -65 0 0 {name=A30 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
 C {lab_pin.sym} 1130 -65 2 1 {name=p163 sig_type=std_logic lab=COUNT3}
+C {/home/madvlsi/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} 365 -625 0 0 {name=x19}

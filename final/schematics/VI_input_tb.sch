@@ -34,7 +34,6 @@ C {madvlsi/vsource.sym} -450 -150 0 0 {name=Vdd
 value=1.8}
 C {madvlsi/gnd.sym} -450 -120 0 0 {name=l3 lab=GND}
 C {madvlsi/vdd.sym} -450 -180 0 0 {name=l4 lab=VDD}
-C {/home/dt/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} -510 110 0 0 {name=x2}
 C {madvlsi/vdd.sym} -460 -30 0 0 {name=l6 lab=VDD}
 C {madvlsi/gnd.sym} -460 110 0 0 {name=l7 lab=GND}
 C {lab_pin.sym} -680 70 0 0 {name=p1 sig_type=std_logic lab=Vbn}
@@ -70,7 +69,7 @@ spiceprefix=X
 }
 C {madvlsi/gnd.sym} -650 100 0 0 {name=l10 lab=GND}
 C {madvlsi/ammeter1.sym} -650 30 0 0 {name=VIb}
-C {lab_pin.sym} -400 50 2 0 {name=p5 sig_type=std_logic lab=Vbn}
+C {lab_pin.sym} -400 40 2 0 {name=p5 sig_type=std_logic lab=Vbn}
 C {madvlsi/vdd.sym} -650 30 0 0 {name=l12 lab=VDD}
 C {lab_pin.sym} -130 -60 3 0 {name=p2 sig_type=std_logic lab=Vbn}
 C {madvlsi/resistor.sym} 130 -120 0 0 {name=R2
@@ -89,7 +88,7 @@ m=1}
 C {cascode_bias_lds.sym} -350 280 0 0 {name=x3}
 C {madvlsi/vdd.sym} -310 100 0 0 {name=l5 lab=VDD}
 C {madvlsi/gnd.sym} -310 300 0 0 {name=l13 lab=GND}
-C {lab_pin.sym} -400 30 2 0 {name=p8 sig_type=std_logic lab=Vbp}
+C {lab_pin.sym} -400 20 2 0 {name=p8 sig_type=std_logic lab=Vbp}
 C {lab_pin.sym} -110 -60 3 0 {name=p9 sig_type=std_logic lab=Vbp}
 C {lab_pin.sym} -370 200 0 0 {name=p10 sig_type=std_logic lab=Vbp}
 C {lab_pin.sym} -250 200 2 0 {name=p11 sig_type=std_logic lab=Vcn}
@@ -97,3 +96,4 @@ C {lab_pin.sym} -150 -60 3 0 {name=p12 sig_type=std_logic lab=Vcn}
 C {madvlsi/ammeter1.sym} -270 -50 2 0 {name=VIr}
 C {lab_pin.sym} -210 20 3 0 {name=p13 sig_type=std_logic lab=VPROBE}
 C {lab_pin.sym} -270 20 3 0 {name=p14 sig_type=std_logic lab=VPROBE1}
+C {/home/madvlsi/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} -510 110 0 0 {name=x2}
