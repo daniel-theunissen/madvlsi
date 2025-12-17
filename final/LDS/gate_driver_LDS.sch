@@ -16,8 +16,8 @@ C {lab_pin.sym} -100 -20 0 0 {name=p2 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} -100 20 0 0 {name=p3 sig_type=std_logic lab=Dnbar}
 C {lab_pin.sym} 90 0 2 0 {name=p4 sig_type=std_logic lab=Vout}
 C {madvlsi/nmos3.sym} 50 80 0 0 {name=M1
-L=\{len\}
-W=\{wid\}
+L=0.5
+W=3
 body=GND
 nf=1
 mult=1
@@ -40,7 +40,10 @@ C {lab_pin.sym} -260 -30 2 0 {name=p17 sig_type=std_logic lab=Vout}
 C {opin.sym} -290 -30 2 0 {name=p18 lab=Vout}
 C {ipin.sym} -290 -70 0 0 {name=p5 lab=Dnbar}
 C {lab_pin.sym} -260 -70 2 0 {name=p6 sig_type=std_logic lab=Dnbar}
-C {code_shown.sym} 170 -110 0 0 {name=SPICE only_toplevel=false value="
-.param wid=3 len=0.5
-"}
 C {transmission_gate_LDS.sym} -40 0 0 0 {name=x1}
+C {iopin.sym} -290 10 2 0 {name=p8 lab=GND}
+C {lab_pin.sym} -290 10 2 0 {name=p9 sig_type=std_logic lab=GND}
+C {iopin.sym} -290 50 2 0 {name=p13 lab=VDD}
+C {lab_pin.sym} -290 50 2 0 {name=p16 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} -40 -50 1 0 {name=p19 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} -40 50 0 0 {name=p20 sig_type=std_logic lab=GND}

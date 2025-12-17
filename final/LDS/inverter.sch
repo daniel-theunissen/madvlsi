@@ -18,12 +18,9 @@ C {iopin.sym} 290 -220 3 0 {name=p2 lab=VP
 C {iopin.sym} 290 -60 1 0 {name=p3 lab=GND
 }
 C {opin.sym} 310 -140 0 0 {name=p4 lab=Y}
-C {code_shown.sym} 400 -260 0 0 {name=SPICE only_toplevel=false value="
-.param wid=3 len=0.5
-"}
 C {madvlsi/pmos3.sym} 290 -190 0 0 {name=M1
-L=\{len\}
-W=\{wid\}
+L=0.5
+W=3
 body=VDD
 nf=1
 mult=1
@@ -37,8 +34,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {madvlsi/nmos3.sym} 290 -90 0 0 {name=M2
-L=\{len\}
-W=\{wid\}
+L=0.5
+W=3
 body=GND
 nf=1
 mult=1
@@ -51,3 +48,6 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
+C {iopin.sym} 140 -195 2 0 {name=p5 lab=VDD
+}
+C {lab_pin.sym} 140 -195 2 0 {name=p6 sig_type=std_logic lab=VDD}

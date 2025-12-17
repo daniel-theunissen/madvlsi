@@ -15,15 +15,15 @@ N 380 -120 380 -50 {lab=Vg}
 N 460 -120 460 -50 {lab=Vg}
 N 540 -120 540 -50 {lab=Vg}
 N 540 -120 600 -120 {lab=Vg}
-N -40 -80 -40 -50 {lab=GND}
-N 40 -80 40 -50 {lab=GND}
-N 120 -80 120 -50 {lab=GND}
-N 200 -80 200 -50 {lab=GND}
-N 280 -80 280 -50 {lab=GND}
-N 360 -80 360 -50 {lab=GND}
-N 440 -80 440 -50 {lab=GND}
-N 520 -80 520 -50 {lab=GND}
-N 520 -80 600 -80 {lab=GND}
+N -40 -80 -40 -50 {lab=Vg}
+N 40 -80 40 -50 {lab=Vg}
+N 120 -80 120 -50 {lab=Vg}
+N 200 -80 200 -50 {lab=Vg}
+N 280 -80 280 -50 {lab=Vg}
+N 360 -80 360 -50 {lab=Vg}
+N 440 -80 440 -50 {lab=Vg}
+N 520 -80 520 -50 {lab=Vg}
+N 520 -80 600 -80 {lab=Vg}
 N -300 -90 -260 -90 {lab=sb0}
 N -470 -60 -430 -60 {lab=GND}
 N -470 -30 -430 -30 {lab=Vg}
@@ -64,13 +64,13 @@ N 220 -120 300 -120 {lab=Vg}
 N 300 -120 380 -120 {lab=Vg}
 N 380 -120 460 -120 {lab=Vg}
 N 460 -120 540 -120 {lab=Vg}
-N -40 -80 40 -80 {lab=GND}
-N 40 -80 120 -80 {lab=GND}
-N 120 -80 200 -80 {lab=GND}
-N 200 -80 280 -80 {lab=GND}
-N 280 -80 360 -80 {lab=GND}
-N 360 -80 440 -80 {lab=GND}
-N 440 -80 520 -80 {lab=GND}
+N -40 -80 40 -80 {lab=Vg}
+N 40 -80 120 -80 {lab=Vg}
+N 120 -80 200 -80 {lab=Vg}
+N 200 -80 280 -80 {lab=Vg}
+N 280 -80 360 -80 {lab=Vg}
+N 360 -80 440 -80 {lab=Vg}
+N 440 -80 520 -80 {lab=Vg}
 N -80 170 0 170 {lab=Isense}
 N 80 170 160 170 {lab=Isense}
 N 160 170 240 170 {lab=Isense}
@@ -86,6 +86,17 @@ N 280 200 360 200 {lab=Idump}
 N 360 200 440 200 {lab=Idump}
 N 440 200 520 200 {lab=Idump}
 N 520 200 570 200 {lab=Idump}
+N -470 -100 -430 -100 {lab=VDD}
+N -65 -100 600 -100 {lab=VDD}
+N -65 -100 -65 -50 {lab=VDD}
+N 15 -100 15 -50 {lab=VDD}
+N 95 -100 95 -50 {lab=VDD}
+N 175 -100 175 -50 {lab=VDD}
+N 255 -100 255 -50 {lab=VDD}
+N 335 -100 335 -50 {lab=VDD}
+N 415 -100 415 -50 {lab=VDD}
+N 495 -100 495 -50 {lab=VDD}
+N 560 -80 560 -50 {lab=Vg}
 C {lab_pin.sym} -260 -90 2 0 {name=p8 sig_type=std_logic lab=sb0}
 C {lab_pin.sym} -430 -60 2 0 {name=p27 sig_type=std_logic lab=GND
 }
@@ -142,3 +153,8 @@ C {daccell_LDS.sym} 325 35 0 0 {name=x6}
 C {daccell_LDS.sym} 405 35 0 0 {name=x7}
 C {daccell_LDS.sym} 485 35 0 0 {name=x8}
 C {dacend_LDS.sym} 555 -2.5 0 0 {name=x9}
+C {lab_pin.sym} -430 -100 2 0 {name=p13 sig_type=std_logic lab=VDD
+}
+C {iopin.sym} -470 -100 2 0 {name=p25 lab=VDD}
+C {lab_pin.sym} 600 -100 2 0 {name=p26 sig_type=std_logic lab=VDD
+}

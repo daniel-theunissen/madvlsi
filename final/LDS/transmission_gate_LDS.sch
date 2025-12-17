@@ -15,9 +15,11 @@ N -280 -100 -250 -100 {lab=Vgate}
 N -280 -60 -250 -60 {lab=Dn}
 N -280 -20 -250 -20 {lab=Dnbar}
 N -280 20 -250 20 {lab=Vout}
+N -280 60 -250 60 {lab=Vout}
+N -280 90 -250 90 {lab=Vout}
 C {madvlsi/nmos3.sym} 0 -30 1 0 {name=M1
-L=\{len\}
-W=\{wid\}
+L=0.5
+W=3
 body=GND
 nf=1
 mult=1
@@ -31,8 +33,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {madvlsi/pmos3.sym} 0 60 3 0 {name=M2
-L=\{len\}
-W=\{wid\}
+L=0.5
+W=3
 body=VDD
 nf=1
 mult=1
@@ -57,6 +59,7 @@ C {lab_pin.sym} -250 -60 2 0 {name=p9 sig_type=std_logic lab=Dn}
 C {lab_pin.sym} -250 -20 2 0 {name=p10 sig_type=std_logic lab=Dnbar}
 C {lab_pin.sym} -250 20 2 0 {name=p11 sig_type=std_logic lab=Vout}
 C {opin.sym} -280 20 2 0 {name=p12 lab=Vout}
-C {code_shown.sym} 85 -115 0 0 {name=SPICE only_toplevel=false value="
-.param wid=3 len=0.5
-"}
+C {lab_pin.sym} -250 60 2 0 {name=p13 sig_type=std_logic lab=GND}
+C {iopin.sym} -280 60 2 0 {name=p14 lab=GND}
+C {lab_pin.sym} -250 90 2 0 {name=p15 sig_type=std_logic lab=VDD}
+C {iopin.sym} -280 90 2 0 {name=p16 lab=VDD}

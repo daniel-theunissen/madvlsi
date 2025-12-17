@@ -13,6 +13,7 @@ N -110 -30 -70 -30 {lab=Iin}
 N -110 10 -70 10 {lab=Vgate}
 N 100 20 140 20 {lab=Idump}
 N 70 -10 110 -10 {lab=Vgate}
+N -110 -70 -80 -70 {lab=GND}
 C {lab_pin.sym} 50 -10 0 0 {name=p1 sig_type=std_logic lab=Vgate}
 C {lab_pin.sym} 100 40 2 0 {name=p9 sig_type=std_logic lab=Idump}
 C {lab_pin.sym} 100 -60 1 0 {name=p12 sig_type=std_logic lab=Iin}
@@ -23,8 +24,8 @@ C {opin.sym} -110 50 2 0 {name=p6 lab=Idump}
 C {ipin.sym} -110 -30 0 0 {name=p19 lab=Iin}
 C {ipin.sym} -110 10 0 0 {name=p25 lab=Vgate}
 C {madvlsi/nmos3.sym} 100 -10 0 0 {name=M5
-L=\{len\}
-W=\{wid\}
+L=0.5
+W=3
 body=GND
 nf=1
 mult=1
@@ -37,6 +38,5 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {code_shown.sym} 155 -125 0 0 {name=SPICE only_toplevel=false value="
-.param wid=3 len=0.5
-"}
+C {lab_pin.sym} -80 -70 2 0 {name=p2 sig_type=std_logic lab=GND}
+C {iopin.sym} -110 -70 2 0 {name=p3 lab=GND}
