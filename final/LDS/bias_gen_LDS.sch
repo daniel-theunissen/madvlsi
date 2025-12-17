@@ -71,6 +71,7 @@ N -280 -30 -240 -30 {lab=#net1}
 N -260 50 -250 50 {lab=#net1}
 N -280 80 -260 80 {lab=#net1}
 N -260 50 -260 80 {lab=#net1}
+N -290 -200 -240 -200 {lab=#net1}
 C {code_shown.sym} -880 -370 0 0 {name=SPICE only_toplevel=false value=".param len=0.5 wid=3"}
 C {madvlsi/nmos3.sym} -190 20 2 0 {name=M10
 L=\{len\}
