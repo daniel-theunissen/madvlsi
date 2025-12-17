@@ -1,0 +1,59 @@
+timestamp 1765999183
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use transmission_gate transmission_gate_0 1 0 60 0 1 620
+parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+port "VDD" 1 0 420 0 420 m1
+port "GND" 0 0 1140 0 1140 m1
+port "Vgate" 2 0 790 0 790 li
+port "Dn" 3 240 1580 240 1580 li
+port "Vout" 5 1070 900 1070 900 li
+port "Dnbar" 4 240 0 240 0 li
+node "VDD" 2 256.41 0 420 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 27200 1440 0 0 0 0 0 0 0 0 0 0
+node "GND" 2 247.722 0 1140 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 27200 1440 0 0 0 0 0 0 0 0 0 0
+node "Vgate" 19 39.4231 0 790 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2400 200 0 0 0 0 0 0 0 0 0 0 0 0
+node "Dn" 13 69.0881 240 1580 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6400 320 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_928_120#" 587 936.469 928 120 ndif 0 0 0 0 0 0 0 0 84000 1480 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 56000 1320 418600 3760 0 0 0 0 0 0 0 0 0 0
+node "Vout" 731 356.698 1070 900 li 0 0 0 0 0 0 0 0 84000 1480 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 87760 2580 0 0 0 0 0 0 0 0 0 0 0 0
+node "Dnbar" 609 556.244 240 0 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 74400 1720 0 0 35520 1696 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "GND" "Vout" 0.161064
+cap "VDD" "a_928_120#" 30.4813
+cap "Vout" "Vgate" 2.60204
+cap "GND" "a_928_120#" 49.6012
+cap "Vout" "Dnbar" 111.156
+cap "a_928_120#" "Vgate" 0.0476451
+cap "VDD" "GND" 16
+cap "VDD" "Vgate" 10.9248
+cap "Vout" "a_928_120#" 340.537
+cap "Dn" "Dnbar" 1.40884
+cap "a_928_120#" "Dnbar" 120.432
+cap "VDD" "Vout" 4.23517
+cap "VDD" "Dnbar" 3.06388
+cap "GND" "Vgate" 10.9248
+device msubckt sky130_fd_pr__nfet_01v8 828 120 829 121 l=100 w=600 "VSUBS" "Dnbar" 200 0 "Vout" 600 84000,1480 "a_928_120#" 600 84000,1480
+cap "transmission_gate_0/VDD" "transmission_gate_0/GND" 33.8196
+cap "transmission_gate_0/Dnbar" "transmission_gate_0/Vout" 29.3654
+cap "transmission_gate_0/Dnbar" "transmission_gate_0/GND" -0.00665711
+cap "transmission_gate_0/Dnbar" "transmission_gate_0/VDD" 102.094
+cap "transmission_gate_0/Vgate" "transmission_gate_0/Vout" -2.60204
+cap "transmission_gate_0/Vout" "transmission_gate_0/Dn" 0.0926234
+cap "transmission_gate_0/Vgate" "transmission_gate_0/GND" -10.8155
+cap "transmission_gate_0/GND" "transmission_gate_0/Dn" 0.117739
+cap "transmission_gate_0/Vgate" "transmission_gate_0/VDD" -10.9248
+cap "transmission_gate_0/GND" "transmission_gate_0/Vout" 13.1409
+cap "transmission_gate_0/VDD" "transmission_gate_0/Vout" 158.626
+cap "transmission_gate_0/Dnbar" "transmission_gate_0/Dn" -0.70442
+cap "transmission_gate_0/Dn" "transmission_gate_0/Dnbar" -0.70442
+cap "transmission_gate_0/Dn" "transmission_gate_0/GND" 0.709014
+merge "transmission_gate_0/GND" "VSUBS" -530.953 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -40000 -2760 0 0 0 0 0 0 0 0 0 0
+merge "VSUBS" "a_928_120#"
+merge "a_928_120#" "GND"
+merge "transmission_gate_0/Dn" "Dn" -69.0881 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6400 -320 0 0 0 0 0 0 0 0 0 0 0 0
+merge "transmission_gate_0/VDD" "VDD" -473.847 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -27200 -1440 0 0 0 0 0 0 0 0 0 0
+merge "transmission_gate_0/Dnbar" "Dnbar" -143.297 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6400 -320 0 0 0 0 0 0 0 0 0 0 0 0
+merge "transmission_gate_0/Vgate" "Vgate" -39.4231 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2400 -200 0 0 0 0 0 0 0 0 0 0 0 0
+merge "transmission_gate_0/Vout" "Vout" -166.929 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -120 0 0 0 0 0 0 0 0 0 0 0 0
