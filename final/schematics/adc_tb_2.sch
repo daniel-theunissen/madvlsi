@@ -293,7 +293,6 @@ C {lab_pin.sym} 1005 -445 2 1 {name=p107 sig_type=std_logic lab=DAC_N5}
 C {lab_pin.sym} 1005 -425 2 1 {name=p108 sig_type=std_logic lab=DAC_N6}
 C {lab_pin.sym} 1005 -405 2 1 {name=p109 sig_type=std_logic lab=DAC_N7}
 C {lab_pin.sym} 1170 -325 2 0 {name=p110 sig_type=std_logic lab=ADC[7..0]}
-C {/home/dt/Documents/madvlsi/final/schematics/controller/controller.sym} 1090 -165 0 0 {name=A1}
 C {lab_pin.sym} 1170 -260 2 0 {name=p111 sig_type=std_logic lab=phi1d}
 C {lab_pin.sym} 1295 -545 2 0 {name=p112 sig_type=std_logic lab=ADC0A}
 C {lab_pin.sym} 1295 -525 2 0 {name=p113 sig_type=std_logic lab=ADC1A}
@@ -461,3 +460,4 @@ device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
 C {lab_pin.sym} 1130 -65 2 1 {name=p163 sig_type=std_logic lab=COUNT3}
 C {/home/madvlsi/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} 365 -625 0 0 {name=x19}
+C {/home/madvlsi/Documents/madvlsi/final/schematics/controller/controller.sym} 1090 -165 0 0 {name=A31}
