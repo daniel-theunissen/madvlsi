@@ -32,8 +32,11 @@ N -50 -90 -50 -10 {lab=#net2}
 N 350 -110 350 -60 {lab=Vbn}
 N 350 -50 350 -30 {lab=Vbn}
 N 350 -30 350 -10 {lab=Vbn}
-N -190 50 -190 70 {lab=#net3}
 N 350 -60 350 -50 {lab=Vbn}
+N -190 130 -190 150 {lab=GND}
+N -190 50 -190 70 {lab=Vconst}
+N -210 100 -210 130 {lab=GND}
+N -210 130 -190 130 {lab=GND}
 C {code_shown.sym} -540 -90 0 0 {name=SPICE only_toplevel=false value=".param len=0.5 wid=3"}
 C {madvlsi/nmos3.sym} -190 20 2 0 {name=M10
 L=\{len\}
@@ -189,6 +192,9 @@ C {lab_pin.sym} 40 130 3 0 {name=p17 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 140 130 3 0 {name=p18 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 210 50 3 0 {name=p19 sig_type=std_logic lab=GND}
 C {lab_pin.sym} 350 50 3 0 {name=p20 sig_type=std_logic lab=GND}
-C {lab_pin.sym} -360 110 2 0 {name=p22 sig_type=std_logic lab=Vres}
-C {iopin.sym} -360 110 2 0 {name=p15 lab=Vres}
-C {lab_pin.sym} -190 70 3 0 {name=p21 sig_type=std_logic lab=Vres}
+C {sky130_fd_pr/res_high_po_0p35.sym} -190 100 0 0 {name=R2
+L=9
+model=res_high_po_0p35
+spiceprefix=X
+mult=1}
+C {lab_pin.sym} -190 150 3 0 {name=p21 sig_type=std_logic lab=GND}
