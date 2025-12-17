@@ -15,15 +15,6 @@ N 380 -120 380 -50 {lab=Vg}
 N 460 -120 460 -50 {lab=Vg}
 N 540 -120 540 -50 {lab=Vg}
 N 540 -120 600 -120 {lab=Vg}
-N -70 -100 -70 -50 {lab=VDD}
-N 10 -100 10 -50 {lab=VDD}
-N 90 -100 90 -50 {lab=VDD}
-N 170 -100 170 -50 {lab=VDD}
-N 250 -100 250 -50 {lab=VDD}
-N 330 -100 330 -50 {lab=VDD}
-N 410 -100 410 -50 {lab=VDD}
-N 490 -100 490 -50 {lab=VDD}
-N 490 -100 600 -100 {lab=VDD}
 N -40 -80 -40 -50 {lab=GND}
 N 40 -80 40 -50 {lab=GND}
 N 120 -80 120 -50 {lab=GND}
@@ -35,7 +26,6 @@ N 520 -80 520 -50 {lab=GND}
 N 520 -80 600 -80 {lab=GND}
 N -300 -90 -260 -90 {lab=sb0}
 N -470 -60 -430 -60 {lab=GND}
-N -470 -90 -430 -90 {lab=VDD}
 N -470 -30 -430 -30 {lab=Vg}
 N -300 -60 -260 -60 {lab=sb1}
 N -300 -30 -260 -30 {lab=sb2}
@@ -74,13 +64,6 @@ N 220 -120 300 -120 {lab=Vg}
 N 300 -120 380 -120 {lab=Vg}
 N 380 -120 460 -120 {lab=Vg}
 N 460 -120 540 -120 {lab=Vg}
-N -70 -100 10 -100 {lab=VDD}
-N 10 -100 90 -100 {lab=VDD}
-N 90 -100 170 -100 {lab=VDD}
-N 170 -100 250 -100 {lab=VDD}
-N 250 -100 330 -100 {lab=VDD}
-N 330 -100 410 -100 {lab=VDD}
-N 410 -100 490 -100 {lab=VDD}
 N -40 -80 40 -80 {lab=GND}
 N 40 -80 120 -80 {lab=GND}
 N 120 -80 200 -80 {lab=GND}
@@ -106,9 +89,6 @@ N 520 200 570 200 {lab=Idump}
 C {lab_pin.sym} -260 -90 2 0 {name=p8 sig_type=std_logic lab=sb0}
 C {lab_pin.sym} -430 -60 2 0 {name=p27 sig_type=std_logic lab=GND
 }
-C {lab_pin.sym} -430 -90 2 0 {name=p28 sig_type=std_logic lab=VDD
-}
-C {iopin.sym} -470 -90 2 0 {name=p33 lab=VDD}
 C {iopin.sym} -470 -60 2 0 {name=p34 lab=GND}
 C {ipin.sym} -300 -90 0 0 {name=p36 lab=sb0}
 C {lab_pin.sym} -430 -30 2 0 {name=p37 sig_type=std_logic lab=Vg
@@ -136,8 +116,6 @@ C {lab_pin.sym} 300 60 1 1 {name=p9 sig_type=std_logic lab=sb2}
 C {lab_pin.sym} 380 60 1 1 {name=p10 sig_type=std_logic lab=sb1}
 C {lab_pin.sym} 460 60 3 0 {name=p11 sig_type=std_logic lab=sb0}
 C {lab_pin.sym} 600 -120 2 0 {name=p12 sig_type=std_logic lab=Vg
-}
-C {lab_pin.sym} 600 -100 2 0 {name=p13 sig_type=std_logic lab=VDD
 }
 C {lab_pin.sym} 600 -80 2 0 {name=p14 sig_type=std_logic lab=GND
 }

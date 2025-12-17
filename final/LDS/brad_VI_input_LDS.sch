@@ -317,31 +317,3 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {cascoded_opamp_pmos_LDS.sym} 170 260 0 0 {name=x1}
-C {lab_pin.sym} 200 330 3 0 {name=p2 sig_type=std_logic lab=GND}
-C {lab_pin.sym} 200 190 1 0 {name=p12 sig_type=std_logic lab=VDD
-}
-C {lab_pin.sym} 350 260 2 0 {name=p13 sig_type=std_logic lab=OP1}
-C {lab_pin.sym} 50 220 0 0 {name=p32 sig_type=std_logic lab=Vbp
-}
-C {lab_pin.sym} 50 240 0 0 {name=p33 sig_type=std_logic lab=Vdssat
-}
-C {lab_pin.sym} 50 260 0 0 {name=p34 sig_type=std_logic lab=MIN1}
-C {lab_pin.sym} 50 280 0 0 {name=p37 sig_type=std_logic lab=Vcn
-}
-C {lab_pin.sym} 50 300 0 0 {name=p40 sig_type=std_logic lab=Vbn
-}
-C {cascoded_opamp_pmos_LDS.sym} 610 260 0 0 {name=x2}
-C {lab_pin.sym} 640 330 3 0 {name=p43 sig_type=std_logic lab=GND}
-C {lab_pin.sym} 640 190 1 0 {name=p44 sig_type=std_logic lab=VDD
-}
-C {lab_pin.sym} 790 260 2 0 {name=p45 sig_type=std_logic lab=OP1}
-C {lab_pin.sym} 490 220 0 0 {name=p46 sig_type=std_logic lab=Vbp
-}
-C {lab_pin.sym} 490 240 0 0 {name=p47 sig_type=std_logic lab=Vdssat
-}
-C {lab_pin.sym} 490 260 0 0 {name=p48 sig_type=std_logic lab=MIN1}
-C {lab_pin.sym} 490 280 0 0 {name=p49 sig_type=std_logic lab=Vcn
-}
-C {lab_pin.sym} 490 300 0 0 {name=p50 sig_type=std_logic lab=Vbn
-}
