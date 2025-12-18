@@ -62,9 +62,8 @@ C {lab_pin.sym} -610 -590 0 0 {name=p23 sig_type=std_logic lab=Vbn
 }
 C {lab_pin.sym} -530 -500 3 0 {name=p57 sig_type=std_logic lab=MIN2}
 C {lab_pin.sym} -510 -500 3 0 {name=p24 sig_type=std_logic lab=MIN1}
-C {lab_pin.sym} -610 -630 0 0 {name=p79 sig_type=std_logic lab=Vin_p}
-C {lab_pin.sym} -610 -610 0 0 {name=Vinn4 sig_type=std_logic lab=Vin_n
-value=0.9}
+C {lab_pin.sym} -610 -630 0 0 {name=p79 sig_type=std_logic lab=Vin_plus}
+C {lab_pin.sym} -610 -610 0 0 {name=Vinn4 sig_type=std_logic lab=Vin_minus}
 C {comparator_LDS.sym} 945 -535 0 0 {name=x7}
 C {lab_pin.sym} 945 -605 0 0 {name=p25 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 945 -465 0 0 {name=p29 sig_type=std_logic lab=GND}
@@ -172,37 +171,39 @@ C {lab_pin.sym} -250 -285 2 0 {name=p123 sig_type=std_logic lab=D1}
 C {lab_pin.sym} -250 -145 2 0 {name=p124 sig_type=std_logic lab=D2}
 C {lab_pin.sym} -400 -105 2 0 {name=p125 sig_type=std_logic lab=GND}
 C {lab_pin.sym} -400 -345 0 0 {name=p126 sig_type=std_logic lab=VDD}
-C {madvlsi/pmos3.sym} -690 -285 0 0 {name=M1
-L=0.5
-W=3
-body=VDD
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
-spiceprefix=X
-}
-C {lab_pin.sym} -690 -195 3 0 {name=p127 sig_type=std_logic lab=Ib}
-C {lab_pin.sym} -720 -285 0 0 {name=p128 sig_type=std_logic lab=Vbp}
-C {madvlsi/pmos3.sym} -690 -225 0 0 {name=M2
-L=0.5
-W=3
-body=VDD
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
-spiceprefix=X
-}
-C {lab_pin.sym} -720 -225 0 0 {name=p129 sig_type=std_logic lab=Vbp}
-C {lab_pin.sym} -690 -315 0 0 {name=p130 sig_type=std_logic lab=VDD}
+C {ipin.sym} -870 -1030 0 0 {name=p131 lab=Vin_plus}
+C {lab_pin.sym} -870 -1030 2 0 {name=p132 sig_type=std_logic lab=Vin_plus}
+C {ipin.sym} -875 -995 0 0 {name=p133 lab=Vin_minus}
+C {lab_pin.sym} -875 -995 2 0 {name=p134 sig_type=std_logic lab=Vin_minus}
+C {ipin.sym} -875 -960 0 0 {name=p135 lab=Vg}
+C {lab_pin.sym} -875 -960 2 0 {name=p136 sig_type=std_logic lab=Vg}
+C {ipin.sym} -875 -925 0 0 {name=p137 lab=Vmid}
+C {lab_pin.sym} -875 -925 2 0 {name=p138 sig_type=std_logic lab=Vmid}
+C {ipin.sym} -880 -890 0 0 {name=p139 lab=phi1}
+C {lab_pin.sym} -880 -890 2 0 {name=p140 sig_type=std_logic lab=phi1}
+C {lab_pin.sym} -985 -175 0 1 {name=p141 sig_type=std_logic lab=sb0}
+C {lab_pin.sym} -985 -195 0 1 {name=p142 sig_type=std_logic lab=sb1}
+C {lab_pin.sym} -985 -215 0 1 {name=p143 sig_type=std_logic lab=sb2}
+C {lab_pin.sym} -985 -235 0 1 {name=p144 sig_type=std_logic lab=sb3}
+C {lab_pin.sym} -985 -255 0 1 {name=p145 sig_type=std_logic lab=sb4}
+C {lab_pin.sym} -985 -275 0 1 {name=p146 sig_type=std_logic lab=sb5}
+C {lab_pin.sym} -985 -295 0 1 {name=p147 sig_type=std_logic lab=sb6}
+C {lab_pin.sym} -985 -315 0 1 {name=p148 sig_type=std_logic lab=sb7}
+C {ipin.sym} -985 -315 0 0 {name=p149 lab=sb7}
+C {ipin.sym} -985 -295 0 0 {name=p150 lab=sb6}
+C {ipin.sym} -985 -275 0 0 {name=p151 lab=sb5}
+C {ipin.sym} -985 -255 0 0 {name=p152 lab=sb4}
+C {ipin.sym} -985 -235 0 0 {name=p153 lab=sb3}
+C {ipin.sym} -985 -215 0 0 {name=p154 lab=sb2}
+C {ipin.sym} -985 -195 0 0 {name=p155 lab=sb1}
+C {ipin.sym} -985 -175 0 0 {name=p156 lab=sb0}
+C {iopin.sym} -880 -855 2 0 {name=p157 lab=VDD}
+C {lab_pin.sym} -880 -855 2 0 {name=p158 sig_type=std_logic lab=VDD}
+C {iopin.sym} -880 -825 2 0 {name=p159 lab=GND}
+C {lab_pin.sym} -880 -825 2 0 {name=p160 sig_type=std_logic lab=GND}
+C {lab_pin.sym} -855 -315 0 1 {name=p127 sig_type=std_logic lab=Ib}
+C {ipin.sym} -855 -315 0 0 {name=p128 lab=Ib}
+C {opin.sym} 1085 -380 0 0 {name=p129 lab=Q}
+C {lab_pin.sym} 1085 -380 0 0 {name=p130 sig_type=std_logic lab=Q}
+C {opin.sym} 1090 -335 0 0 {name=p161 lab=Qbar}
+C {lab_pin.sym} 1090 -335 0 0 {name=p162 sig_type=std_logic lab=Qbar}

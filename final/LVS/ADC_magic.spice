@@ -1,0 +1,189 @@
+* SPICE3 file created from ADC_LDS.ext - technology: sky130A
+
+.subckt IV_converter_LDS GND VDD Vgate Vmid Iin_Vout Vbn
+X0 Iin_Vout Vgate Vmid GND sky130_fd_pr__nfet_01v8 ad=0.6 pd=3.2 as=0.6 ps=3.2 w=1 l=4
+X1 a_n60_n600# Vbn GND GND sky130_fd_pr__nfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X2 GND a_n60_n600# Iin_Vout VDD sky130_fd_pr__pfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X3 Vmid a_n60_n600# a_n60_n600# Vmid sky130_fd_pr__pfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+.ends
+
+.subckt inverter VP VDD A Y GND
+X0 Y A GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X1 Y A VP VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+.ends
+
+.subckt daccell GND Iin Iprime Vgate D Isense Idump VDD
+Xinverter_0 Vgate VDD D inverter_0/Y GND inverter
+X0 Iprime Vgate Iin GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X1 a_0_n380# D Isense GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X2 a_0_n380# inverter_0/Y Idump GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X3 Iin Vgate a_0_n380# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+.ends
+
+.subckt dacend GND Iin Vgate Idump
+X0 Iin Vgate Idump GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+.ends
+
+.subckt dac Iin Isense Idump sb7 sb6 sb5 sb4 sb3 sb2 sb1 sb0 VDD Vg GND
+Xdaccell_0 GND Iin daccell_1/Iin Vg sb7 Isense Idump VDD daccell
+Xdaccell_1 GND daccell_1/Iin daccell_2/Iin Vg sb6 Isense Idump VDD daccell
+Xdaccell_2 GND daccell_2/Iin daccell_3/Iin Vg sb5 Isense Idump VDD daccell
+Xdaccell_3 GND daccell_3/Iin daccell_4/Iin Vg sb4 Isense Idump VDD daccell
+Xdaccell_4 GND daccell_4/Iin daccell_5/Iin Vg sb3 Isense Idump VDD daccell
+Xdaccell_5 GND daccell_5/Iin daccell_6/Iin Vg sb2 Isense Idump VDD daccell
+Xdaccell_6 GND daccell_6/Iin daccell_7/Iin Vg sb1 Isense Idump VDD daccell
+Xdaccell_7 GND daccell_7/Iin dacend_0/Iin Vg sb0 Isense Idump VDD daccell
+Xdacend_0 GND dacend_0/Iin Vg Idump dacend
+.ends
+
+.subckt bias_gen Vbp Vbn VDD GND
+X0 VDD a_740_700# Vbp VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X1 a_n3260_n1500# a_n3260_n1500# a_n3220_n1640# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X2 Vbn Vbn GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X3 VDD Vbp a_n3260_n1500# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X4 a_n3260_n1500# a_n3260_n1500# a_n3220_n1640# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X5 Vbp Vbn GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X6 a_n3260_n1500# a_n3260_n1500# a_n3220_n1640# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X7 VDD a_740_700# a_740_700# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X8 a_n3260_n1500# a_n3260_n1500# a_n3220_n1640# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X9 a_n3260_n1500# a_n3260_n1500# a_n3220_n1640# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X10 a_740_700# a_n3260_n1500# GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X11 a_n3260_n1500# a_n3260_n1500# a_n3220_n1640# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X12 a_n3260_n1500# a_n3260_n1500# a_n3220_n1640# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X13 a_n3260_n1500# a_n3260_n1500# a_n3220_n1640# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X14 a_n3260_n1500# a_n3260_n1500# a_n3220_n1640# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X15 VDD Vbp Vbn VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X16 a_n3260_n1500# a_n3260_n1500# a_n3220_n1640# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X17 GND Vbp GND GND sky130_fd_pr__nfet_01v8 ad=7 pd=21.4 as=20.3 ps=65 w=10 l=10
+X18 a_n3220_n1640# GND GND sky130_fd_pr__res_high_po_0p35 l=9.16
+.ends
+
+.subckt cascoded_opamp Vbp Vout GND Vbn Vminus Vplus VDD Vcp
+X0 a_0_n500# Vcp Vout VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X1 a_880_n1200# a_880_n1200# GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X2 Vout a_880_n1200# GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X3 a_0_100# Vplus a_0_n1100# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X4 VDD Vbp a_0_100# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X5 a_0_n1100# Vbn GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X6 VDD Vbp a_0_n500# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X7 a_0_100# Vcp a_880_n1200# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X8 a_0_n500# Vminus a_0_n1100# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+.ends
+
+.subckt cascode_bias_LDS Vbp VDD Vc GND Vdssat
+X0 Vdssat a_680_0# GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X1 VDD Vbp Vc VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X2 a_1460_840# Vbp a_680_0# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X3 Vdssat a_680_0# a_680_0# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X4 a_1460_840# Vbp a_720_600# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X5 Vdssat Vc Vc GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X6 VDD Vbp a_720_600# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X7 Vdssat a_680_0# a_680_0# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+.ends
+
+.subckt cascoded_opamp_pmos Vbp Vminus Vplus Vbn Vcn Vout GND VDD
+X0 a_n40_0# Vcn a_900_n1300# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X1 Vout Vcn a_0_n1300# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X2 VDD a_n40_0# a_n40_0# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X3 a_1620_n1380# Vminus a_0_n1300# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X4 VDD Vbp a_1620_n1380# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X5 a_900_n1300# Vplus a_1620_n1380# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X6 a_0_n1300# Vbn GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X7 VDD a_n40_0# Vout VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X8 a_900_n1300# Vbn GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+.ends
+
+.subckt summation VDD Vbp I1 I2 Vout_p1 Vout_p2 deltaI -deltaI Vout_n1 Vout_n2 D1
++ D2 Vbn GND
+X0 D2 Vbn GND GND sky130_fd_pr__nfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X1 deltaI Vout_n1 D1 GND sky130_fd_pr__nfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X2 -deltaI Vout_n2 D2 GND sky130_fd_pr__nfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X3 I2 Vout_p2 -deltaI VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X4 VDD Vbp I1 VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X5 D1 Vbn GND GND sky130_fd_pr__nfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X6 VDD Vbp I2 VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X7 VDD Vbp I2 VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X8 I1 Vout_p1 deltaI VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X9 VDD Vbp I1 VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+.ends
+
+.subckt cascode_bias_pmos Vdssat_p Vbn Vcp VDD GND
+X0 a_520_60# Vbn a_1340_n180# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X1 Vdssat_p Vcp Vcp VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X2 Vdssat_p a_480_700# a_480_700# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X3 Vdssat_p a_480_700# VDD VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X4 Vdssat_p a_480_700# a_480_700# VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X5 Vcp Vbn GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X6 a_520_60# Vbn GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X7 a_480_700# Vbn a_1340_n180# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+.ends
+
+.subckt VI_input GND VDD Vbn Vbp OP1 MIN1 OP2 MIN2 Iout_minus Iout_plus Vin_minus
++ Vin_plus w_1166_4826# w_1166_2026#
+X0 dw_960_4620# dw_960_1820# GND sky130_fd_pr__res_xhigh_po_0p35 l=20.16
+X1 dw_960_4620# Vbp VDD VDD sky130_fd_pr__pfet_01v8 ad=1.5 pd=7 as=1.5 ps=7 w=3 l=2
+X2 MIN2 Vbn GND GND sky130_fd_pr__nfet_01v8 ad=3 pd=5 as=1.5 ps=7 w=3 l=0.5
+X3 Iout_minus OP2 MIN2 GND sky130_fd_pr__nfet_01v8 ad=1.5 pd=7 as=3 ps=5 w=3 l=0.5
+X4 VDD Vbp dw_960_1820# VDD sky130_fd_pr__pfet_01v8 ad=1.5 pd=7 as=1.5 ps=7 w=3 l=2
+X5 MIN1 Vin_plus dw_960_4620# dw_960_4620# sky130_fd_pr__pfet_01v8 ad=2 pd=9 as=2 ps=9 w=4 l=0.5
+X6 dw_960_4620# Vbp VDD VDD sky130_fd_pr__pfet_01v8 ad=1.5 pd=7 as=1.5 ps=7 w=3 l=2
+X7 MIN1 Vbn GND GND sky130_fd_pr__nfet_01v8 ad=1.5 pd=7 as=1.5 ps=7 w=3 l=0.5
+X8 MIN1 Vbn GND GND sky130_fd_pr__nfet_01v8 ad=1.5 pd=7 as=1.5 ps=7 w=3 l=0.5
+X9 MIN2 Vbn GND GND sky130_fd_pr__nfet_01v8 ad=1.5 pd=7 as=1.5 ps=7 w=3 l=0.5
+X10 VDD Vbp dw_960_1820# VDD sky130_fd_pr__pfet_01v8 ad=1.5 pd=7 as=1.5 ps=7 w=3 l=2
+X11 Iout_plus OP1 MIN1 GND sky130_fd_pr__nfet_01v8 ad=1.5 pd=7 as=1.5 ps=7 w=3 l=0.5
+X12 VDD Vbp dw_960_1820# VDD sky130_fd_pr__pfet_01v8 ad=1.5 pd=7 as=1.5 ps=7 w=3 l=2
+X13 MIN2 Vin_minus dw_960_1820# dw_960_1820# sky130_fd_pr__pfet_01v8 ad=2 pd=9 as=2 ps=9 w=4 l=0.5
+X14 dw_960_4620# Vbp VDD VDD sky130_fd_pr__pfet_01v8 ad=1.5 pd=7 as=1.5 ps=7 w=3 l=2
+.ends
+
+.subckt comparator_LDS VDD Vin_p Vin_n phi2 Q GND Vbn phi1 Qbar
+X0 VDD a_n960_460# a_n960_1180# VDD sky130_fd_pr__pfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X1 a_n960_1180# Vin_p a_n960_680# GND sky130_fd_pr__nfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X2 GND Vbn a_n960_680# GND sky130_fd_pr__nfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X3 Q phi2 GND GND sky130_fd_pr__nfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X4 VDD a_n960_1180# a_n960_460# VDD sky130_fd_pr__pfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X5 a_n960_1180# phi1 a_n960_460# VDD sky130_fd_pr__pfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X6 a_n960_460# phi2 Q VDD sky130_fd_pr__pfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X7 a_n960_1180# phi2 Qbar VDD sky130_fd_pr__pfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X8 Qbar Q GND GND sky130_fd_pr__nfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X9 a_n960_680# Vin_n a_n960_460# GND sky130_fd_pr__nfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X10 Q Qbar GND GND sky130_fd_pr__nfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+X11 Qbar phi2 GND GND sky130_fd_pr__nfet_01v8 ad=1.8 pd=7.2 as=1.8 ps=7.2 w=3 l=0.5
+.ends
+
+.subckt ADC_LDS Vin_plus Vin_minus VDD GND Vg Vmid phi1 sb7 sb6 sb5 sb4 sb3 sb2 sb1
++ sb0 Q Qbar Ib
+XIV_converter_LDS_1 GND VDD Vg Vmid summation_0/deltaI bias_gen_0/Vbn w_21566_6256#
++ IV_converter_LDS
+Xinverter_0 VDD VDD phi1 inverter_0/Y GND inverter
+Xdac_0 Ib dac_0/Isense dac_0/Idump sb7 sb6 sb5 sb4 sb3 sb2 sb1 sb0 VDD Vg GND dac
+Xbias_gen_0 bias_gen_0/Vbp bias_gen_0/Vbn VDD GND bias_gen
+Xcascoded_opamp_0 bias_gen_0/Vbp summation_0/Vout_p1 GND bias_gen_0/Vbn summation_0/I1
++ cascoded_opamp_1/Vplus VDD cascoded_opamp_1/Vcp cascoded_opamp
+Xcascode_bias_LDS_0 bias_gen_0/Vbp VDD cascode_bias_LDS_0/Vc GND cascode_bias_LDS_0/Vdssat
++ cascode_bias_LDS
+Xcascoded_opamp_1 bias_gen_0/Vbp summation_0/Vout_p2 GND bias_gen_0/Vbn summation_0/I2
++ cascoded_opamp_1/Vplus VDD cascoded_opamp_1/Vcp cascoded_opamp
+Xcascoded_opamp_pmos_0 bias_gen_0/Vbp dac_0/Idump cascode_bias_LDS_0/Vdssat bias_gen_0/Vbn
++ cascode_bias_LDS_0/Vc summation_0/Vout_n2 GND VDD cascoded_opamp_pmos
+Xcascoded_opamp_pmos_1 bias_gen_0/Vbp dac_0/Isense cascode_bias_LDS_0/Vdssat bias_gen_0/Vbn
++ cascode_bias_LDS_0/Vc summation_0/Vout_n1 GND VDD cascoded_opamp_pmos
+Xcascoded_opamp_pmos_2 bias_gen_0/Vbp VI_input_0/MIN1 cascode_bias_LDS_0/Vdssat bias_gen_0/Vbn
++ cascode_bias_LDS_0/Vc VI_input_0/OP1 GND VDD cascoded_opamp_pmos
+Xcascoded_opamp_pmos_3 bias_gen_0/Vbp VI_input_0/MIN2 cascode_bias_LDS_0/Vdssat bias_gen_0/Vbn
++ cascode_bias_LDS_0/Vc VI_input_0/OP2 GND VDD cascoded_opamp_pmos
+Xsummation_0 VDD bias_gen_0/Vbp summation_0/I1 summation_0/I2 summation_0/Vout_p1
++ summation_0/Vout_p2 summation_0/deltaI summation_0/-deltaI summation_0/Vout_n1 summation_0/Vout_n2
++ dac_0/Isense dac_0/Idump bias_gen_0/Vbn GND summation
+Xcascode_bias_pmos_0 cascoded_opamp_1/Vplus bias_gen_0/Vbn cascoded_opamp_1/Vcp VDD
++ GND cascode_bias_pmos
+XVI_input_0 GND VDD bias_gen_0/Vbn bias_gen_0/Vbp VI_input_0/OP1 VI_input_0/MIN1 VI_input_0/OP2
++ VI_input_0/MIN2 summation_0/I2 summation_0/I1 Vin_minus Vin_plus w_8726_3686# w_5926_3686#
++ VI_input
+Xcomparator_LDS_0 VDD summation_0/-deltaI summation_0/deltaI inverter_0/Y Q GND bias_gen_0/Vbn
++ phi1 Qbar comparator_LDS
+XIV_converter_LDS_0 GND VDD Vg Vmid summation_0/-deltaI bias_gen_0/Vbn w_21566_3436#
++ IV_converter_LDS
+.ends
+
