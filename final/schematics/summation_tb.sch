@@ -32,7 +32,7 @@ i(v.x1.vbiaspl)
 i(v.x1.vbiasnr)
 i(v.x1.vbiasnl)"
 y1=-5.2e-06}
-B 2 650 240 1450 640 {flags=graph
+B 2 1610 250 2410 650 {flags=graph
 y1=0.11
 y2=1.7
 ypos1=0
@@ -59,7 +59,7 @@ logx=0
 logy=0
 rawfile=$netlist_dir/summation_tb.raw
 sim_type=tran}
-B 2 615 710 1415 1110 {flags=graph
+B 2 605 240 1405 640 {flags=graph
 y1=0
 y2=1.6e-05
 ypos1=0

@@ -20,6 +20,7 @@ xlabel("V+ (V)")
 ylabel("I (A)")
 title("Iout+, Iout- @ V- = 0V")
 legend("Iout- (theory)", "Iout+ (theory)", "Iout- (sim)", "Iout+ (sim)")
+grid on
 
 figure;
 plot(Vin_p, data.i_v_x4_vib_, "r."); hold on

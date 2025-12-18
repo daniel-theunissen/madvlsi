@@ -28,6 +28,36 @@ logx=0
 logy=0
 rawfile=$netlist_dir/controller_tb.raw
 sim_type=tran}
+B 2 560 20 1360 420 {flags=graph
+y1=0
+y2=1.8
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=1e-06
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="dac7a
+
+rst_n
+dac6a
+dac5a
+dac4a
+dac3a
+dac2a
+dac1a
+dac0a"
+color="5 11 9 9 9 9 9 9 9"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
 C {madvlsi/vsource.sym} -250 -180 0 0 {name=Vdd
 value=1.8}
 C {madvlsi/vsource.sym} -180 -180 0 0 {name=Vclk
@@ -48,7 +78,7 @@ C {code_shown.sym} -245 -415 0 0 {name=SPICE only_toplevel=false value=".control
 C {sky130_fd_pr/corner.sym} -400 -420 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {lab_pin.sym} -180 -210 1 0 {name=p1 sig_type=std_logic lab=CLK}
 C {madvlsi/vsource.sym} -170 -10 0 0 {name=Vrst_n
-value="pwl(0 0 50n 0 51n 1.8)"}
+value="pwl(0 0 500n 0 501n 1.8)"}
 C {madvlsi/gnd.sym} -170 20 0 0 {name=l7 lab=GND}
 C {lab_pin.sym} 110 -260 0 0 {name=p2 sig_type=std_logic lab=CLK}
 C {lab_pin.sym} -250 -40 1 0 {name=p3 sig_type=std_logic lab=COMP}

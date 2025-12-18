@@ -1,0 +1,15 @@
+* SPICE3 file created from daccell.ext - technology: sky130A
+
+.subckt inverter VP VDD A Y GND
+X0 Y A GND GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X1 Y A VP VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+.ends
+
+.subckt daccell GND Iin Iprime Vgate D Isense Idump VDD
+Xinverter_0 Vgate VDD D inverter_0/Y GND inverter
+X0 Iprime Vgate Iin GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X1 a_0_n380# D Isense GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X2 a_0_n380# inverter_0/Y Idump GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X3 Iin Vgate a_0_n380# GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+.ends
+

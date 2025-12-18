@@ -22,6 +22,11 @@ end
 %%
 close all;
 figure;
-plot(data.run19_1.i_viin_, data.run14_8.v_vout_); hold on
+plot(data.run19_1.i_viin_, data.run15_8.v_vout_); hold on
+title("Current to Voltage Conversion")
+xlabel("Input Current (A)")
+ylabel("Output Voltage (V)")
+xline(0,'k--')
+grid on
 % xline(16.6e-6, 'r--')
 

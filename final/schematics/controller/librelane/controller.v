@@ -29,8 +29,9 @@ module controller #(
     begin
       count <= 0;
       sar_reg <= {1'b1, {(NUM_BITS - 1){1'b0}}};
+      adc_out <= 0;
     end
-    else if (comparator_clk)
+    else
     begin
       if (count == (NUM_BITS))
       begin
@@ -38,7 +39,7 @@ module controller #(
         adc_out <= sar_reg;
         sar_reg <= {1'b1, {(NUM_BITS - 1){1'b0}}};
       end
-      else
+      else if (comparator_clk)
       begin
         case (comp)
           1'b1:
@@ -46,7 +47,10 @@ module controller #(
           1'b0:
             sar_reg[NUM_BITS - (count+1)] <= 1;
         endcase
-        sar_reg[NUM_BITS - (count + 2)] <= 1;
+        if ((count + 2) != (NUM_BITS + 1))
+        begin
+          sar_reg[NUM_BITS - (count + 2)] <= 1;
+        end
         count <= count + 1;
       end
     end

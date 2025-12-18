@@ -1,0 +1,52 @@
+** sch_path: /home/dt/Documents/madvlsi/final/LDS/dac_LDS.sch
+.subckt dac_LDS sb0 VDD GND sb1 Vg sb2 sb3 Isense sb4 Idump sb5 sb6 sb7 Iin
+*.PININFO GND:B sb0:I sb1:I sb2:I sb3:I sb4:I sb5:I sb6:I sb7:I Isense:O Idump:O Vg:I Iin:I VDD:B
+x1 net1 GND Iin Vg sb7 Isense Idump VDD daccell_LDS
+x2 net2 GND net1 Vg sb6 Isense Idump VDD daccell_LDS
+x3 net3 GND net2 Vg sb5 Isense Idump VDD daccell_LDS
+x4 net4 GND net3 Vg sb4 Isense Idump VDD daccell_LDS
+x5 net5 GND net4 Vg sb3 Isense Idump VDD daccell_LDS
+x6 net6 GND net5 Vg sb2 Isense Idump VDD daccell_LDS
+x7 net7 GND net6 Vg sb1 Isense Idump VDD daccell_LDS
+x8 net8 GND net7 Vg sb0 Isense Idump VDD daccell_LDS
+x9 net8 Vg Idump GND dacend_LDS
+.ends
+
+* expanding   symbol:  daccell_LDS.sym # of pins=8
+** sym_path: /home/dt/Documents/madvlsi/final/LDS/daccell_LDS.sym
+** sch_path: /home/dt/Documents/madvlsi/final/LDS/daccell_LDS.sch
+.subckt daccell_LDS Iprime GND Iin Vgate D Isense Idump VDD
+*.PININFO GND:B Isense:O Idump:O Iin:I Iprime:O Vgate:I D:I VDD:B
+XM2 net2 D Isense GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+X1 Vgate D net1 GND VDD inverter
+XM1 net2 net1 Idump GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM3 Iin Vgate net2 GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 Iin Vgate Iprime GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  dacend_LDS.sym # of pins=4
+** sym_path: /home/dt/Documents/madvlsi/final/LDS/dacend_LDS.sym
+** sch_path: /home/dt/Documents/madvlsi/final/LDS/dacend_LDS.sch
+.subckt dacend_LDS Iin Vgate Idump GND
+*.PININFO Idump:O Iin:I Vgate:I GND:B
+XM5 Iin Vgate Idump GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  inverter.sym # of pins=5
+** sym_path: /home/dt/Documents/madvlsi/final/LDS/inverter.sym
+** sch_path: /home/dt/Documents/madvlsi/final/LDS/inverter.sch
+.subckt inverter VP A Y GND VDD
+*.PININFO A:I VP:B GND:B Y:O VDD:B
+XM1 Y A VP VDD sky130_fd_pr__pfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y A GND GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+

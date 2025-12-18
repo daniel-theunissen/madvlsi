@@ -37,6 +37,7 @@ ylabel('Current (A)');
 title(['DAC Current Sweep: ', filename], 'Interpreter', 'none');
 legend('Isense', 'Idump');
 
+
 %%
 % close all;
 ib = data.i_vidump_(1) + data.i_visense_(1);
@@ -112,6 +113,9 @@ title("8-Bit DAC Linearity")
 xlabel("Input (decimal)")
 ylabel("Output (Normalized to decimal)")
 legend("Ideal", "Actual", Location="northwest")
+grid on;
+xlim([0 255])
+ylim([0 255])
 % plot(d_in, data.i_Vitest_./(ib/96), 'gx')
 % plot(d_in, d_in, 'm.')
 
@@ -135,7 +139,9 @@ plot(dnl_list, '.'); hold on
 plot(dnl_list, 'k-')
 title("DNL")
 xlabel("Index")
-ylabel("Bits of DNL")
+ylabel("LSBs of DNL")
+axis([0 255 -0.017 0.001])
+grid on
 
 disp(data.i_vib_(1))
 % figure;

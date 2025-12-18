@@ -14,14 +14,17 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=2e-05
+x2=9e-06
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
 node="phi1
-q"
-color="10 21"
+q
+sb7
+
+count3a"
+color="10 21 5 6"
 dataset=-1
 unitx=1
 logx=0
@@ -29,40 +32,37 @@ logy=0
 rawfile=$netlist_dir/adc_tb_2.raw
 sim_type=tran}
 B 2 1510 -1360 2310 -960 {flags=graph
-y1=0
-y2=1.8
+y1=0.25
+y2=1.3
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
 x1=0
-x2=2e-05
+x2=9e-06
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
 node="iin_vout
-iin_vout1
-
-
-phi1"
-color="21 10 9"
+iin_vout1"
+color="21 10"
 dataset=-1
 unitx=1
 logx=0
 logy=0
 }
 B 2 1530 -870 2330 -470 {flags=graph
-y1=-2e-05
-y2=9.5e-06
+y1=-2.5e-05
+y2=9.4e-06
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
 x1=0
-x2=2e-05
+x2=9e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -70,6 +70,27 @@ ylabmag=1.0
 node="i(vdi)
 i(vdi_n)"
 color="21 10"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+B 2 1525 -420 2325 -20 {flags=graph
+y1=-0.41
+y2=-0.39
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=9e-06
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node=vinp
+color=6
 dataset=-1
 unitx=1
 logx=0
@@ -124,23 +145,13 @@ C {madvlsi/vdd.sym} 355 -535 0 0 {name=l1 lab=VDD}
 C {madvlsi/gnd.sym} 355 -475 0 0 {name=l2 lab=GND}
 C {sky130_fd_pr/corner.sym} -705 -1030 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {IV_converter.sym} -345 -265 0 0 {name=x5}
-C {lab_pin.sym} -295 -215 0 0 {name=p14 sig_type=std_logic lab=Vmid}
 C {lab_pin.sym} -495 -245 0 0 {name=p17 sig_type=std_logic lab=Vbn}
 C {lab_pin.sym} -345 -315 0 0 {name=p18 sig_type=std_logic lab=Iin_Vout}
 C {IV_converter.sym} -235 -135 0 0 {name=x6}
-C {lab_pin.sym} -185 -85 0 0 {name=p32 sig_type=std_logic lab=Vmid}
 C {lab_pin.sym} -385 -115 0 0 {name=p34 sig_type=std_logic lab=Vbn}
 C {lab_pin.sym} -235 -185 0 0 {name=p35 sig_type=std_logic lab=Iin_Vout1}
-C {madvlsi/vsource.sym} -155 -285 0 0 {name=Vgate
-value=1.1
-}
-C {madvlsi/gnd.sym} -155 -255 0 0 {name=l4 lab=GND}
-C {madvlsi/vsource.sym} -85 -285 0 0 {name=Vmid
-value=0.7
-}
-C {madvlsi/gnd.sym} -85 -255 0 0 {name=l6 lab=GND}
-C {lab_pin.sym} -155 -315 1 0 {name=p37 sig_type=std_logic lab=Vg}
-C {lab_pin.sym} -85 -315 1 0 {name=p38 sig_type=std_logic lab=Vmid}
+C {lab_pin.sym} -160 -415 2 0 {name=p38 sig_type=std_logic lab=Vmid}
+C {/home/dt/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} 365 -625 0 0 {name=x7}
 C {lab_pin.sym} -1055 -130 3 0 {name=p24 sig_type=std_logic lab=D2}
 C {lab_pin.sym} -1145 -175 3 0 {name=p25 sig_type=std_logic lab=D1}
 C {lab_pin.sym} -1175 -285 1 0 {name=p39 sig_type=std_logic lab=I2}
@@ -202,10 +213,10 @@ C {lab_pin.sym} -1210 -610 3 0 {name=p73 sig_type=std_logic lab=Ib}
 C {lab_pin.sym} -1080 -680 0 0 {name=p74 sig_type=std_logic lab=Ib}
 C {madvlsi/ammeter1.sym} -1080 -680 3 0 {name=Vib}
 C {lab_pin.sym} -1240 -640 0 0 {name=p75 sig_type=std_logic lab=Vbp}
-C {madvlsi/vsource.sym} -505 -630 0 0 {name=Vinp
-value=-0.25}
-C {madvlsi/gnd.sym} -505 -600 0 0 {name=l24 lab=GND}
-C {lab_pin.sym} -505 -660 1 0 {name=p76 sig_type=std_logic lab=Vin_p}
+C {madvlsi/vsource.sym} -665 -470 0 0 {name=Vinp
+value=-0.402344}
+C {madvlsi/gnd.sym} -665 -440 0 0 {name=l24 lab=GND}
+C {lab_pin.sym} -665 -500 1 0 {name=p76 sig_type=std_logic lab=Vinp}
 C {madvlsi/vsource.sym} -585 -630 0 0 {name=Vinn
 value=0}
 C {madvlsi/gnd.sym} -585 -600 0 0 {name=Vinn1 lab=GND
@@ -215,7 +226,7 @@ value=0.9}
 C {brad_VI_input.sym} -225 -625 0 0 {name=x11}
 C {lab_pin.sym} -375 -635 0 0 {name=p77 sig_type=std_logic lab=Vbn}
 C {lab_pin.sym} -375 -615 0 0 {name=p78 sig_type=std_logic lab=Vbp}
-C {lab_pin.sym} -375 -675 0 0 {name=p79 sig_type=std_logic lab=Vin_p}
+C {lab_pin.sym} -375 -675 0 0 {name=p79 sig_type=std_logic lab=Vinp}
 C {lab_pin.sym} -375 -655 0 0 {name=Vinn4 sig_type=std_logic lab=Vin_n
 value=0.9}
 C {madvlsi/ammeter1.sym} -435 -535 2 0 {name=VIr}
@@ -293,6 +304,7 @@ C {lab_pin.sym} 1005 -445 2 1 {name=p107 sig_type=std_logic lab=DAC_N5}
 C {lab_pin.sym} 1005 -425 2 1 {name=p108 sig_type=std_logic lab=DAC_N6}
 C {lab_pin.sym} 1005 -405 2 1 {name=p109 sig_type=std_logic lab=DAC_N7}
 C {lab_pin.sym} 1170 -325 2 0 {name=p110 sig_type=std_logic lab=ADC[7..0]}
+C {/home/dt/Documents/madvlsi/final/schematics/controller/controller.sym} 1090 -165 0 0 {name=A1}
 C {lab_pin.sym} 1170 -260 2 0 {name=p111 sig_type=std_logic lab=phi1d}
 C {lab_pin.sym} 1295 -545 2 0 {name=p112 sig_type=std_logic lab=ADC0A}
 C {lab_pin.sym} 1295 -525 2 0 {name=p113 sig_type=std_logic lab=ADC1A}
@@ -421,15 +433,15 @@ C {lab_pin.sym} 1145 -690 1 0 {name=p151 sig_type=std_logic lab=DAC_N4A}
 C {lab_pin.sym} 1235 -690 1 0 {name=p152 sig_type=std_logic lab=DAC_N5A}
 C {lab_pin.sym} 1325 -690 1 0 {name=p153 sig_type=std_logic lab=DAC_N6A}
 C {lab_pin.sym} 1415 -690 1 0 {name=p154 sig_type=std_logic lab=DAC_N7A}
-C {code_shown.sym} -1020 -1040 0 0 {name=SPICE only_toplevel=false value="
+C {code_shown.sym} -1065 -1065 0 0 {name=SPICE only_toplevel=false value="
 .control
   save all
   set wr_vecnames
   set wr_singlescale
   remzerovec
-  tran 1n 20u
-  write adc_tb_2.raw
-  wrdata ~/Documents/madvlsi/final/schematics/adctest/adc_tb2.txt v(vin_p) v(sb0) v(sb1) v(sb2) v(sb3) v(sb4) v(sb5) v(sb6) v(sb7) v(adc0a) v(adc1a) v(adc2a) v(adc3a) v(adc4a) v(adc5a) v(adc6a) v(adc7a) v(count0a) v(count1a) v(count2a) v(count3a)
+  tran 2n 9000n
+  * write adc_tb_2.raw
+  wrdata ~/Documents/madvlsi/final/schematics/adctest/adc_tb2.txt v(rst_n) v(vinp) v(sb0) v(sb1) v(sb2) v(sb3) v(sb4) v(sb5) v(sb6) v(sb7) v(adc0a) v(adc1a) v(adc2a) v(adc3a) v(adc4a) v(adc5a) v(adc6a) v(adc7a) v(count0a) v(count1a) v(count2a) v(count3a)
   quit
 .endc
 "}
@@ -459,5 +471,15 @@ C {devices/dac_bridge.sym} 1160 -65 0 0 {name=A30 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=1n t_fall=1n
 + out_low=0 out_high=1.8"}
 C {lab_pin.sym} 1130 -65 2 1 {name=p163 sig_type=std_logic lab=COUNT3}
-C {/home/madvlsi/Documents/madvlsi/final/schematics/bias_gen/bias_gen.sym} 365 -625 0 0 {name=x19}
-C {/home/madvlsi/Documents/madvlsi/final/schematics/controller/controller.sym} 1090 -165 0 0 {name=A31}
+C {lab_pin.sym} -185 -85 2 0 {name=p14 sig_type=std_logic lab=Vmid}
+C {lab_pin.sym} -295 -215 2 0 {name=p32 sig_type=std_logic lab=Vmid}
+C {lab_pin.sym} -75 -345 2 0 {name=p165 sig_type=std_logic lab=Vg}
+C {lab_pin.sym} 475 -675 2 0 {name=p37 sig_type=std_logic lab=Vconst}
+C {madvlsi/vsource.sym} -75 -315 0 0 {name=Vgate
+value=1.45
+}
+C {madvlsi/gnd.sym} -75 -285 0 0 {name=l4 lab=GND}
+C {madvlsi/vsource.sym} -160 -385 0 0 {name=Vmid
+value=0.7
+}
+C {madvlsi/gnd.sym} -160 -355 0 0 {name=l6 lab=GND}

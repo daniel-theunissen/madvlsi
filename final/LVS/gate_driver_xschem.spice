@@ -1,0 +1,19 @@
+** sch_path: /home/dt/Documents/madvlsi/final/LDS/gate_driver_LDS.sch
+.subckt gate_driver_LDS Vgate Dn Vout Dnbar GND VDD
+*.PININFO Vgate:I Dn:I Vout:O Dnbar:I GND:B VDD:B
+XM1 Vout Dnbar GND GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+x1 Vgate Dn Dnbar Vout VDD GND transmission_gate_LDS
+.ends
+
+* expanding   symbol:  transmission_gate_LDS.sym # of pins=6
+** sym_path: /home/dt/Documents/madvlsi/final/LDS/transmission_gate_LDS.sym
+** sch_path: /home/dt/Documents/madvlsi/final/LDS/transmission_gate_LDS.sch
+.subckt transmission_gate_LDS Vgate Dn Dnbar Vout VDD GND
+*.PININFO Vgate:I Dn:I Dnbar:I Vout:O GND:B VDD:B
+XM1 Vout Dn Vgate GND sky130_fd_pr__nfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Vout Dnbar Vgate VDD sky130_fd_pr__pfet_01v8 L=0.5 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+

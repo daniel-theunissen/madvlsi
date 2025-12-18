@@ -1,0 +1,12 @@
+* SPICE3 file created from gate_driver.ext - technology: sky130A
+
+.subckt transmission_gate Dn Dnbar Vgate Vout GND VDD
+X0 Vout Dn Vgate GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+X1 Vout Dnbar Vgate VDD sky130_fd_pr__pfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+.ends
+
+.subckt gate_driver GND VDD Vgate Dn Dnbar Vout
+Xtransmission_gate_0 Dn Dnbar Vgate Vout GND VDD transmission_gate
+X0 GND Dnbar Vout GND sky130_fd_pr__nfet_01v8 ad=2.1 pd=7.4 as=2.1 ps=7.4 w=3 l=0.5
+.ends
+

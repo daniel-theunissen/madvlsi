@@ -18,14 +18,24 @@ async def test_input(dut, input):
     COMP = dut.comp
     SAR_REG = dut.sar_reg
     ADC_OUT = dut.adc_out
+    COMP_CLK = dut.comparator_clk
     value = int(input, 2)
+    if int("10000000", 2) > value:
+        next_comp_value = 1
+    else:
+        next_comp_value = 0
+
     print(f"Theoretical input: {value}")
 
     for i in range(1001):
         output_value = int(str(SAR_REG.value), 2)
-        if output_value > value:
-            COMP.value = 1
+        if COMP_CLK.value == 1:
+            COMP.value = next_comp_value
         else:
+            if output_value > value:
+                next_comp_value = 1
+            else:
+                next_comp_value = 0
             COMP.value = 0
         # await ClockCycles(CLK, 1)
         await Timer(1, units="ns")
@@ -42,7 +52,9 @@ async def test_controller(dut):
 
     await reset(dut)
 
-    value = "00111111"
+    value = "00100111"
+
+    await test_input(dut, value)
 
     await test_input(dut, value)
 

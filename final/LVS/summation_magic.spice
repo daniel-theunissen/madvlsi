@@ -1,0 +1,16 @@
+* SPICE3 file created from summation.ext - technology: sky130A
+
+.subckt summation VDD Vbp I1 I2 Vout_p1 Vout_p2 deltaI -deltaI Vout_n1 Vout_n2 D1
++ D2 Vbn GND
+X0 D2 Vbn GND GND sky130_fd_pr__nfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X1 deltaI Vout_n1 D1 GND sky130_fd_pr__nfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X2 -deltaI Vout_n2 D2 GND sky130_fd_pr__nfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X3 I2 Vout_p2 -deltaI VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X4 VDD Vbp I1 VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X5 D1 Vbn GND GND sky130_fd_pr__nfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X6 VDD Vbp I2 VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X7 VDD Vbp I2 VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X8 I1 Vout_p1 deltaI VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+X9 VDD Vbp I1 VDD sky130_fd_pr__pfet_01v8 ad=2.8 pd=9.4 as=2.8 ps=9.4 w=4 l=0.5
+.ends
+

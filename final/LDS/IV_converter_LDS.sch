@@ -21,24 +21,9 @@ N -200 -70 -200 70 {lab=Iin_Vout}
 N -200 70 -130 70 {lab=Iin_Vout}
 N -200 -70 -60 -70 {lab=Iin_Vout}
 N -60 -70 -60 -60 {lab=Iin_Vout}
-C {madvlsi/pmos3.sym} -130 40 0 1 {name=M5
-L=\{len\}
-W=\{wid\}
-body=VDD
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
-spiceprefix=X
-}
 C {madvlsi/pmos4.sym} -40 40 0 0 {name=M6
-L=\{len\}
-W=\{wid\}
+L=0.5
+W=3
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -51,8 +36,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {madvlsi/nmos3.sym} -130 -30 0 0 {name=M7
-L=\{len\}
-W=\{wid\}
+L=0.5
+W=3
 body=GND
 nf=1
 mult=1
@@ -85,6 +70,20 @@ C {iopin.sym} -140 0 2 0 {name=p7 lab=GND}
 C {iopin.sym} -30 40 0 0 {name=p8 lab=Vmid}
 C {ipin.sym} -160 -30 0 0 {name=p9 lab=Vbn}
 C {ipin.sym} -10 -30 2 0 {name=p10 lab=Vgate}
-C {code_shown.sym} 80 0 0 0 {name=SPICE1 only_toplevel=false value="
-.param wid=3 len=0.5
-"}
+C {madvlsi/pmos3.sym} -130 40 0 1 {name=M1
+L=0.5
+W=3
+body=VDD
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {iopin.sym} -330 90 2 0 {name=p1 lab=VDD}
+C {lab_pin.sym} -330 90 2 0 {name=p2 sig_type=std_logic lab=VDD}

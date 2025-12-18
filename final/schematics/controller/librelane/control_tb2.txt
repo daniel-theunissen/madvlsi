@@ -1,0 +1,37 @@
+"
+.control
+  set wr_vecnames
+  set wr_singlescale
+  remzerovec
+
+  let run = 0
+  let steps = 2048
+  let vin = -0.5
+
+  dowhile run <= steps
+    set wr_vecnames
+    alter vinp $&vin
+    save all   
+    tran 2n 9000n
+    wrdata ~/Documents/madvlsi/final/schematics/adctest/word_sweep/{$&run}.txt v(vinp) v(sb0) v(sb1) v(sb2) v(sb3) v(sb4) v(sb5) v(sb6) v(sb7) v(adc0a) v(adc1a) v(adc2a) v(adc3a) v(adc4a) v(adc5a) v(adc6a) v(adc7a) v(count0a) v(count1a) v(count2a) v(count3a)
+    reset
+    let run = run + 1
+    let vin = vin + 0.00048828125
+  end
+  quit
+.endc
+"
+
+(0.125/256) - 0.5
+"
+.control
+  save all
+  set wr_vecnames
+  set wr_singlescale
+  remzerovec
+  tran 2n 9000n
+  write adc_tb_2.raw
+  wrdata ~/Documents/madvlsi/final/schematics/adctest/adc_tb2.txt v(vin_p) v(sb0) v(sb1) v(sb2) v(sb3) v(sb4) v(sb5) v(sb6) v(sb7) v(adc0a) v(adc1a) v(adc2a) v(adc3a) v(adc4a) v(adc5a) v(adc6a) v(adc7a) v(count0a) v(count1a) v(count2a) v(count3a)
+  quit
+.endc
+"
