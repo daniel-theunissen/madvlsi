@@ -18,15 +18,15 @@ node "Vgate" 1560 646.23 -60 160 li 0 0 0 0 0 0 0 0 84000 1480 84000 1480 0 0 0 
 node "Dn" 389 374.732 180 960 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 74400 1720 0 0 6400 320 0 0 0 0 0 0 0 0 0 0 0 0
 node "VDD" 1552 2000.16 -60 -220 m1 0 0 0 0 421600 2600 0 0 96000 1520 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 67200 1360 408000 2560 0 0 0 0 0 0 0 0 0 0
 substrate "GND" 0 0 -60 520 m1 0 0 0 0 0 0 0 0 0 0 96000 1520 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 67200 1360 408000 2560 0 0 0 0 0 0 0 0 0 0
-cap "Dn" "Dnbar" 29.8683
-cap "Dnbar" "VDD" 160.93
-cap "Dn" "VDD" 0.496551
-cap "Vout" "Dnbar" 69.0229
-cap "Vgate" "Dnbar" 66.7373
-cap "Vout" "Dn" 69.0229
-cap "Dn" "Vgate" 66.7373
+cap "Dnbar" "Vgate" 66.7373
+cap "Dn" "Vout" 69.0229
 cap "Vout" "VDD" 652.912
+cap "Dnbar" "Vout" 69.0229
+cap "Vgate" "Vout" 216.531
+cap "Dn" "VDD" 0.496551
+cap "Dn" "Dnbar" 29.8683
+cap "Dn" "Vgate" 66.7373
+cap "Dnbar" "VDD" 160.93
 cap "Vgate" "VDD" 362.549
-cap "Vout" "Vgate" 216.531
 device msubckt sky130_fd_pr__pfet_01v8 120 -500 121 -499 l=100 w=600 "VDD" "Dnbar" 200 0 "Vgate" 600 84000,1480 "Vout" 600 84000,1480
 device msubckt sky130_fd_pr__nfet_01v8 120 240 121 241 l=100 w=600 "GND" "Dn" 200 0 "Vgate" 600 84000,1480 "Vout" 600 84000,1480

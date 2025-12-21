@@ -13,15 +13,15 @@ module controller #(
     output wire [NUM_BITS - 1:0] dac_in,
     output wire [NUM_BITS - 1:0] dac_in_n,
     output reg comparator_clk,
-    output reg [NUM_BITS - 1:0] adc_out,
-    output reg [$clog2(NUM_BITS):0] count
+    output reg [NUM_BITS - 1:0] adc_out
+    //output reg [$clog2(NUM_BITS):0] count
   );
 
   reg [NUM_BITS - 1:0] sar_reg;
   assign dac_in = sar_reg;
   assign dac_in_n = ~dac_in;
 
-  //reg [$clog2(NUM_BITS):0] count;
+  reg [$clog2(NUM_BITS):0] count;
 
   always @(posedge clk)
   begin
